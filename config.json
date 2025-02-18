@@ -1,0 +1,16 @@
+{
+    "channel_type": "gewechat",
+    "debug": 1,
+    "dify_api_base": "http://localhost/v1",
+    "dify_api_key": "app-DF1frHefkFBmpz6A1xxTreF0",
+    "dify_app_type": "chatflow",
+    "gewechat_app_id": "wx_UGdj81O5nGHctzupxq8AV",
+    "gewechat_base_url": "http://192.168.29.237:2531/v2/api",
+    "gewechat_callback_url": "http://192.168.29.237:9919/v2/api/callback/collect",
+    "gewechat_download_url": "http://192.168.29.237:2532/download",
+    "gewechat_token": "2848539b92e44bd2aabc0e9831b4426d",
+    "model": "dify",
+    "nick_name_black_list": [],
+    "wxid_black_list": [],
+    "wxid_recip_note": "wxid_j9m9a65vqqvc22"
+}
