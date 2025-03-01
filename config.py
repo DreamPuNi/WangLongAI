@@ -17,6 +17,8 @@ available_setting = {
     "web_ui_password": "dify-on-wechat",
     # 错误回复消息
     "error_reply": "我暂时遇到了一些问题，请您稍后重试~",
+    # 消息缓冲器
+    "message_buffer_second": 10,
     # openai api配置
     "open_ai_api_key": "",  # openai api key
     # openai apibase，当use_azure_chatgpt为true时，需要设置对应的api base
@@ -182,7 +184,7 @@ available_setting = {
     "gewechat_token": "",
     "gewechat_app_id": "",
     "gewechat_callback_url": "", # 回调地址，示例：http://172.17.0.1:9919/v2/api/callback/collect
-    
+
     # chatgpt指令自定义触发词
     "clear_memory_commands": ["#清除记忆"],  # 重置会话指令，必须以#开头
     # channel配置
@@ -210,6 +212,12 @@ available_setting = {
     "Minimax_group_id": "",
     "Minimax_base_url": "",
     "web_port": 9899,
+    # sikulix-wecom配置
+    "sikulix_describe":"", # 注意：wcf不需要任何设置，这个只是占位
+    # sikulix-wecom配置
+    "wx_name":"", # 你的微信名字
+    # wcf配置
+    "wcf_describe":"", # 注意：wcf不需要任何设置，这个只是占位
 }
 
 class Config(dict):
@@ -256,8 +264,6 @@ class Config(dict):
         try:
             with open(os.path.join(get_appdata_dir(), "user_datas.pkl"), "rb") as f:
                 self.user_datas = pickle.load(f)
-                print("========user_datas", self.user_datas)
-                print("========user_datas",self.user_datas['wxid_j9m9a65vqqvc22'])
                 logger.info("[Config] User datas loaded.")
         except FileNotFoundError as e:
             logger.info("[Config] User datas file not found, ignore.")
@@ -269,7 +275,6 @@ class Config(dict):
         try:
             with open(os.path.join(get_appdata_dir(), "user_datas.pkl"), "wb") as f:
                 pickle.dump(self.user_datas, f)
-                print("========user_datas", self.user_datas)
                 logger.info("[Config] User datas saved.")
         except Exception as e:
             logger.info("[Config] User datas error: {}".format(e))

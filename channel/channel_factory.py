@@ -18,6 +18,9 @@ def create_channel(channel_type) -> Channel:
     elif channel_type == "wxy":
         from channel.wechat.wechaty_channel import WechatyChannel
         ch = WechatyChannel()
+    elif channel_type == "wcf":
+        from channel.wcferry.wcf_channel import WechatfChannel
+        ch = WechatfChannel()
     elif channel_type == "terminal":
         from channel.terminal.terminal_channel import TerminalChannel
         ch = TerminalChannel()
@@ -48,6 +51,9 @@ def create_channel(channel_type) -> Channel:
     elif channel_type == "gewechat":
         from channel.gewechat.gewechat_channel import GeWeChatChannel
         ch = GeWeChatChannel()
+    elif channel_type == "sikulix_wecom":
+        from channel.sikulix_wecom.sikulix_com_channel import SikuliXChannel
+        ch = SikuliXChannel(jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll",sikulix_jar_path = r"D:\Program\dify-on-wechat\lib\sikulix\sikulixide-2.0.5-win.jar")
     else:
         raise RuntimeError
     ch.channel_type = channel_type

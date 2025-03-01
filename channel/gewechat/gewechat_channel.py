@@ -1,21 +1,22 @@
 import re
 import os
+import sys
+import web
 import time
 import json
-import web
-from urllib.parse import urlparse
-
-from bridge.context import Context, ContextType
-from bridge.reply import Reply, ReplyType
-from channel.chat_channel import ChatChannel
-from channel.gewechat.gewechat_message import GeWeChatMessage
-from common.log import logger
-from common.singleton import singleton
-from common.tmp_dir import TmpDir
-from config import conf, save_config
-from lib.gewechat import GewechatClient
-from voice.audio_convert import mp3_to_silk
 import uuid
+import datetime
+from common.log import logger
+from common.tmp_dir import TmpDir
+from urllib.parse import urlparse
+from config import conf, save_config
+from common.singleton import singleton
+from lib.gewechat import GewechatClient
+from bridge.reply import Reply, ReplyType
+from voice.audio_convert import mp3_to_silk
+from channel.chat_channel import ChatChannel
+from bridge.context import Context, ContextType
+from channel.gewechat.gewechat_message import GeWeChatMessage
 
 MAX_UTF8_LEN = 2048
 
@@ -25,6 +26,9 @@ class GeWeChatChannel(ChatChannel):
 
     def __init__(self):
         super().__init__()
+
+        self.current_date = None
+        self.today_counter = 0
 
         self.base_url = conf().get("gewechat_base_url")
         if not self.base_url:
@@ -117,7 +121,6 @@ class GeWeChatChannel(ChatChannel):
             text_after_details = reply_text.split('</details>')[-1]
 
             conf().user_datas[receiver]["history"].append({"assistant": text_after_details}) # 更新回复的聊天记录
-            print("=============user_datas",conf().user_datas)
 
             if "<end>" in text_after_details: # 先判断是不是对话结束,如果是就转人工
                 wxid_black_list = conf().get("wxid_black_list")
@@ -126,7 +129,9 @@ class GeWeChatChannel(ChatChannel):
                 save_config()
                 logger.info("[gewechat] Transfer to manual {}".format(receiver))
                 user = context["msg"].other_user_nickname if context.get("msg") else "default"
-                self.send_transfer_notice(receiver, user)# 执行通知函数
+                self.send_transfer_notice(receiver, user) # 执行通知函数
+                self.rename_customer(receiver, user) # 执行重命名
+
             reply_list = re.findall(r'「(.*?)」', text_after_details) # 对消息进行切分自适应发送
             for content in reply_list:
                 sleep_time = len(content) * 0.3
@@ -172,13 +177,28 @@ class GeWeChatChannel(ChatChannel):
     def send_transfer_notice(self, tras_wxid,tras_nick_name):
         """执行通知目标账号用户状态发生变化"""
         notice_reciver_wxid = conf().get("wxid_recip_note")
-        print("-----------消息接受者")
         if notice_reciver_wxid:
             content = f"客户 [{tras_nick_name}], wxid= [{tras_wxid}] 已转人工处理，请及时查看"
             self.client.post_text(self.app_id, notice_reciver_wxid, content, "")
             logger.info("[gewechat] Transfer {} to manual notifacation send to {}".format(tras_nick_name, tras_wxid))
         else:
             pass
+
+    def rename_customer(self, remark_wxid, remark_name):
+        """重命名客户"""
+        new_name = f"{self._generate_name_remark()}{remark_name}"
+        self.client.set_friend_remark(self.app_id,remark_wxid, new_name)
+
+    def _generate_name_remark(self):
+        """生成[20250220-01-何颂生]这样的重命名文本"""
+        today = datetime.datetime.now().strftime("%Y%m%d")
+        if self.current_date != today:
+            self.current_date = today
+            self.today_counter = 0
+        self.today_counter += 1
+        formatted_counter = f"{self.today_counter:02d}"
+        remark = f"{self.current_date}-{formatted_counter}-"
+        return remark
 
 class Query:
     def GET(self):

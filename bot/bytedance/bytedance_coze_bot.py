@@ -41,7 +41,9 @@ class ByteDanceCozeBot(Bot):
             logger.info("[COZE] query={}".format(query))
             channel_type = conf().get("channel_type", "wx")
             user_id = None
-            if channel_type in ["wx", "wework", "gewechat"]:
+            # print(f"other user nickname:{context["msg"].other_user_nickname}")
+            # print(f"other user nickname:{context["msg"].other_user_id}")
+            if channel_type in ["wx", "wework", "gewechat","sikulix_wecom","wcf"]:
                 user_id = context["msg"].other_user_nickname
                 if user_id is None or user_id == '':
                     user_id = context["msg"].actual_user_nickname

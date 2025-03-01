@@ -10,6 +10,7 @@ from common import const
 from config import load_config
 from plugins import *
 import threading
+from common.verify import VerifyAccess
 
 
 def sigterm_handler_wrap(_signo):
@@ -66,6 +67,25 @@ def run():
         logger.error("App startup failed!")
         logger.exception(e)
 
+def run_by_webui():
+    try:
+        load_config()
+        channel_name = conf().get("channel_type", "wx")
+        start_channel(channel_name)
+        while True:
+            time.sleep(1)
+    except Exception as e:
+        logger.error("App startup failed!")
+        logger.exception(e)
 
 if __name__ == "__main__":
-    run()
+    verify = VerifyAccess()
+    i = 0
+    if not verify.check_local_license():
+        while i < 3:
+            print(verify.token)
+            key = input("请输入你的Key：")
+            verify.verify(key)
+            i += 1
+    else:
+        run()

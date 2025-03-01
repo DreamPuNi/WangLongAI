@@ -1,22 +1,25 @@
 {
-  "dify_api_base": "https://api.dify.ai/v1",
-  "dify_api_key": "app-xxx",
-  "dify_app_type": "chatbot",
-  "channel_type": "gewechat",
-  "gewechat_app_id": "",
-  "gewechat_token": "",
-  "gewechat_base_url": "",
-  "gewechat_callback_url": "",
-  "gewechat_download_url": "",
-  "debug": true,
-  "model": "dify",
-  "single_chat_prefix": [""],
-  "single_chat_reply_prefix": "",
-  "group_chat_prefix": ["@bot"],
-  "group_name_white_list": ["ALL_GROUP"],
-  "image_recognition": true,
-  "speech_recognition": true,
-  "voice_reply_voice": true,
-  "voice_to_text": "dify",
-  "text_to_voice": "dify"
+    "message_buffer_second": 1,
+    "debug": 0,
+
+    "model": "dify",
+
+    "dify_api_base": "http://localhost/v1",
+    "dify_api_key": "",
+    "dify_app_type": "chatbot",
+
+    "coze_api_base": "",
+    "coze_api_key": "",
+    "coze_bot_id": "",
+
+    "channel_type": "sikulix",
+
+    "gewechat_app_id": "",
+    "gewechat_base_url": "http://192.168.29.237:2531/v2/api",
+    "gewechat_callback_url": "http://192.168.29.237:9919/v2/api/callback/collect",
+    "gewechat_download_url": "http://192.168.29.237:2532/download",
+    "gewechat_token": "",
+    "nick_name_black_list": [],
+    "wxid_black_list": [],
+    "wxid_recip_note": ""
 }

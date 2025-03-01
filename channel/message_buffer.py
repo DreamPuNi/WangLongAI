@@ -1,10 +1,10 @@
 import threading
-from typing import Dict
-from common.dequeue import Dequeue
-from collections import defaultdict
-from common.log import logger
 from config import conf
+from typing import Dict
+from common.log import logger
+from common.dequeue import Dequeue
 from bridge.context import Context
+from collections import defaultdict
 
 class MessageBuffer:
     """这里是实现的消息缓冲器，实现在消息通道类，主要是用来合并消息"""
@@ -33,9 +33,9 @@ class MessageBuffer:
                     buffer['timer'].cancel()
 
                 # 创建新计时器
-                buffer['timer'] = threading.Timer(10.0, self._process, args=[key])
+                buffer['timer'] = threading.Timer(conf().get("message_buffer_second", 1), self._process, args=[key])
                 buffer['timer'].start()
-                logger.info("Reset timer and add message {} wait for {} seconds.".format(key,"10"))
+                logger.info("Reset timer and add message {} wait for {} seconds.".format(key,conf().get("message_buffer_second", 1)))
         else:
             logger.info("User {} has been transfer to manual.".format(key))
 
@@ -70,8 +70,6 @@ class MessageBuffer:
         for ctx in contexts[1:]:
             if ctx.type != base.type or {k: v for k,v in ctx.kwargs.items() if k!='msg'} != {k:v for k,v in base.kwargs.items() if k!='msg'}:
                 logger.error("The context from {} parameters are inconsistent and cannot be merged.".format(contexts[0].kwargs['session_id']))
-                #for con in contexts:
-                #    print("====context-01====",con)
                 raise ValueError()
 
         # 拼接消息内容

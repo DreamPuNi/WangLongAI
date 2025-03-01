@@ -1,13 +1,23 @@
 import logging
 import sys
+import flet as ft
+from queue import Queue
 
+log_queue = Queue()
+
+class FletLogHandler(logging.Handler):
+    def emit(self, record):
+        log_entry = self.format(record)
+        log_queue.put(log_entry)
 
 def _reset_logger(log):
-    for handler in log.handlers:
-        handler.close()
-        log.removeHandler(handler)
-        del handler
-    log.handlers.clear()
+    flet_handler = FletLogHandler()
+    flet_handler.setFormatter(
+        logging.Formatter(
+            "[%(levelname)s][%(asctime)s][%(filename)s:%(lineno)d] - %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S",
+        )
+    )
     log.propagate = False
     console_handle = logging.StreamHandler(sys.stdout)
     console_handle.setFormatter(

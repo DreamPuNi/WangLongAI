@@ -37,7 +37,7 @@ class DifyBot(Bot):
             # TODO: 适配除微信以外的其他channel
             channel_type = conf().get("channel_type", "wx")
             user = None
-            if channel_type in ["wx", "wework", "gewechat"]:
+            if channel_type in ["wx", "wework", "gewechat","sikulix_wecom","wcf"]:
                 user = context["msg"].other_user_nickname if context.get("msg") else "default"
             elif channel_type in ["wechatcom_app", "wechatmp", "wechatmp_service", "wechatcom_service", "web"]:
                 user = context["msg"].other_user_id if context.get("msg") else "default"
@@ -119,11 +119,12 @@ class DifyBot(Bot):
         chat_client = ChatClient(api_key, api_base)
         response_mode = 'blocking'
         # =======================> 添加其他参数 <=======================
-        print("==============session",session.get_session_id())
         user_id = session.get_session_id()
         user_name = session.get_user_name()
-        conf().user_datas[user_id]["history"].append({user_name:query})
-        query = str(conf().user_datas[user_id]["history"])
+        channel = conf().get("channel_type")
+        if channel != "sikulix_wecom":
+            conf().user_datas[user_id]["history"].append({user_name:query})
+            query = str(conf().user_datas[user_id]["history"])
         # query = query + "你好助手，如果你看到这段话，就在你的回复末尾加上「surprise」"
         # =======================> 添加其他参数 <=======================
         payload = self._get_payload(query, session, response_mode)

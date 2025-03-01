@@ -1,0 +1,53 @@
+当前待办：
+- 项目的两种打包方案
+    - 封装好的app
+    - 源码及cmd脚本交付(没有实验呢)
+
+- gewechat的登陆问题
+
+- flet前端
+    - 注意这玩意有依赖项，打包的时候记得添加上
+    - 按钮转换
+    - gewechat的登陆管理
+    - 数据界面
+    - 后端随前端终止
+
+- wcf的消息格式化
+
+暂缓待办：
+- 语音输入和输出
+
+- message_buffer
+    - 上下文消息不同时的处理方法：messagebuffer的addmessage里面添加一个检查类型为文本，如果是文本就放入，如果不是就检查是否有存储的，有的话直接处理，然后将当前消息也直接处理
+
+
+
+已完成待办：
+- 消息记录管理
+    1.修改地址：./bot/dify/dify_bot/Difybot/_reply与./channel/gewechat/gewechat_channel/GeWeChatChannel/send添加了消息记录管理
+    2.实现功能：dify聊天记录本地管理及本地载入
+
+- 对话结束检测
+    1.修改地址：./channel/gewechat/gewechat_channel/GeWeChatChannel/send中进行转人工和通知事件处理
+    2.实现功能：检测对话结束/发送会话结束消息到通知人
+
+- 消息缓冲机制
+    1.修改地址：./channel/message_buffer
+    2.实现功能：对gewechat的消息进行10秒的缓冲
+
+- dify接入sikulix
+    1.实现了dify接入sikulix
+    2.实现了sikulix自动操作企业微信界面自动聊天
+
+- wechatcom
+    - 微信客服接入的测试，需要进行gitpull到公网IP的服务器
+
+- 自动重命名：
+    - sikulix的已经ok了,gewechat的也已经ok了，都是检测<end>
+
+- 对复制的内容的检测
+    - 检测是否纯文本
+    - 检测是否最后一条是自己回复的
+
+- 前端界面的制作
+    - 修改当前的webui

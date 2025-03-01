@@ -429,6 +429,7 @@ class ChatChannel(Channel):
                     self._fail_callback(session_id, exception=worker_exception, **kwargs)
                 else:
                     self._success_callback(session_id, **kwargs)
+
             except CancelledError as e:
                 logger.info("Worker cancelled, session_id = {}".format(session_id))
             except Exception as e:
@@ -465,7 +466,6 @@ class ChatChannel(Channel):
             else:
                 # 在这里添加消息缓冲功能
                 self.message_buffer.add_message(context)
-
                 # self.sessions[session_id][0].put(context)
 
     def consume(self):

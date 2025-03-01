@@ -1,0 +1,130 @@
+{
+  "channel_type":{
+    "wechat_common": {
+      "message_buffer_second": {
+        "tittle": "消息缓冲时间",
+        "describe": "用来将用户的消息进行合并，防止短句多次调用AI",
+        "type": "int"
+      },
+      "debug": {
+        "tittle": "调试模式",
+        "describe": "调试模式会输出更详细的日志",
+        "type": "bool"
+      },
+      "nick_name_black_list": {
+        "tittle": "不回复的用户（微信名）",
+        "describe": "这部分用户AI不会进行回复",
+        "type": "list"
+      },
+      "wxid_black_list": {
+        "tittle": "不回复的用户（wxid）",
+        "describe": "这部分用户AI不会进行回复",
+        "type": "list"
+      },
+      "wxid_recip_note": {
+        "tittle": "接受通知的wxid",
+        "describe": "在对话结束之后会发送给这个微信一个通知消息，并且将对话结束的用户添加至AI不再处理的列表",
+        "type": "str"
+      }
+    },
+    "gewechat": {
+      "gewechat_app_id": {
+        "tittle": "gewe渠道ID",
+        "describe": "首次登录可留空,自动获取",
+        "type": "str"
+      },
+      "gewechat_base_url": {
+        "tittle": "gewe地址",
+        "describe": "gewe服务的API地址，http://本机ip:2531/v2/api",
+        "type": "str"
+      },
+      "gewechat_callback_url": {
+        "tittle": "gewe回调地址",
+        "describe": "回调地址，http://本机ip:9919/v2/api/callback/collect",
+        "type": "str"
+      },
+      "gewechat_download_url": {
+        "tittle": "文件下载地址",
+        "describe": "文件下载地址，http://本机ip:2532/download",
+        "type": "str"
+      },
+      "gewechat_token": {
+        "tittle": "gewe令牌",
+        "describe": "首次登录可留空,自动获取",
+        "type": "str"
+      }
+    },
+    "sikulix_wecom": {
+      "sikulix_describe": {
+        "tittle": "高贵的sikulix不需要任何设置",
+        "describe": "高贵的sikulix不需要任何设置",
+        "type": "str"
+      }
+    },
+    "wcf": {
+      "wcf_describe": {
+        "tittle": "高贵的wcf不需要任何设置",
+        "describe": "高贵的wcf不需要任何设置",
+        "type": "str"
+      }
+    }
+  },
+  "model":{
+    "dify": {
+      "dify_api_base": {
+        "tittle": "Dify地址",
+        "describe": "Dify的API地址",
+        "type": "str"
+      },
+      "dify_api_key": {
+        "tittle": "Dify密钥",
+        "describe": "Dify的API密钥",
+        "type": "str"
+      },
+      "dify_app_type": {
+        "tittle": "Dify应用类型",
+        "describe": "你当前配置的Dify应用的类型",
+        "type": "str"
+      }
+    },
+    "coze": {
+      "coze_api_base": {
+        "tittle": "Coze地址",
+        "describe": "Coze的API地址",
+        "type": "str"
+      },
+      "coze_api_key": {
+        "tittle": "Coze密钥",
+        "describe": "Coze的API密钥",
+        "type": "str"
+      },
+      "coze_bot_id": {
+        "tittle": "CozeBotID",
+        "describe": "你的Coze机器人ID",
+        "type": "str"
+      }
+    },
+    "openai": {
+      "open_ai_api_key": {
+        "tittle": "API密钥",
+        "describe": "你的AI的API密钥",
+        "type": "str"
+      },
+      "open_ai_api_base": {
+        "tittle": "API地址",
+        "describe": "你的AI的API地址",
+        "type": "str"
+      },
+      "character_desc": {
+        "tittle": "SystemPrompt",
+        "describe": "你的系统提示词",
+        "type": "str"
+      },
+      "proxy": {
+        "tittle": "代理",
+        "describe": "代理服务地址",
+        "type": "str"
+      }
+    }
+  }
+}

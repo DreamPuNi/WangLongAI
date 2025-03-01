@@ -1,0 +1,8 @@
+[
+  {
+    "white_theme": {
+        "window01_background": "#F5F5DC",
+        "window02_background": "#E0E0B4",
+    }
+  }
+]
