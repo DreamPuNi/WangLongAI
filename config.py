@@ -312,7 +312,7 @@ def load_config():
         config_path = "./config-template.json"
 
     config_str = read_file(config_path)
-    logger.debug("[INIT] config str: {}".format(drag_sensitive(config_str)))
+    # logger.debug("[INIT] config str: {}".format(drag_sensitive(config_str)))
 
     # 将json字符串反序列化为dict类型
     config = Config(json.loads(config_str))

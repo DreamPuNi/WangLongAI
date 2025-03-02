@@ -33,6 +33,7 @@ from channel.chat_message import ChatMessage
 class SikuliXMessage(ChatMessage):
     def __init__(self, msg, is_group=False):
         super().__init__(msg)
+        self.assistant_name = "何颂生:"
         self.ctype = ContextType.TEXT
         self.content,self.from_user_nickname,self.to_user_nickname = self.format_msg(msg)
         self.is_group = is_group
@@ -42,10 +43,10 @@ class SikuliXMessage(ChatMessage):
         self.other_user_id = self.from_user_id
         self.session_id = self.from_user_id
         self.receiver = self.from_user_id
-
         self.other_user_nickname = self.from_user_nickname
 
-        self.assistant_name = conf().get("wx_name") + ":"
+        # self.assistant_name = conf().get("wx_name") + ":"
+
 
     def format_msg(self, msg):
         """
@@ -68,14 +69,16 @@ class SikuliXMessage(ChatMessage):
         for line in lines:
             if line.endswith(":"):
                 if current_speaker and current_speaker != line:
-                    result.append({current_speaker: "".join(current_content).rstrip("。")})
-                    current_content = []
+                    if line == self.assistant_name:
+                        result.append({current_speaker: "".join(current_content).rstrip("。")})
+                        current_content = []
+                    else:
+                        result.append({"assistant": "".join(current_content).rstrip("。")})
+                        current_content = []
 
                 current_speaker = line
                 if current_speaker != self.assistant_name:
                     user_name = current_speaker[:-1]
-                else:
-                    current_speaker = "assistant"
             else:
                 current_content.append(line + "。")  # 使用句号连接
 
@@ -112,19 +115,29 @@ class SikuliXMessage(ChatMessage):
 
 
 if __name__ == "__main__":
-    message = """望龙（ai销售版）@微信@微信联系人 2/19 14:01:46
-是是是
+    message = """硝:
+宁夏
 
-望龙（ai销售版）@微信@微信联系人 2/19 14:01:47
-是是是
+硝:
+吴忠
 
-张豆豆 2/19 14:04:12
-让我日日
+何颂生:
+我在陕西西安
 
-望龙（ai销售版）@微信@微信联系人 2/19 14:15:31
-你能识别语音吗？
+何颂生:
+听着不愿
 
-望龙（ai销售版）@微信@微信联系人 2/19 14:15:44
-哎哟，不错，还是自动转换。"""
+何颂生:
+远
+
+硝:
+青铜峡
+
+硝:
+[不支持类型消息]
+
+何颂生:
+okokok
+不用那么详细"""
     sm = SikuliXMessage(message)
     print(sm)

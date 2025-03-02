@@ -6,7 +6,7 @@ import signal
 import threading
 import flet as ft
 from PIL import Image
-
+import asyncio
 from common.log import log_queue
 from plugins import *
 from common import const
@@ -224,7 +224,6 @@ def main(page: ft.Page):
     def start_run_app(e):
         start_run()
 
-
     def start_run():
         global current_process_instance
 
@@ -240,19 +239,29 @@ def main(page: ft.Page):
         if current_process_instance is not None and current_process_instance.is_alive():
             os.kill(current_process_instance.pid, signal.SIGTERM)  # 杀掉当前进程
 
-    # 数据中心
+    # 数据中心页部分
     class LogViewManager:
         def __init__(self):
             self.base_width = 400
             self.base_height = 450
             self.is_expanded = False
+            self.log_base_height = 360
+            self.log_expand_height = 620
 
-        def create_log_view(self):
+        def create_log_view(self, page: ft.Page):
+            self.page = page
             self.log_view = ft.ListView(
                 expand=True,
-                spacing=10,
+                spacing=5,
                 auto_scroll=True,
-                controls=[ft.Text("日志初始化完成...", color="white")],
+                controls=[ft.Text("日志初始化完成...", color="white")]
+            )
+
+            self.log_view_container = ft.Container(
+                content=self.log_view,
+                height=self.log_base_height,  # 初始高度为 360
+                border=ft.border.all(1, "#FFFFFF"),
+                padding=10,
             )
 
             self.log_container = ft.Container(
@@ -269,46 +278,52 @@ def main(page: ft.Page):
                             ],
                             alignment=ft.MainAxisAlignment.SPACE_BETWEEN
                         ),
-                        ft.Container(
-                            content=self.log_view,
-                            height=350,  # 留出标题栏空间
-                            border=ft.border.all(1, "#FFFFFF"),
-                            padding=10
-                        )
+                        self.log_view_container,
                     ]
                 ),
                 width=self.base_width,
                 height=self.base_height,
-                bgcolor="#808B93",
+                bgcolor="#000000",
                 border_radius=10,
                 padding=20
             )
+            self.page.run_task(self.start_log_updater)
             return self.log_container
+
+        async def start_log_updater(self):
+            """启动日志更新任务"""
+            while True:
+                await asyncio.sleep(1)  # 每隔 1 秒检查一次
+                self.update_logs()
 
         def toggle_size(self, e):
             if self.is_expanded:
                 self.log_container.width = self.base_width
                 self.log_container.height = self.base_height
+                self.log_view.spacing = 5
+                self.log_view_container.height = self.log_base_height
             else:
-                self.log_container.width = 800
-                self.log_container.height = 600
+                self.log_container.width = 1050
+                self.log_container.height = 710
+                self.log_view.spacing = 10
+                self.log_view_container.height = self.log_expand_height
+
             self.is_expanded = not self.is_expanded
             self.log_container.update()
-    log_manager = LogViewManager()
 
-    def update_logs(e=None):
-        try:
-            while not log_queue.empty():
-                log_entry = log_queue.get_nowait()
-                if len(log_manager.log_view.controls) > 100:  # 保持最近100条日志
-                    log_manager.log_view.controls.pop(0)
-                log_manager.log_view.controls.append(
-                    ft.Text(log_entry, color="white", selectable=True)
-                )
-                log_manager.log_view.update()
-        except Exception as e:
-            logger.error(f"Log update error: {str(e)}")
-        ft.Timer(0.1,update_logs,repeat=True).start()
+        def update_logs(self):
+            try:
+                while not log_queue.empty():
+                    log_entry = log_queue.get_nowait()
+                    print("================", log_entry)
+                    self.log_view.controls.append(
+                        ft.Text(log_entry, color="white", selectable=True)
+                    )
+                    self.log_view.update()
+            except Exception as e:
+                logger.error(f"Log update error: {str(e)}")
+
+    log_manager = LogViewManager()
 
     # 渠道管理页部分
     channel_dynamic_content = ft.Column(expand=True)
@@ -323,14 +338,6 @@ def main(page: ft.Page):
         padding=ft.padding.all(10),
         shape=ft.RoundedRectangleBorder(radius=5),
         overlay_color="#EDEBEB",
-    )
-
-    power_dialog = ft.Dropdown(
-        options=[
-            ft.dropdown.Option("最小化到系统托盘",),
-            ft.dropdown.Option("关闭应用",)
-        ],
-        visible=True,
     )
 
     navbar_container = ft.Container( # 左侧导航栏
@@ -383,7 +390,7 @@ def main(page: ft.Page):
                 ft.Container(
                     content=ft.Row(
                         [
-                            log_manager.create_log_view(),
+                            log_manager.create_log_view(page),
                             ft.Container(
                                 content=ft.Text("流量监控", color="#000000", size=30, weight=ft.FontWeight.BOLD),
                                 bgcolor="#94CED8",
@@ -481,7 +488,12 @@ def main(page: ft.Page):
                                     [
                                         ft.Text("请选择需要运行的渠道：", color="#000000", size=20, weight=ft.FontWeight.BOLD),
                                         ft.Dropdown(
-                                            options=[ft.dropdown.Option("gewechat"), ft.dropdown.Option("sikulix_wecom"), ft.dropdown.Option("wcf")],
+                                            options=[
+                                                ft.dropdown.Option("gewechat"),
+                                                ft.dropdown.Option("sikulix_wecom"),
+                                                ft.dropdown.Option("sikulix_wechat"),
+                                                ft.dropdown.Option("wcf")
+                                            ],
                                             on_change=lambda e: update_parameters(
                                                 dynamic_content=channel_dynamic_content,
                                                 config_class="channel_type",

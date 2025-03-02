@@ -1,716 +1,234 @@
-[DEBUG][2025-02-28 08:14:58][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 08:14:58][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 08:14:58][config.py:267] - [Config] User datas file not found, ignore.
-[DEBUG][2025-02-28 08:14:59][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 08:14:59][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 08:14:59][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 08:14:59][config.py:267] - [Config] User datas file not found, ignore.
-[INFO][2025-02-28 08:15:02][interface.py:223] - 01-这个函数是进来了
-[INFO][2025-02-28 08:15:02][interface.py:233] - 02-这个函数是进来了
-[DEBUG][2025-02-28 08:15:03][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 08:15:03][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 08:15:03][config.py:267] - [Config] User datas file not found, ignore.
-[DEBUG][2025-02-28 08:15:03][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 08:15:03][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 08:15:03][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 08:15:03][config.py:267] - [Config] User datas file not found, ignore.
-[DEBUG][2025-02-28 08:15:03][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 08:15:03][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 08:15:03][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_m-Kknmg7AoetHxv_l_UAo, download_url: http://192.168.31.235:2532/download
-[INFO][2025-02-28 08:15:03][plugin_manager.py:50] - Loading plugins config...
-[INFO][2025-02-28 08:15:03][plugin_manager.py:88] - Scaning plugins ...
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin banwords: No module named 'plugins.banwords'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin bdunit: No module named 'plugins.bdunit'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin custom_dify_app: No module named 'plugins.custom_dify_app'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin dungeon: No module named 'plugins.dungeon'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin finish: No module named 'plugins.finish'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin godcmd: No module named 'plugins.godcmd'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin hello: No module named 'plugins.hello'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin jina_sum: No module named 'plugins.jina_sum'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin keyword: No module named 'plugins.keyword'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin linkai: No module named 'plugins.linkai'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin role: No module named 'plugins.role'
-[WARNING][2025-02-28 08:15:03][plugin_manager.py:113] - Failed to import plugin tool: No module named 'plugins.tool'
-[DEBUG][2025-02-28 08:15:03][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin Godcmd not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin Keyword not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin Banwords not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin linkai not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin JinaSum not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin Role not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin Dungeon not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin CustomDifyApp not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin BDunit not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin Hello not found, but found in plugins.json
-[ERROR][2025-02-28 08:15:03][plugin_manager.py:188] - Plugin Finish not found, but found in plugins.json
-[INFO][2025-02-28 08:15:03][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
-[INFO][2025-02-28 08:15:03][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
-[DEBUG][2025-02-28 08:15:06][gewechat_channel.py:229] - [gewechat] receive data: b'{"testMsg":"\xe5\x9b\x9e\xe8\xb0\x83\xe5\x9c\xb0\xe5\x9d\x80\xe9\x93\xbe\xe6\x8e\xa5\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81","token":"934c7ad0b1994c13a52374f5be9f39fb"}'
-[DEBUG][2025-02-28 08:15:06][gewechat_channel.py:234] - [gewechat] 收到gewechat服务发送的回调测试消息
-[INFO][2025-02-28 08:15:06][gewechat_channel.py:97] - [gewechat] callback set successfully
-[DEBUG][2025-02-28 08:15:17][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 08:15:17][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 08:15:17][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 08:15:17][config.py:267] - [Config] User datas file not found, ignore.
-[INFO][2025-02-28 08:15:17][interface.py:238] - 03-这个函数是进来了
-[DEBUG][2025-02-28 08:15:36][gewechat_channel.py:229] - [gewechat] receive data: b'{"TypeName":"AddMsg","Appid":"wx_m-Kknmg7AoetHxv_l_UAo","Data":{"MsgId":539892519,"FromUserName":{"string":"wxid_j9m9a65vqqvc22"},"ToUserName":{"string":"wxid_7im0hocoravz22"},"MsgType":1,"Content":{"string":"\xe5\x9c\xa8\xe5\x90\x97\xe5\x85\x84\xe5\xbc\x9f"},"Status":3,"ImgStatus":1,"ImgBuf":{"iLen":0},"CreateTime":1740701736,"MsgSource":"<msgsource>\\n\\t<pua>1</pua>\\n\\t<eggIncluded>1</eggIncluded>\\n\\t<signature>V1_sEOtOCAy|v1_sEOtOCAy</signature>\\n\\t<tmp_node>\\n\\t\\t<publisher-id></publisher-id>\\n\\t</tmp_node>\\n</msgsource>\\n","PushContent":"A-\xe5\x8d\xa7\xe5\xb7\xa2\xe5\xa5\xbd\xe5\xb8\x85-\xe4\xbd\x95\xe9\xa2\x82\xe7\x94\x9f : \xe5\x9c\xa8\xe5\x90\x97\xe5\x85\x84\xe5\xbc\x9f","NewMsgId":7800348038499055532,"MsgSeq":857732299},"Wxid":"wxid_7im0hocoravz22"}'
-[INFO][2025-02-28 08:15:37][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 5 seconds.
-[DEBUG][2025-02-28 08:15:42][chat_channel.py:488] - [chat_channel] consume context: Context(type=TEXT, content=在吗兄弟, kwargs={'isgroup': False, 'msg': <channel.gewechat.gewechat_message.GeWeChatMessage object at 0x000001B38AACE4B0>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_j9m9a65vqqvc22', 'receiver': 'wxid_j9m9a65vqqvc22'})
-[DEBUG][2025-02-28 08:15:42][chat_channel.py:217] - [chat_channel] ready to handle context: Context(type=TEXT, content=在吗兄弟, kwargs={'isgroup': False, 'msg': <channel.gewechat.gewechat_message.GeWeChatMessage object at 0x000001B38AACE4B0>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_j9m9a65vqqvc22', 'receiver': 'wxid_j9m9a65vqqvc22'})
-[DEBUG][2025-02-28 08:15:42][chat_channel.py:243] - [chat_channel] ready to handle context: type=TEXT, content=在吗兄弟
-[INFO][2025-02-28 08:15:42][bridge.py:73] - create bot dify for chat
-[INFO][2025-02-28 08:15:42][dify_bot.py:35] - [DIFY] query=在吗兄弟
-[DEBUG][2025-02-28 08:15:42][dify_bot.py:46] - [DIFY] dify_user=何颂生
-[DEBUG][2025-02-28 08:15:42][dify_bot.py:65] - [DIFY] Session user and room info - user_id: wxid_j9m9a65vqqvc22, user_name: 何颂生, room_id: , room_name: 
-[DEBUG][2025-02-28 08:15:42][dify_bot.py:66] - [DIFY] session=<bot.dify.dify_session.DifySession object at 0x000001B38AACFBC0> query=在吗兄弟
-[DEBUG][2025-02-28 08:15:46][dify_bot.py:162] - [DIFY] usage {'prompt_tokens': 1628, 'prompt_unit_price': '0', 'prompt_price_unit': '0', 'prompt_price': '0E-7', 'completion_tokens': 105, 'completion_unit_price': '0', 'completion_price_unit': '0', 'completion_price': '0E-7', 'total_tokens': 1733, 'total_price': '0E-7', 'currency': 'USD', 'latency': 3.3639064300004975}
-[DEBUG][2025-02-28 08:15:46][chat_channel.py:219] - [chat_channel] ready to decorate reply: Reply(type=TEXT, content=「嗨喽 您好，您是打算近期来三亚玩吗?」)
-[DEBUG][2025-02-28 08:15:46][chat_channel.py:362] - [chat_channel] ready to send reply: Reply(type=TEXT, content=「嗨喽 您好，您是打算近期来三亚玩吗?」), context: Context(type=TEXT, content=在吗兄弟, kwargs={'isgroup': False, 'msg': <channel.gewechat.gewechat_message.GeWeChatMessage object at 0x000001B38AACE4B0>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_j9m9a65vqqvc22', 'receiver': 'wxid_j9m9a65vqqvc22', 'channel': <channel.gewechat.gewechat_channel.GeWeChatChannel object at 0x000001B38A3C8110>})
-[INFO][2025-02-28 08:15:52][gewechat_channel.py:141] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「嗨喽 您好，您是打算近期来三亚玩吗?」
-[DEBUG][2025-02-28 08:15:52][chat_channel.py:407] - Worker return success, session_id = wxid_j9m9a65vqqvc22
-[DEBUG][2025-02-28 16:27:36][config.py:337] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 16:27:36][config.py:339] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 16:27:36][config.py:268] - [Config] User datas file not found, ignore.
-[DEBUG][2025-02-28 16:27:37][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 16:27:37][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 16:27:37][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_m-Kknmg7AoetHxv_l_UAo, download_url: http://192.168.31.235:2532/download
-[INFO][2025-02-28 16:27:37][plugin_manager.py:50] - Loading plugins config...
-[INFO][2025-02-28 16:27:37][plugin_manager.py:88] - Scaning plugins ...
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
-[INFO][2025-02-28 16:27:37][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
-[WARNING][2025-02-28 16:27:37][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
-[DEBUG][2025-02-28 16:27:37][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
-[DEBUG][2025-02-28 16:27:37][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\godcmd\config.json, exist=True
-[DEBUG][2025-02-28 16:27:37][plugin.py:28] - loading plugin config, plugin_name=Godcmd, conf={'password': '', 'admin_users': []}
-[INFO][2025-02-28 16:27:37][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7583。
-[INFO][2025-02-28 16:27:37][godcmd.py:210] - [Godcmd] inited
-[DEBUG][2025-02-28 16:27:37][keyword.py:35] - [keyword]加载配置文件D:\Program\dify-on-wechat-ek\plugins\keyword\config.json
-[INFO][2025-02-28 16:27:37][keyword.py:41] - [keyword] {}
-[INFO][2025-02-28 16:27:37][keyword.py:43] - [keyword] inited.
-[DEBUG][2025-02-28 16:27:37][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\custom_dify_app\config.json, exist=False
-[DEBUG][2025-02-28 16:27:37][plugin.py:28] - loading plugin config, plugin_name=CustomDifyApp, conf=None
-[INFO][2025-02-28 16:27:37][custom_dify_app.py:25] - [CustomDifyApp] config is None
-[DEBUG][2025-02-28 16:27:37][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\hello\config.json, exist=False
-[DEBUG][2025-02-28 16:27:37][plugin.py:28] - loading plugin config, plugin_name=Hello, conf=None
-[DEBUG][2025-02-28 16:27:37][hello.py:126] - No Hello plugin config.json, use plugins/hello/config.json.template
-[INFO][2025-02-28 16:27:37][hello.py:38] - [Hello] inited
-[INFO][2025-02-28 16:27:37][finish.py:23] - [Finish] inited
-[INFO][2025-02-28 16:27:37][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
-[INFO][2025-02-28 16:27:37][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
-[INFO][2025-02-28 16:27:39][app.py:19] - signal 2 received, exiting...
-[INFO][2025-02-28 16:27:39][config.py:277] - [Config] User datas saved.
-[DEBUG][2025-02-28 18:47:05][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:47:05][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:47:05][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:47:07][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 18:47:07][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:47:07][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:47:07][config.py:265] - [Config] User datas loaded.
-[INFO][2025-02-28 18:47:24][config.py:351] - [Config] Configuration saved.
-[DEBUG][2025-02-28 18:47:38][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:47:38][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:47:38][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:47:38][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 18:47:38][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:47:38][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:47:38][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:47:38][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 18:47:38][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 18:47:38][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_m-Kknmg7AoetHxv_l_UAo, download_url: http://192.168.31.235:2532/download
-[INFO][2025-02-28 18:47:38][plugin_manager.py:50] - Loading plugins config...
-[INFO][2025-02-28 18:47:38][plugin_manager.py:88] - Scaning plugins ...
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
-[INFO][2025-02-28 18:47:38][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
-[WARNING][2025-02-28 18:47:38][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
-[DEBUG][2025-02-28 18:47:38][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
-[DEBUG][2025-02-28 18:47:38][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\godcmd\config.json, exist=True
-[DEBUG][2025-02-28 18:47:38][plugin.py:28] - loading plugin config, plugin_name=Godcmd, conf={'password': '', 'admin_users': []}
-[INFO][2025-02-28 18:47:38][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7905。
-[INFO][2025-02-28 18:47:38][godcmd.py:210] - [Godcmd] inited
-[DEBUG][2025-02-28 18:47:38][keyword.py:35] - [keyword]加载配置文件D:\Program\dify-on-wechat\plugins\keyword\config.json
-[INFO][2025-02-28 18:47:38][keyword.py:41] - [keyword] {}
-[INFO][2025-02-28 18:47:38][keyword.py:43] - [keyword] inited.
-[DEBUG][2025-02-28 18:47:38][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\custom_dify_app\config.json, exist=False
-[DEBUG][2025-02-28 18:47:38][plugin.py:28] - loading plugin config, plugin_name=CustomDifyApp, conf=None
-[INFO][2025-02-28 18:47:38][custom_dify_app.py:25] - [CustomDifyApp] config is None
-[DEBUG][2025-02-28 18:47:38][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\hello\config.json, exist=False
-[DEBUG][2025-02-28 18:47:38][plugin.py:28] - loading plugin config, plugin_name=Hello, conf=None
-[DEBUG][2025-02-28 18:47:38][hello.py:126] - No Hello plugin config.json, use plugins/hello/config.json.template
-[INFO][2025-02-28 18:47:38][hello.py:38] - [Hello] inited
-[INFO][2025-02-28 18:47:38][finish.py:23] - [Finish] inited
-[INFO][2025-02-28 18:47:38][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
-[INFO][2025-02-28 18:47:38][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
-[DEBUG][2025-02-28 18:47:41][gewechat_channel.py:229] - [gewechat] receive data: b'{"testMsg":"\xe5\x9b\x9e\xe8\xb0\x83\xe5\x9c\xb0\xe5\x9d\x80\xe9\x93\xbe\xe6\x8e\xa5\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81","token":"934c7ad0b1994c13a52374f5be9f39fb"}'
-[DEBUG][2025-02-28 18:47:41][gewechat_channel.py:234] - [gewechat] 收到gewechat服务发送的回调测试消息
-[INFO][2025-02-28 18:47:41][gewechat_channel.py:97] - [gewechat] callback set successfully
-[DEBUG][2025-02-28 18:47:50][gewechat_channel.py:229] - [gewechat] receive data: b'{"TypeName":"AddMsg","Appid":"wx_m-Kknmg7AoetHxv_l_UAo","Data":{"MsgId":1866828453,"FromUserName":{"string":"45597406866@chatroom"},"ToUserName":{"string":"wxid_7im0hocoravz22"},"MsgType":1,"Content":{"string":"wxid_9ptzrl2kfpio22:\\n\xe4\xbd\xa0\xe8\x83\xbd\xe4\xb8\x8d\xe8\x83\xbd\xe5\x96\x8a\xe4\xbb\x96\xe4\xbb\xac\xe5\x9b\x9e\xe4\xb8\x80\xe4\xb8\x8b\xe6\x88\x91\xe6\x89\xbe\xe4\xb8\xaa\xe4\xbe\x9b\xe5\xba\x94\xe9\x93\xbe\xe9\x83\xbd\xe4\xb8\x8d\xe5\x90\x8a\xe6\x88\x91"},"Status":3,"ImgStatus":1,"ImgBuf":{"iLen":0},"CreateTime":1740739669,"MsgSource":"<msgsource>\\n\\t<bizflag>0</bizflag>\\n\\t<pua>1</pua>\\n\\t<eggIncluded>1</eggIncluded>\\n\\t<silence>1</silence>\\n\\t<membercount>309</membercount>\\n\\t<signature>V1_5XGgNc5p|v1_5XGgNc5p</signature>\\n\\t<tmp_node>\\n\\t\\t<publisher-id></publisher-id>\\n\\t</tmp_node>\\n</msgsource>\\n","NewMsgId":554696667980842454,"MsgSeq":857732488},"Wxid":"wxid_7im0hocoravz22"}'
-[DEBUG][2025-02-28 18:47:50][gewechat_message.py:523] - [gewechat] Parse is_at from PushContent. self.is_at: False
-[DEBUG][2025-02-28 18:47:50][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=私域发烧友【交个朋友2.0】
-[DEBUG][2025-02-28 18:47:51][gewechat_channel.py:229] - [gewechat] receive data: b'{"TypeName":"AddMsg","Appid":"wx_m-Kknmg7AoetHxv_l_UAo","Data":{"MsgId":705864017,"FromUserName":{"string":"45597406866@chatroom"},"ToUserName":{"string":"wxid_7im0hocoravz22"},"MsgType":1,"Content":{"string":"wxid_wgxygx2cclf322:\\n\xe4\xbd\xa0\xe6\x98\xaf\xe7\x8c\xb4\xe5\xad\x90\xe6\xb4\xbe\xe6\x9d\xa5\xe6\x90\x9e\xe7\xac\x91\xe7\x9a\x84\xe5\x90\x97[\xe7\xa0\xb4\xe6\xb6\x95\xe4\xb8\xba\xe7\xac\x91]"},"Status":3,"ImgStatus":1,"ImgBuf":{"iLen":0},"CreateTime":1740739671,"MsgSource":"<msgsource>\\n\\t<bizflag>0</bizflag>\\n\\t<pua>1</pua>\\n\\t<eggIncluded>1</eggIncluded>\\n\\t<silence>1</silence>\\n\\t<membercount>309</membercount>\\n\\t<signature>V1_9zNRMiXP|v1_9zNRMiXP</signature>\\n\\t<tmp_node>\\n\\t\\t<publisher-id></publisher-id>\\n\\t</tmp_node>\\n</msgsource>\\n","NewMsgId":5215278282244113298,"MsgSeq":857732489},"Wxid":"wxid_7im0hocoravz22"}'
-[DEBUG][2025-02-28 18:47:52][gewechat_message.py:523] - [gewechat] Parse is_at from PushContent. self.is_at: False
-[DEBUG][2025-02-28 18:47:52][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=私域发烧友【交个朋友2.0】
-[DEBUG][2025-02-28 18:47:54][gewechat_channel.py:229] - [gewechat] receive data: b'{"TypeName":"AddMsg","Appid":"wx_m-Kknmg7AoetHxv_l_UAo","Data":{"MsgId":2022947179,"FromUserName":{"string":"45597406866@chatroom"},"ToUserName":{"string":"wxid_7im0hocoravz22"},"MsgType":47,"Content":{"string":"wxid_9ptzrl2kfpio22:\\n<msg><emoji fromusername=\\"wxid_9ptzrl2kfpio22\\" tousername=\\"45597406866@chatroom\\" type=\\"2\\" idbuffer=\\"media:0_0\\" md5=\\"657f1772e0176a2d65e0717af196682d\\" len=\\"9534157\\" productid=\\"\\" androidmd5=\\"657f1772e0176a2d65e0717af196682d\\" androidlen=\\"9534157\\" s60v3md5=\\"657f1772e0176a2d65e0717af196682d\\" s60v3len=\\"9534157\\" s60v5md5=\\"657f1772e0176a2d65e0717af196682d\\" s60v5len=\\"9534157\\" cdnurl=\\"http://vweixinf.tc.qq.com/110/20401/stodownload?m=657f1772e0176a2d65e0717af196682d&amp;filekey=30450201010431302f02016e0402535a04203635376631373732653031373661326436356530373137616631393636383264020400917acd040d00000004627466730000000132&amp;hy=SZ&amp;storeid=2638b34630001ae230577cf680000006e01004fb1535a164c4b50b784d033a&amp;ef=1&amp;bizid=1022\\" designerid=\\"\\" thumburl=\\"\\" encrypturl=\\"http://vweixinf.tc.qq.com/110/20402/stodownload?m=5ba00d29821609472397d6613552a2ea&amp;filekey=30450201010431302f02016e0402535a04203562613030643239383231363039343732333937643636313335353261326561020400917ad0040d00000004627466730000000132&amp;hy=SZ&amp;storeid=2638b34630009ea920577cf680000006e02004fb2535a164c4b50b784d045d&amp;ef=2&amp;bizid=1022\\" aeskey=\\"0033576b7a094c00add49fad4c6bff31\\" externurl=\\"http://vweixinf.tc.qq.com/110/20403/stodownload?m=cd9d940a82a93a066faf9df248d8c6f3&amp;filekey=30440201010430302e02016e0402535a0420636439643934306138326139336130363666616639646632343864386336663302030b3c90040d00000004627466730000000132&amp;hy=SZ&amp;storeid=2638b34640002c86a0577cf680000006e03004fb3535a164c4b50b784d057a&amp;ef=3&amp;bizid=1022\\" externmd5=\\"56030b6b50bec50dd7dacfe8a84af681\\" width=\\"500\\" height=\\"500\\" tpurl=\\"\\" tpauthkey=\\"\\" attachedtext=\\"\\" attachedtextcolor=\\"\\" lensid=\\"\\" emojiattr=\\"\\" linkid=\\"\\" desc=\\"\\"></emoji><gameext type=\\"0\\" content=\\"0\\"></gameext><extcommoninfo></extcommoninfo></msg>"},"Status":3,"ImgStatus":2,"ImgBuf":{"iLen":0},"CreateTime":1740739674,"MsgSource":"<msgsource>\\n\\t<silence>1</silence>\\n\\t<membercount>309</membercount>\\n\\t<signature>V1_NHHHHMK5|v1_ZgaKPyc4</signature>\\n\\t<tmp_node>\\n\\t\\t<publisher-id></publisher-id>\\n\\t</tmp_node>\\n</msgsource>\\n","NewMsgId":2010139655076106437,"MsgSeq":857732490},"Wxid":"wxid_7im0hocoravz22"}'
-[DEBUG][2025-02-28 18:48:02][gewechat_channel.py:229] - [gewechat] receive data: b'{"TypeName":"AddMsg","Appid":"wx_m-Kknmg7AoetHxv_l_UAo","Data":{"MsgId":1205240694,"FromUserName":{"string":"45597406866@chatroom"},"ToUserName":{"string":"wxid_7im0hocoravz22"},"MsgType":1,"Content":{"string":"wxid_i7qixystugc522:\\n\xe8\x80\x81\xe5\x90\xb4\xe4\xbd\x93\xe9\x87\x8f\xe5\xa4\xaa\xe5\xa4\xa7\xe4\xba\x86"},"Status":3,"ImgStatus":1,"ImgBuf":{"iLen":0},"CreateTime":1740739681,"MsgSource":"<msgsource>\\n\\t<bizflag>0</bizflag>\\n\\t<pua>1</pua>\\n\\t<alnode>\\n\\t\\t<inlenlist>13</inlenlist>\\n\\t</alnode>\\n\\t<eggIncluded>1</eggIncluded>\\n\\t<silence>1</silence>\\n\\t<membercount>309</membercount>\\n\\t<signature>V1_3uoG/Dei|v1_3uoG/Dei</signature>\\n\\t<tmp_node>\\n\\t\\t<publisher-id></publisher-id>\\n\\t</tmp_node>\\n</msgsource>\\n","NewMsgId":4086847201298703349,"MsgSeq":857732491},"Wxid":"wxid_7im0hocoravz22"}'
-[DEBUG][2025-02-28 18:48:02][gewechat_message.py:523] - [gewechat] Parse is_at from PushContent. self.is_at: False
-[DEBUG][2025-02-28 18:48:02][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=私域发烧友【交个朋友2.0】
-[DEBUG][2025-02-28 18:48:04][gewechat_channel.py:229] - [gewechat] receive data: b'{"TypeName":"AddMsg","Appid":"wx_m-Kknmg7AoetHxv_l_UAo","Data":{"MsgId":1336318822,"FromUserName":{"string":"45597406866@chatroom"},"ToUserName":{"string":"wxid_7im0hocoravz22"},"MsgType":10002,"Content":{"string":"45597406866@chatroom:\\n<sysmsg type=\\"pat\\">\\n<pat>\\n  <fromusername>wxid_wgxygx2cclf322</fromusername>\\n  <chatusername>45597406866@chatroom</chatusername>\\n  <pattedusername>wxid_9ptzrl2kfpio22</pattedusername>\\n  <patsuffix><![CDATA[\xe5\x8a\x9f\xe5\xbe\xb7+999[\xe5\x90\x88\xe5\x8d\x81]]]></patsuffix>\\n  <patsuffixversion>2</patsuffixversion>\\n\\n\\n\\n\\n\\n\\n  <template><![CDATA[\\"${wxid_wgxygx2cclf322}\\" \xe6\x8b\x8d\xe4\xba\x86\xe6\x8b\x8d \\"${wxid_9ptzrl2kfpio22}\\" \xe5\x8a\x9f\xe5\xbe\xb7+999[\xe5\x90\x88\xe5\x8d\x81]]]></template>\\n\\n\\n\\n\\n\\n\\n\\n</pat>\\n</sysmsg>"},"Status":4,"ImgStatus":1,"ImgBuf":{"iLen":0},"CreateTime":1740739680,"MsgSource":"<msgsource>\\n\\t<tmp_node>\\n\\t\\t<publisher-id></publisher-id>\\n\\t</tmp_node>\\n</msgsource>\\n","NewMsgId":1272098589665043873,"MsgSeq":857732492},"Wxid":"wxid_7im0hocoravz22"}'
-[DEBUG][2025-02-28 18:48:05][gewechat_message.py:523] - [gewechat] Parse is_at from PushContent. self.is_at: False
-[DEBUG][2025-02-28 18:50:08][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:50:08][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:50:08][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:50:08][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 18:50:08][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:50:08][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:50:08][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:51:14][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:51:14][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:51:14][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:51:14][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 18:51:14][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:51:14][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:51:14][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:55:36][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:55:36][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:55:36][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:55:36][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 18:55:36][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:55:36][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:55:36][config.py:265] - [Config] User datas loaded.
-[INFO][2025-02-28 18:55:41][config.py:351] - [Config] Configuration saved.
-[DEBUG][2025-02-28 18:55:54][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:55:54][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:55:54][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:55:54][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 18:55:54][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 18:55:54][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 18:55:54][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 18:55:54][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 18:55:54][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 18:55:54][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_m-Kknmg7AoetHxv_l_UAo, download_url: http://192.168.31.235:2532/download
-[INFO][2025-02-28 18:55:54][plugin_manager.py:50] - Loading plugins config...
-[INFO][2025-02-28 18:55:54][plugin_manager.py:88] - Scaning plugins ...
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
-[INFO][2025-02-28 18:55:54][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
-[WARNING][2025-02-28 18:55:54][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
-[DEBUG][2025-02-28 18:55:54][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
-[DEBUG][2025-02-28 18:55:54][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\godcmd\config.json, exist=True
-[DEBUG][2025-02-28 18:55:54][plugin.py:28] - loading plugin config, plugin_name=Godcmd, conf={'password': '', 'admin_users': []}
-[INFO][2025-02-28 18:55:54][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为1645。
-[INFO][2025-02-28 18:55:54][godcmd.py:210] - [Godcmd] inited
-[DEBUG][2025-02-28 18:55:54][keyword.py:35] - [keyword]加载配置文件D:\Program\dify-on-wechat\plugins\keyword\config.json
-[INFO][2025-02-28 18:55:54][keyword.py:41] - [keyword] {}
-[INFO][2025-02-28 18:55:54][keyword.py:43] - [keyword] inited.
-[DEBUG][2025-02-28 18:55:54][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\custom_dify_app\config.json, exist=False
-[DEBUG][2025-02-28 18:55:54][plugin.py:28] - loading plugin config, plugin_name=CustomDifyApp, conf=None
-[INFO][2025-02-28 18:55:54][custom_dify_app.py:25] - [CustomDifyApp] config is None
-[DEBUG][2025-02-28 18:55:54][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\hello\config.json, exist=False
-[DEBUG][2025-02-28 18:55:54][plugin.py:28] - loading plugin config, plugin_name=Hello, conf=None
-[DEBUG][2025-02-28 18:55:54][hello.py:126] - No Hello plugin config.json, use plugins/hello/config.json.template
-[INFO][2025-02-28 18:55:54][hello.py:38] - [Hello] inited
-[INFO][2025-02-28 18:55:54][finish.py:23] - [Finish] inited
-[INFO][2025-02-28 18:55:54][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
-[INFO][2025-02-28 18:55:54][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
-[DEBUG][2025-02-28 18:55:57][gewechat_channel.py:229] - [gewechat] receive data: b'{"testMsg":"\xe5\x9b\x9e\xe8\xb0\x83\xe5\x9c\xb0\xe5\x9d\x80\xe9\x93\xbe\xe6\x8e\xa5\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81","token":"934c7ad0b1994c13a52374f5be9f39fb"}'
-[DEBUG][2025-02-28 18:55:57][gewechat_channel.py:234] - [gewechat] 收到gewechat服务发送的回调测试消息
-[INFO][2025-02-28 18:55:57][gewechat_channel.py:97] - [gewechat] callback set successfully
-[DEBUG][2025-02-28 18:56:00][gewechat_channel.py:229] - [gewechat] receive data: b'{"TypeName":"AddMsg","Appid":"wx_m-Kknmg7AoetHxv_l_UAo","Data":{"MsgId":1933459283,"FromUserName":{"string":"45597406866@chatroom"},"ToUserName":{"string":"wxid_7im0hocoravz22"},"MsgType":1,"Content":{"string":"wxid_mxtps7czsawy22:\\n@\xd8\x93\xe9\x80\x86\xe5\xa4\xa9\xe8\x80\x8c\xe8\xa1\x8c\xe2\x80\x85\xe4\xbd\xa0\xe9\x97\xae\xe4\xb8\x80\xe4\xb8\x8b\xe8\x80\x81\xe5\x90\xb4\xef\xbc\x8c\xe6\x8a\x95\xe6\x8a\x96\xe5\xae\xb6\xe8\xa6\x81\xe4\xb8\x8d\xe8\xa6\x81\xe6\x8a\x98\xe6\x89\xa3\xef\xbc\x9f"},"Status":3,"ImgStatus":1,"ImgBuf":{"iLen":0},"CreateTime":1740740159,"MsgSource":"<msgsource>\\n\\t<atuserlist><![CDATA[wxid_9ptzrl2kfpio22]]></atuserlist>\\n\\t<pua>1</pua>\\n\\t<eggIncluded>1</eggIncluded>\\n\\t<silence>1</silence>\\n\\t<membercount>309</membercount>\\n\\t<signature>V1_mXOfiMUz|v1_mXOfiMUz</signature>\\n\\t<tmp_node>\\n\\t\\t<publisher-id></publisher-id>\\n\\t</tmp_node>\\n</msgsource>\\n","NewMsgId":4900507341648767740,"MsgSeq":857732506},"Wxid":"wxid_7im0hocoravz22"}'
-[DEBUG][2025-02-28 18:56:00][gewechat_message.py:516] - [gewechat] is_at: False. atuserlist: wxid_9ptzrl2kfpio22
-[DEBUG][2025-02-28 18:56:00][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=私域发烧友【交个朋友2.0】
-[DEBUG][2025-02-28 19:37:54][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:37:54][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:37:54][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:37:54][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 19:37:54][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:37:54][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:37:54][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:37:59][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:37:59][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:37:59][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:37:59][config.py:313] - [INIT] config str: {
-    "channel_type": "gewechat",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 19:37:59][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:37:59][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:37:59][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:37:59][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 19:37:59][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 19:37:59][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_m-Kknmg7AoetHxv_l_UAo, download_url: http://192.168.31.235:2532/download
-[INFO][2025-02-28 19:37:59][plugin_manager.py:50] - Loading plugins config...
-[INFO][2025-02-28 19:37:59][plugin_manager.py:88] - Scaning plugins ...
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
-[INFO][2025-02-28 19:37:59][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
-[WARNING][2025-02-28 19:37:59][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
-[DEBUG][2025-02-28 19:37:59][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
-[DEBUG][2025-02-28 19:37:59][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\godcmd\config.json, exist=True
-[DEBUG][2025-02-28 19:37:59][plugin.py:28] - loading plugin config, plugin_name=Godcmd, conf={'password': '', 'admin_users': []}
-[INFO][2025-02-28 19:37:59][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7951。
-[INFO][2025-02-28 19:37:59][godcmd.py:210] - [Godcmd] inited
-[DEBUG][2025-02-28 19:37:59][keyword.py:35] - [keyword]加载配置文件D:\Program\dify-on-wechat\plugins\keyword\config.json
-[INFO][2025-02-28 19:37:59][keyword.py:41] - [keyword] {}
-[INFO][2025-02-28 19:37:59][keyword.py:43] - [keyword] inited.
-[DEBUG][2025-02-28 19:37:59][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\custom_dify_app\config.json, exist=False
-[DEBUG][2025-02-28 19:37:59][plugin.py:28] - loading plugin config, plugin_name=CustomDifyApp, conf=None
-[INFO][2025-02-28 19:37:59][custom_dify_app.py:25] - [CustomDifyApp] config is None
-[DEBUG][2025-02-28 19:37:59][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\hello\config.json, exist=False
-[DEBUG][2025-02-28 19:37:59][plugin.py:28] - loading plugin config, plugin_name=Hello, conf=None
-[DEBUG][2025-02-28 19:37:59][hello.py:126] - No Hello plugin config.json, use plugins/hello/config.json.template
-[INFO][2025-02-28 19:37:59][hello.py:38] - [Hello] inited
-[INFO][2025-02-28 19:37:59][finish.py:23] - [Finish] inited
-[INFO][2025-02-28 19:37:59][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
-[INFO][2025-02-28 19:37:59][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
-[DEBUG][2025-02-28 19:38:02][gewechat_channel.py:229] - [gewechat] receive data: b'{"testMsg":"\xe5\x9b\x9e\xe8\xb0\x83\xe5\x9c\xb0\xe5\x9d\x80\xe9\x93\xbe\xe6\x8e\xa5\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81","token":"934c7ad0b1994c13a52374f5be9f39fb"}'
-[DEBUG][2025-02-28 19:38:02][gewechat_channel.py:234] - [gewechat] 收到gewechat服务发送的回调测试消息
-[INFO][2025-02-28 19:38:02][gewechat_channel.py:97] - [gewechat] callback set successfully
-[DEBUG][2025-02-28 19:50:52][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:50:52][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:50:52][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:50:52][config.py:313] - [INIT] config str: {
-    "channel_type": "wcf",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 19:50:52][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:50:52][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:50:52][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:50:58][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:50:58][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:50:58][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:50:58][config.py:313] - [INIT] config str: {
-    "channel_type": "wcf",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-02-28 19:50:58][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:50:58][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:50:58][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:50:58][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 19:50:58][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 19:51:00][wcf_channel.py:47] - 微信登录成功，当前用户ID: wxid_j9m9a65vqqvc22, 用户名：何颂生
-[DEBUG][2025-02-28 19:53:03][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:53:03][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:53:03][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:53:03][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 19:53:03][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 19:53:05][wcf_channel.py:47] - 微信登录成功，当前用户ID: wxid_j9m9a65vqqvc22, 用户名：何颂生
-[DEBUG][2025-02-28 19:53:09][wcf_channel.py:90] - 收到消息: wxid_7im0hocoravz22[wxid_7im0hocoravz22]|8369257733868616597|2025-02-28 19:53:09|1|a1f8ae0a4f0f4066a2312ab5d338cb92
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <signature>V1_a2aaYOET|v1_a2aaYOET</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-（）
-[INFO][2025-02-28 19:53:09][message_buffer.py:38] - Reset timer and add message wxid_7im0hocoravz22 wait for 5 seconds.
-[DEBUG][2025-02-28 19:53:09][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|5951278357478632670|2025-02-28 19:53:10|1|34334cf45cafbfb9cc7d2a8f0a813daa
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_pkeja9Fq|v1_pkeja9Fq</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-你能想到的我都想过了一遍，让自己忙起来，不要去多想一些事情
-[DEBUG][2025-02-28 19:53:09][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:53:15][chat_channel.py:488] - [chat_channel] consume context: Context(type=TEXT, content=（）, kwargs={'isgroup': False, 'msg': <channel.wcferry.wcf_message.WechatfMessage object at 0x0000023518500560>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_7im0hocoravz22', 'receiver': 'wxid_7im0hocoravz22'})
-[DEBUG][2025-02-28 19:53:15][chat_channel.py:217] - [chat_channel] ready to handle context: Context(type=TEXT, content=（）, kwargs={'isgroup': False, 'msg': <channel.wcferry.wcf_message.WechatfMessage object at 0x0000023518500560>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_7im0hocoravz22', 'receiver': 'wxid_7im0hocoravz22'})
-[DEBUG][2025-02-28 19:53:15][chat_channel.py:243] - [chat_channel] ready to handle context: type=TEXT, content=（）
-[INFO][2025-02-28 19:53:15][bridge.py:73] - create bot dify for chat
-[INFO][2025-02-28 19:53:15][dify_bot.py:35] - [DIFY] query=（）
-[DEBUG][2025-02-28 19:53:15][dify_bot.py:46] - [DIFY] dify_user=望龙（ai销售版）
-[DEBUG][2025-02-28 19:53:15][dify_bot.py:65] - [DIFY] Session user and room info - user_id: wxid_7im0hocoravz22, user_name: 望龙（ai销售版）, room_id: , room_name: 
-[DEBUG][2025-02-28 19:53:15][dify_bot.py:66] - [DIFY] session=<bot.dify.dify_session.DifySession object at 0x0000023518501430> query=（）
-[DEBUG][2025-02-28 19:53:17][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|413820450655573004|2025-02-28 19:53:17|1|94075c4b3c8935e6a1c92e74734d00de
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_dhtpT15/|v1_dhtpT15/</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-还有就是一天换一个维持一个月
-[DEBUG][2025-02-28 19:53:17][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:53:19][dify_bot.py:162] - [DIFY] usage {'prompt_tokens': 1596, 'prompt_unit_price': '0', 'prompt_price_unit': '0', 'prompt_price': '0E-7', 'completion_tokens': 98, 'completion_unit_price': '0', 'completion_price_unit': '0', 'completion_price': '0E-7', 'total_tokens': 1694, 'total_price': '0E-7', 'currency': 'USD', 'latency': 2.678914866002742}
-[DEBUG][2025-02-28 19:53:19][chat_channel.py:219] - [chat_channel] ready to decorate reply: Reply(type=TEXT, content=「嗨喽 您好，您是打算近期来三亚玩吗?」)
-[DEBUG][2025-02-28 19:53:19][chat_channel.py:362] - [chat_channel] ready to send reply: Reply(type=TEXT, content=「嗨喽 您好，您是打算近期来三亚玩吗?」), context: Context(type=TEXT, content=（）, kwargs={'isgroup': False, 'msg': <channel.wcferry.wcf_message.WechatfMessage object at 0x0000023518500560>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_7im0hocoravz22', 'receiver': 'wxid_7im0hocoravz22', 'channel': <channel.wcferry.wcf_channel.WechatfChannel object at 0x0000023516C523F0>})
-[DEBUG][2025-02-28 19:53:19][chat_channel.py:407] - Worker return success, session_id = wxid_7im0hocoravz22
-[DEBUG][2025-02-28 19:53:22][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|8509693186917431858|2025-02-28 19:53:22|1|6771b2e58580d20b380ed942c5c57132
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_bhkxeZHR|v1_bhkxeZHR</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-然后整个人就是那种精神焕发的感觉
-[DEBUG][2025-02-28 19:53:22][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:53:38][wcf_channel.py:90] - 收到消息: wxid_rhz4ersq6l6p21[47531262952@chatroom]|550287286182527943|2025-02-28 19:53:38|1|8667880fa4c6637efa6e16785bb548d6
-<msgsource>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node>    <pua>1</pua>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_iW7xWx2d|v1_iW7xWx2d</signature>    <tmp_node>        <publisher-id />    </tmp_node></msgsource>
-还有个不错的，自个买装备，参加救援组织救人救动物，人家答谢的时候那种感觉很美妙
-[DEBUG][2025-02-28 19:53:38][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[INFO][2025-02-28 19:53:43][app.py:19] - signal 2 received, exiting...
-[INFO][2025-02-28 19:53:43][config.py:276] - [Config] User datas saved.
-[DEBUG][2025-02-28 19:56:28][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 19:56:28][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 19:56:28][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 19:56:28][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 19:56:28][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 19:56:31][wcf_channel.py:47] - 微信登录成功，当前用户ID: wxid_j9m9a65vqqvc22, 用户名：何颂生
-[DEBUG][2025-02-28 19:56:34][wcf_channel.py:90] - 收到消息: wxid_7im0hocoravz22[wxid_7im0hocoravz22]|685245413960857396|2025-02-28 19:56:34|1|038df11380511056b3f1fbad58d3789f
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <signature>V1_/YgcflrZ|v1_/YgcflrZ</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-在吗
-[INFO][2025-02-28 19:56:34][message_buffer.py:38] - Reset timer and add message wxid_7im0hocoravz22 wait for 5 seconds.
-[DEBUG][2025-02-28 19:56:36][wcf_channel.py:90] - 收到消息: wxid_rhz4ersq6l6p21[47531262952@chatroom]|6974524023109503049|2025-02-28 19:56:36|1|f4d1021d91e0e1f07443726c5dc01f4e
-<msgsource>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node>    <pua>1</pua>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_7hL0eMN/|v1_7hL0eMN/</signature>    <tmp_node>        <publisher-id />    </tmp_node></msgsource>
-牛逼
-[DEBUG][2025-02-28 19:56:36][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:56:39][chat_channel.py:488] - [chat_channel] consume context: Context(type=TEXT, content=在吗, kwargs={'isgroup': False, 'msg': <channel.wcferry.wcf_message.WechatfMessage object at 0x0000019B609A0470>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_7im0hocoravz22', 'receiver': 'wxid_7im0hocoravz22'})
-[DEBUG][2025-02-28 19:56:39][chat_channel.py:217] - [chat_channel] ready to handle context: Context(type=TEXT, content=在吗, kwargs={'isgroup': False, 'msg': <channel.wcferry.wcf_message.WechatfMessage object at 0x0000019B609A0470>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_7im0hocoravz22', 'receiver': 'wxid_7im0hocoravz22'})
-[DEBUG][2025-02-28 19:56:39][chat_channel.py:243] - [chat_channel] ready to handle context: type=TEXT, content=在吗
-[INFO][2025-02-28 19:56:39][bridge.py:73] - create bot dify for chat
-[INFO][2025-02-28 19:56:39][dify_bot.py:35] - [DIFY] query=在吗
-[DEBUG][2025-02-28 19:56:39][dify_bot.py:46] - [DIFY] dify_user=望龙（ai销售版）
-[DEBUG][2025-02-28 19:56:39][dify_bot.py:65] - [DIFY] Session user and room info - user_id: wxid_7im0hocoravz22, user_name: 望龙（ai销售版）, room_id: , room_name: 
-[DEBUG][2025-02-28 19:56:39][dify_bot.py:66] - [DIFY] session=<bot.dify.dify_session.DifySession object at 0x0000019B609A0B90> query=在吗
-[DEBUG][2025-02-28 19:56:43][dify_bot.py:162] - [DIFY] usage {'prompt_tokens': 1624, 'prompt_unit_price': '0', 'prompt_price_unit': '0', 'prompt_price': '0E-7', 'completion_tokens': 107, 'completion_unit_price': '0', 'completion_price_unit': '0', 'completion_price': '0E-7', 'total_tokens': 1731, 'total_price': '0E-7', 'currency': 'USD', 'latency': 2.9347139930177946}
-[DEBUG][2025-02-28 19:56:43][chat_channel.py:219] - [chat_channel] ready to decorate reply: Reply(type=TEXT, content=「嗨喽 您好，您是打算近期来三亚玩吗?」)
-[DEBUG][2025-02-28 19:56:43][chat_channel.py:362] - [chat_channel] ready to send reply: Reply(type=TEXT, content=「嗨喽 您好，您是打算近期来三亚玩吗?」), context: Context(type=TEXT, content=在吗, kwargs={'isgroup': False, 'msg': <channel.wcferry.wcf_message.WechatfMessage object at 0x0000019B609A0470>, 'origin_ctype': <ContextType.TEXT: 1>, 'openai_api_key': None, 'gpt_model': None, 'session_id': 'wxid_7im0hocoravz22', 'receiver': 'wxid_7im0hocoravz22', 'channel': <channel.wcferry.wcf_channel.WechatfChannel object at 0x0000019B5F181730>})
-[DEBUG][2025-02-28 19:56:48][chat_channel.py:407] - Worker return success, session_id = wxid_7im0hocoravz22
-[DEBUG][2025-02-28 19:56:56][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|6065679838840161311|2025-02-28 19:56:56|1|9ff9218ad77e02717e6160d231a8dd2f
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_mHNG+s1i|v1_mHNG+s1i</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-半路上还叫了几个
-[DEBUG][2025-02-28 19:56:56][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:56:57][wcf_channel.py:90] - 收到消息: wxid_rhz4ersq6l6p21[47531262952@chatroom]|3905559675206745791|2025-02-28 19:56:57|1|5bb0f3fff138427d193767add2f63a77
-<msgsource>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node>    <pua>1</pua>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_SirS13Nx|v1_SirS13Nx</signature>    <tmp_node>        <publisher-id />    </tmp_node></msgsource>
-我说的这个真的是个好办法
-[DEBUG][2025-02-28 19:56:57][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:57:02][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|2804665337999925131|2025-02-28 19:57:01|1|9d11d24a86808bd86ad84721ec90af91
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_qKM/BE6R|v1_qKM/BE6R</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-五个人一起爬的
-[DEBUG][2025-02-28 19:57:02][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:57:09][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|3669580514333145623|2025-02-28 19:57:09|1|961e94a9581f6a3131769f7e25b74e70
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_UMuBiwZy|v1_UMuBiwZy</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-清一色始祖鸟
-[DEBUG][2025-02-28 19:57:09][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:58:33][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|8194701965039144673|2025-02-28 19:58:33|1|d8c61c5962c24aecb4fd7993a6526447
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_4x72r7sQ|v1_4x72r7sQ</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-然后你都不知道这群傻逼在那块给我说了个什么话
-[DEBUG][2025-02-28 19:58:33][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:58:43][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|7355655097810513179|2025-02-28 19:58:43|1|9d7187decc958ae1c0f7e435efebb138
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_pKqxhtTf|v1_pKqxhtTf</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-里面年纪最大的就是我平均年龄合下来，只有20岁
-[DEBUG][2025-02-28 19:58:43][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:58:53][wcf_channel.py:90] - 收到消息: yu276057[47531262952@chatroom]|34781835154275971|2025-02-28 19:58:53|1|8a2b75871900852c1ba1b64b18afdb2e
-<msgsource>    <bizflag>0</bizflag>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_bNpnmNWv|v1_bNpnmNWv</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-MM哥不在便利店上班了吗
-[DEBUG][2025-02-28 19:58:53][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[DEBUG][2025-02-28 19:58:55][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|70913046487424564|2025-02-28 19:58:55|1|6553cc5fd2a5b69401401bf6af4ab0c1
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_zbtaiCM5|v1_zbtaiCM5</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-最小那个17岁的那个弱智下了山之后问了一个很厉害，很厉害的一句话，我这辈子都不会忘的
-[DEBUG][2025-02-28 19:58:55][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[ERROR][2025-02-28 19:58:56][wcf_channel.py:97] - 处理消息失败: Unsupported message type: 47
-[INFO][2025-02-28 19:58:59][app.py:19] - signal 2 received, exiting...
-[INFO][2025-02-28 19:58:59][config.py:276] - [Config] User datas saved.
-[DEBUG][2025-02-28 20:01:48][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-02-28 20:01:48][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-02-28 20:01:48][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-02-28 20:01:48][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
-[WARNING][2025-02-28 20:01:48][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
-[INFO][2025-02-28 20:01:50][wcf_channel.py:47] - 微信登录成功，当前用户ID: wxid_j9m9a65vqqvc22, 用户名：何颂生
-[DEBUG][2025-02-28 20:01:52][wcf_channel.py:90] - 收到消息: wxid_eruw2ophjz8b22[47531262952@chatroom]|1067983251982061768|2025-02-28 20:01:52|1|428d7ffdfdc663e18cf072251ea66a18
-<msgsource>    <pua>1</pua>    <eggIncluded>1</eggIncluded>    <silence>1</silence>    <membercount>362</membercount>    <signature>V1_Q/2s6cuF|v1_Q/2s6cuF</signature>    <tmp_node>        <publisher-id />    </tmp_node>    <sec_msg_node>        <alnode>            <fr>1</fr>        </alnode>    </sec_msg_node></msgsource>
-第一次上新闻就一马当先
-从此在大场面不在站旁边
-[DEBUG][2025-02-28 20:01:52][chat_channel.py:116] - No need reply, groupName not in whitelist, group_name=西舞好色男女群
-[INFO][2025-02-28 20:01:54][app.py:20] - signal 2 received, exiting...
-[INFO][2025-02-28 20:01:54][config.py:276] - [Config] User datas saved.
-[DEBUG][2025-03-01 16:43:54][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-03-01 16:43:54][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-03-01 16:43:54][config.py:265] - [Config] User datas loaded.
-[DEBUG][2025-03-01 16:44:15][config.py:313] - [INIT] config str: {
-    "channel_type": "wcf",
-    "coze_api_base": "https://api.coze.cn",
-    "coze_api_key": "pat*****mRp",
-    "coze_bot_id": "7472418615191896074",
-    "debug": "1",
-    "dify_api_base": "http://localhost/v1",
-    "dify_api_key": "app*****91b",
-    "dify_app_type": "chatbot",
-    "gewechat_app_id": "wx_m-Kknmg7AoetHxv_l_UAo",
-    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
-    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
-    "gewechat_download_url": "http://192.168.31.235:2532/download",
-    "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
-    "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wxid_black_list": [],
-    "wxid_recip_note": ""
-}
-[DEBUG][2025-03-01 16:44:15][config.py:336] - [INIT] set log level to DEBUG
-[INFO][2025-03-01 16:44:15][config.py:338] - [INIT] load config: {'channel_type': 'wcf', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_m-Kknmg7AoetHxv_l_UAo', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wxid_black_list': [], 'wxid_recip_note': ''}
-[INFO][2025-03-01 16:44:15][config.py:265] - [Config] User datas loaded.
-[INFO][2025-03-01 16:44:24][config.py:351] - [Config] Configuration saved.
+[DEBUG][2025-03-02 09:10:51][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:10:51][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:10:51][config.py:267] - [Config] User datas loaded.
+[INFO][2025-03-02 09:10:51][app.py:371] - Assets path configured: D:\Program\dify-on-wechat\assets
+[INFO][2025-03-02 09:10:51][flet_socket_server.py:61] - Starting up TCP server on localhost:64052
+[INFO][2025-03-02 09:10:51][app.py:171] - Flet app has started...
+[INFO][2025-03-02 09:10:51][app.py:131] - App URL: tcp://localhost:64052
+[INFO][2025-03-02 09:10:51][__init__.py:62] - Starting Flet View app...
+[INFO][2025-03-02 09:10:51][__init__.py:86] - Looking for Flet executable at: D:\Program\0-venv\dify-on-wechat-env\Lib\site-packages\flet_desktop\app\flet\flet.exe
+[INFO][2025-03-02 09:10:51][__init__.py:88] - Flet View found in: D:\Program\0-venv\dify-on-wechat-env\Lib\site-packages\flet_desktop\app\flet\flet.exe
+[INFO][2025-03-02 09:10:51][app.py:240] - App session started
+[DEBUG][2025-03-02 09:10:51][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:10:51][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:10:51][config.py:267] - [Config] User datas loaded.
+[INFO][2025-03-02 09:10:57][config.py:353] - [Config] Configuration saved.
+[DEBUG][2025-03-02 09:11:05][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:11:05][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:11:05][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:11:05][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:11:05][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:11:05][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:11:05][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
+[WARNING][2025-03-02 09:11:05][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
+[INFO][2025-03-02 09:11:05][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_h_wNG48atr8kFFQWkELQ2, download_url: http://192.168.31.235:2532/download
+[INFO][2025-03-02 09:11:05][plugin_manager.py:50] - Loading plugins config...
+[INFO][2025-03-02 09:11:05][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2025-03-02 09:11:05][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2025-03-02 09:11:05][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[DEBUG][2025-03-02 09:11:05][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
+[DEBUG][2025-03-02 09:11:05][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\godcmd\config.json, exist=True
+[DEBUG][2025-03-02 09:11:05][plugin.py:28] - loading plugin config, plugin_name=Godcmd, conf={'password': '', 'admin_users': []}
+[INFO][2025-03-02 09:11:05][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为1985。
+[INFO][2025-03-02 09:11:05][godcmd.py:210] - [Godcmd] inited
+[DEBUG][2025-03-02 09:11:05][keyword.py:35] - [keyword]加载配置文件D:\Program\dify-on-wechat\plugins\keyword\config.json
+[INFO][2025-03-02 09:11:05][keyword.py:41] - [keyword] {}
+[INFO][2025-03-02 09:11:05][keyword.py:43] - [keyword] inited.
+[DEBUG][2025-03-02 09:11:05][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\custom_dify_app\config.json, exist=False
+[DEBUG][2025-03-02 09:11:05][plugin.py:28] - loading plugin config, plugin_name=CustomDifyApp, conf=None
+[INFO][2025-03-02 09:11:05][custom_dify_app.py:25] - [CustomDifyApp] config is None
+[DEBUG][2025-03-02 09:11:05][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\hello\config.json, exist=False
+[DEBUG][2025-03-02 09:11:05][plugin.py:28] - loading plugin config, plugin_name=Hello, conf=None
+[DEBUG][2025-03-02 09:11:05][hello.py:126] - No Hello plugin config.json, use plugins/hello/config.json.template
+[INFO][2025-03-02 09:11:05][hello.py:38] - [Hello] inited
+[INFO][2025-03-02 09:11:05][finish.py:23] - [Finish] inited
+[INFO][2025-03-02 09:11:05][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
+[INFO][2025-03-02 09:11:05][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
+[DEBUG][2025-03-02 09:11:08][gewechat_channel.py:229] - [gewechat] receive data: b'{"testMsg":"\xe5\x9b\x9e\xe8\xb0\x83\xe5\x9c\xb0\xe5\x9d\x80\xe9\x93\xbe\xe6\x8e\xa5\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81","token":"934c7ad0b1994c13a52374f5be9f39fb"}'
+[DEBUG][2025-03-02 09:11:08][gewechat_channel.py:234] - [gewechat] 收到gewechat服务发送的回调测试消息
+[DEBUG][2025-03-02 09:11:46][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:11:46][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:11:46][config.py:267] - [Config] User datas loaded.
+[INFO][2025-03-02 09:11:46][app.py:371] - Assets path configured: D:\Program\dify-on-wechat\assets
+[INFO][2025-03-02 09:11:46][flet_socket_server.py:61] - Starting up TCP server on localhost:64121
+[INFO][2025-03-02 09:11:46][app.py:171] - Flet app has started...
+[INFO][2025-03-02 09:11:46][app.py:131] - App URL: tcp://localhost:64121
+[INFO][2025-03-02 09:11:46][__init__.py:62] - Starting Flet View app...
+[INFO][2025-03-02 09:11:46][__init__.py:86] - Looking for Flet executable at: D:\Program\0-venv\dify-on-wechat-env\Lib\site-packages\flet_desktop\app\flet\flet.exe
+[INFO][2025-03-02 09:11:46][__init__.py:88] - Flet View found in: D:\Program\0-venv\dify-on-wechat-env\Lib\site-packages\flet_desktop\app\flet\flet.exe
+[INFO][2025-03-02 09:11:46][app.py:240] - App session started
+[DEBUG][2025-03-02 09:11:46][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:11:46][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:11:46][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:11:50][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:11:50][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:11:50][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:11:50][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:11:50][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:11:50][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:11:50][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
+[WARNING][2025-03-02 09:11:50][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
+[INFO][2025-03-02 09:11:50][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_h_wNG48atr8kFFQWkELQ2, download_url: http://192.168.31.235:2532/download
+[INFO][2025-03-02 09:11:50][plugin_manager.py:50] - Loading plugins config...
+[INFO][2025-03-02 09:11:50][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2025-03-02 09:11:50][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2025-03-02 09:11:50][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[DEBUG][2025-03-02 09:11:50][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
+[DEBUG][2025-03-02 09:11:50][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\godcmd\config.json, exist=True
+[DEBUG][2025-03-02 09:11:50][plugin.py:28] - loading plugin config, plugin_name=Godcmd, conf={'password': '', 'admin_users': []}
+[INFO][2025-03-02 09:11:50][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为8941。
+[INFO][2025-03-02 09:11:50][godcmd.py:210] - [Godcmd] inited
+[DEBUG][2025-03-02 09:11:50][keyword.py:35] - [keyword]加载配置文件D:\Program\dify-on-wechat\plugins\keyword\config.json
+[INFO][2025-03-02 09:11:50][keyword.py:41] - [keyword] {}
+[INFO][2025-03-02 09:11:50][keyword.py:43] - [keyword] inited.
+[DEBUG][2025-03-02 09:11:50][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\custom_dify_app\config.json, exist=False
+[DEBUG][2025-03-02 09:11:50][plugin.py:28] - loading plugin config, plugin_name=CustomDifyApp, conf=None
+[INFO][2025-03-02 09:11:50][custom_dify_app.py:25] - [CustomDifyApp] config is None
+[DEBUG][2025-03-02 09:11:50][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\hello\config.json, exist=False
+[DEBUG][2025-03-02 09:11:50][plugin.py:28] - loading plugin config, plugin_name=Hello, conf=None
+[DEBUG][2025-03-02 09:11:50][hello.py:126] - No Hello plugin config.json, use plugins/hello/config.json.template
+[INFO][2025-03-02 09:11:50][hello.py:38] - [Hello] inited
+[INFO][2025-03-02 09:11:50][finish.py:23] - [Finish] inited
+[INFO][2025-03-02 09:11:50][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
+[INFO][2025-03-02 09:11:50][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
+[DEBUG][2025-03-02 09:11:53][gewechat_channel.py:229] - [gewechat] receive data: b'{"testMsg":"\xe5\x9b\x9e\xe8\xb0\x83\xe5\x9c\xb0\xe5\x9d\x80\xe9\x93\xbe\xe6\x8e\xa5\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81","token":"934c7ad0b1994c13a52374f5be9f39fb"}'
+[DEBUG][2025-03-02 09:11:53][gewechat_channel.py:234] - [gewechat] 收到gewechat服务发送的回调测试消息
+[DEBUG][2025-03-02 09:12:09][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:12:09][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:12:09][config.py:267] - [Config] User datas loaded.
+[INFO][2025-03-02 09:12:09][app.py:371] - Assets path configured: D:\Program\dify-on-wechat\assets
+[INFO][2025-03-02 09:12:09][flet_socket_server.py:61] - Starting up TCP server on localhost:64143
+[INFO][2025-03-02 09:12:09][app.py:171] - Flet app has started...
+[INFO][2025-03-02 09:12:09][app.py:131] - App URL: tcp://localhost:64143
+[INFO][2025-03-02 09:12:09][__init__.py:62] - Starting Flet View app...
+[INFO][2025-03-02 09:12:09][__init__.py:86] - Looking for Flet executable at: D:\Program\0-venv\dify-on-wechat-env\Lib\site-packages\flet_desktop\app\flet\flet.exe
+[INFO][2025-03-02 09:12:09][__init__.py:88] - Flet View found in: D:\Program\0-venv\dify-on-wechat-env\Lib\site-packages\flet_desktop\app\flet\flet.exe
+[INFO][2025-03-02 09:12:10][app.py:240] - App session started
+[DEBUG][2025-03-02 09:12:10][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:12:10][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:12:10][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:12:16][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:12:16][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:12:16][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:12:16][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:12:16][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:12:16][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:12:16][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
+[WARNING][2025-03-02 09:12:16][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
+[INFO][2025-03-02 09:12:16][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_h_wNG48atr8kFFQWkELQ2, download_url: http://192.168.31.235:2532/download
+[INFO][2025-03-02 09:12:16][plugin_manager.py:50] - Loading plugins config...
+[INFO][2025-03-02 09:12:16][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2025-03-02 09:12:16][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2025-03-02 09:12:16][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[DEBUG][2025-03-02 09:12:16][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
+[DEBUG][2025-03-02 09:12:16][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\godcmd\config.json, exist=True
+[DEBUG][2025-03-02 09:12:16][plugin.py:28] - loading plugin config, plugin_name=Godcmd, conf={'password': '', 'admin_users': []}
+[INFO][2025-03-02 09:12:16][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为7586。
+[INFO][2025-03-02 09:12:16][godcmd.py:210] - [Godcmd] inited
+[DEBUG][2025-03-02 09:12:16][keyword.py:35] - [keyword]加载配置文件D:\Program\dify-on-wechat\plugins\keyword\config.json
+[INFO][2025-03-02 09:12:16][keyword.py:41] - [keyword] {}
+[INFO][2025-03-02 09:12:16][keyword.py:43] - [keyword] inited.
+[DEBUG][2025-03-02 09:12:16][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\custom_dify_app\config.json, exist=False
+[DEBUG][2025-03-02 09:12:16][plugin.py:28] - loading plugin config, plugin_name=CustomDifyApp, conf=None
+[INFO][2025-03-02 09:12:16][custom_dify_app.py:25] - [CustomDifyApp] config is None
+[DEBUG][2025-03-02 09:12:16][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\hello\config.json, exist=False
+[DEBUG][2025-03-02 09:12:16][plugin.py:28] - loading plugin config, plugin_name=Hello, conf=None
+[DEBUG][2025-03-02 09:12:16][hello.py:126] - No Hello plugin config.json, use plugins/hello/config.json.template
+[INFO][2025-03-02 09:12:16][hello.py:38] - [Hello] inited
+[INFO][2025-03-02 09:12:16][finish.py:23] - [Finish] inited
+[INFO][2025-03-02 09:12:16][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
+[INFO][2025-03-02 09:12:16][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
+[DEBUG][2025-03-02 09:12:19][gewechat_channel.py:229] - [gewechat] receive data: b'{"testMsg":"\xe5\x9b\x9e\xe8\xb0\x83\xe5\x9c\xb0\xe5\x9d\x80\xe9\x93\xbe\xe6\x8e\xa5\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81","token":"934c7ad0b1994c13a52374f5be9f39fb"}'
+[DEBUG][2025-03-02 09:12:19][gewechat_channel.py:234] - [gewechat] 收到gewechat服务发送的回调测试消息
+[DEBUG][2025-03-02 09:16:50][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:16:50][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:16:50][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:16:51][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:16:51][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:16:51][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:16:57][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:16:57][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:16:57][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:16:57][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:16:57][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:16:57][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:16:57][audio_convert.py:10] - import pysilk failed, wechaty voice message will not be supported.
+[WARNING][2025-03-02 09:16:57][audio_convert.py:20] - import pilk failed, silk voice conversion will not be supported. Try: pip install pilk
+[INFO][2025-03-02 09:16:57][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 934c7ad0b1994c13a52374f5be9f39fb, app_id: wx_h_wNG48atr8kFFQWkELQ2, download_url: http://192.168.31.235:2532/download
+[INFO][2025-03-02 09:16:57][plugin_manager.py:50] - Loading plugins config...
+[INFO][2025-03-02 09:16:57][plugin_manager.py:88] - Scaning plugins ...
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2025-03-02 09:16:57][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2025-03-02 09:16:57][plugin_manager.py:113] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[DEBUG][2025-03-02 09:16:57][plugin_manager.py:185] - plugins.json config={'plugins': SortedDict({'Godcmd': {'enabled': True, 'priority': 999}, 'Keyword': {'enabled': True, 'priority': 900}, 'Banwords': {'enabled': False, 'priority': 100}, 'linkai': {'enabled': False, 'priority': 99}, 'JinaSum': {'enabled': False, 'priority': 10}, 'Role': {'enabled': False, 'priority': 0}, 'Dungeon': {'enabled': False, 'priority': 0}, 'CustomDifyApp': {'enabled': True, 'priority': 0}, 'BDunit': {'enabled': False, 'priority': 0}, 'Hello': {'enabled': True, 'priority': -1}, 'Finish': {'enabled': True, 'priority': -999}}, sort_func=<lambda>, reverse=True)}
+[DEBUG][2025-03-02 09:16:57][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\godcmd\config.json, exist=True
+[DEBUG][2025-03-02 09:16:57][plugin.py:28] - loading plugin config, plugin_name=Godcmd, conf={'password': '', 'admin_users': []}
+[INFO][2025-03-02 09:16:57][godcmd.py:194] - [Godcmd] 因未设置口令，本次的临时口令为2658。
+[INFO][2025-03-02 09:16:57][godcmd.py:210] - [Godcmd] inited
+[DEBUG][2025-03-02 09:16:57][keyword.py:35] - [keyword]加载配置文件D:\Program\dify-on-wechat\plugins\keyword\config.json
+[INFO][2025-03-02 09:16:57][keyword.py:41] - [keyword] {}
+[INFO][2025-03-02 09:16:57][keyword.py:43] - [keyword] inited.
+[DEBUG][2025-03-02 09:16:57][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\custom_dify_app\config.json, exist=False
+[DEBUG][2025-03-02 09:16:57][plugin.py:28] - loading plugin config, plugin_name=CustomDifyApp, conf=None
+[INFO][2025-03-02 09:16:57][custom_dify_app.py:25] - [CustomDifyApp] config is None
+[DEBUG][2025-03-02 09:16:57][plugin.py:21] - loading plugin config, plugin_config_path=./plugins\hello\config.json, exist=False
+[DEBUG][2025-03-02 09:16:57][plugin.py:28] - loading plugin config, plugin_name=Hello, conf=None
+[DEBUG][2025-03-02 09:16:57][hello.py:126] - No Hello plugin config.json, use plugins/hello/config.json.template
+[INFO][2025-03-02 09:16:57][hello.py:38] - [Hello] inited
+[INFO][2025-03-02 09:16:57][finish.py:23] - [Finish] inited
+[INFO][2025-03-02 09:16:57][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
+[INFO][2025-03-02 09:16:57][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
+[DEBUG][2025-03-02 09:17:00][gewechat_channel.py:229] - [gewechat] receive data: b'{"testMsg":"\xe5\x9b\x9e\xe8\xb0\x83\xe5\x9c\xb0\xe5\x9d\x80\xe9\x93\xbe\xe6\x8e\xa5\xe6\x88\x90\xe5\x8a\x9f\xef\xbc\x81","token":"934c7ad0b1994c13a52374f5be9f39fb"}'
+[DEBUG][2025-03-02 09:17:00][gewechat_channel.py:234] - [gewechat] 收到gewechat服务发送的回调测试消息
+[DEBUG][2025-03-02 09:31:21][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:31:21][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:31:21][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:31:21][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:31:21][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:31:21][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:31:46][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:31:46][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:31:46][config.py:267] - [Config] User datas loaded.
+[DEBUG][2025-03-02 09:31:46][config.py:338] - [INIT] set log level to DEBUG
+[INFO][2025-03-02 09:31:46][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': '1', 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_h_wNG48atr8kFFQWkELQ2', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '934c7ad0b1994c13a52374f5be9f39fb', 'message_buffer_second': 5, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wecom', 'wx_name': '望龙（ai销售版）', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-02 09:31:46][config.py:267] - [Config] User datas loaded.
+[INFO][2025-03-02 09:31:53][config.py:353] - [Config] Configuration saved.

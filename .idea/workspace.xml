@@ -8,99 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.flake8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pre-commit-config.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/translate/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/bytedance/bytedance_coze_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/bytedance/bytedance_coze_bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/dify/dify_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/dify/dify_bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/channel_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/channel_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/chat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/chat_channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/gewechat/gewechat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/gewechat/gewechat_channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/message_buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/message_buffer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/sikulix_wecom/sikulix_com_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix_wecom/sikulix_com_channel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-template.json" beforeDir="false" afterPath="$PROJECT_DIR$/config-template.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/Dockerfile.latest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/build.latest.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/entrypoint.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/audios/chengdu-disney.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/audios/gewechat_voice.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gewechat/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gewechat/gewechat_login.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gewechat/gewechat_service_design.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gewechat/gewechat_service_success.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gewechat/gewechat_voice.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/NLP工程化.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/auto-coder-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/auto-coder-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/image1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/image2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/image4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/image5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/image6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/plugin-suno-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/plugin-suno-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/supportme.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/wechat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/wechat_group_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/wechat_group_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/images/wework.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/user-info/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/user-info/import-user-info-dsl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/user-info/user-info-fields.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/user-info/user-info-room.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/user-info/user-info-single.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/version/old-version.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsl/chat-workflow.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsl/用户信息.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/file_list.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-06.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-07.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-08.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-09.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/图片-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-01.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-02.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-03.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-05.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-06.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-07.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-08.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-09.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-10.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-11.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-12.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager/视频-无人直播-翡翠-04.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nixpacks.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_pkl.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/data/read_pkl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements-optional.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-optional.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_grouping.json" beforeDir="false" afterPath="$PROJECT_DIR$/config_grouping.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/is_chating.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sikulix/wechat/is_chating.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/license.lic" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/run.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/shutdown.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/start.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/tout.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stop.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tail_log.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_datas.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/login.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/login.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,41 +54,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.6.log_out.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.chat_channel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.dify_bot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.flet.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fuck_webui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gewechat_channel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gewechat_webui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.interface.executor&quot;: &quot;Run&quot;,
-    &quot;Python.log_out.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.read_pkl.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sikulix_channel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sikulix_message.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tkinter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.verify.executor&quot;: &quot;Run&quot;,
-    &quot;Python.web_ui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.web_ui_failed.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Program/dify-on-wechat/channel/sikulix_wechat&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.2.get_logging.executor": "Run",
+    "Python.6.log_out.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.chat_channel.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.dify_bot.executor": "Run",
+    "Python.flet.executor": "Run",
+    "Python.fuck_webui.executor": "Run",
+    "Python.gewechat_channel.executor": "Run",
+    "Python.gewechat_webui.executor": "Run",
+    "Python.interface.executor": "Run",
+    "Python.interface_t1.executor": "Run",
+    "Python.log.executor": "Run",
+    "Python.log_out.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.read_pkl.executor": "Run",
+    "Python.sikulix_channel.executor": "Run",
+    "Python.sikulix_chat_message.executor": "Run",
+    "Python.sikulix_message.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.tkinter.executor": "Run",
+    "Python.verify.executor": "Run",
+    "Python.web_ui.executor": "Run",
+    "Python.web_ui_failed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/Program/dify-on-wechat",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program\dify-on-wechat" />
       <recent name="D:\Program\dify-on-wechat\channel\sikulix_wechat" />
       <recent name="D:\Program\dify-on-wechat\external" />
       <recent name="D:\Program\dify-on-wechat\channel\wcferry" />
-      <recent name="D:\Program\dify-on-wechat" />
       <recent name="D:\Program\dify-on-wechat\files_manager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -198,14 +125,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_channel.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_channel.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/interface_t1.py</url>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

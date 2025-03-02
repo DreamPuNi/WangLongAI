@@ -53,7 +53,10 @@ def create_channel(channel_type) -> Channel:
         ch = GeWeChatChannel()
     elif channel_type == "sikulix_wecom":
         from channel.sikulix_wecom.sikulix_com_channel import SikuliXChannel
-        ch = SikuliXChannel(jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll",sikulix_jar_path = r"D:\Program\dify-on-wechat\lib\sikulix\sikulixide-2.0.5-win.jar")
+        ch = SikuliXChannel(jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll")
+    elif channel_type == "sikulix_wechat":
+        from channel.sikulix_wechat.sikulix_chat_channel import SikuliXChannel
+        ch = SikuliXChannel(jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll")
     else:
         raise RuntimeError
     ch.channel_type = channel_type

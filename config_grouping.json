@@ -61,6 +61,13 @@
         "type": "str"
       }
     },
+    "sikulix_wechat": {
+      "wx_name": {
+        "tittle": "你的微信昵称",
+        "describe": "你的微信昵称",
+        "type": "str"
+      }
+    },
     "wcf": {
       "wcf_describe": {
         "tittle": "高贵的wcf不需要任何设置",

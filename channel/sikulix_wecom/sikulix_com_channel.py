@@ -18,7 +18,7 @@ from bridge.context import Context, ContextType
 from channel.sikulix_wecom.sikulix_com_message import SikuliXMessage
 
 class SikuliXChannel(ChatChannel):
-    def __init__(self, jvm_path,sikulix_jar_path):
+    def __init__(self, jvm_path):
         # 启动 JVM，并加载 sikulixapi.jar
         super().__init__()
         PROJECT_ROOT = sys.path[0]

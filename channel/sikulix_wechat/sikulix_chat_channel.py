@@ -18,7 +18,7 @@ from bridge.context import Context, ContextType
 from channel.sikulix_wechat.sikulix_chat_message import SikuliXMessage
 
 class SikuliXChannel(ChatChannel):
-    def __init__(self, jvm_path,sikulix_jar_path):
+    def __init__(self, jvm_path):
         # 启动 JVM，并加载 sikulixapi.jar
         super().__init__()
         PROJECT_ROOT = sys.path[0]
@@ -45,6 +45,8 @@ class SikuliXChannel(ChatChannel):
         self.is_chating = os.path.join(PROJECT_ROOT, "lib", "sikulix", "wechat", "is_chating.png")
         self.isnt_replied = os.path.join(PROJECT_ROOT, "lib", "sikulix", "wechat", "isnt_replied.png")
         self.new_friend = os.path.join(PROJECT_ROOT, "lib", "sikulix", "wechat", "new_friend.png")
+        self.new_friend_01 = os.path.join(PROJECT_ROOT, "lib", "sikulix", "wechat", "new_friend_01.png")
+        self.new_friend_accept = os.path.join(PROJECT_ROOT, "lib", "sikulix", "wechat", "new_friend_accept.png")
         self.new_msg_01 = os.path.join(PROJECT_ROOT, "lib", "sikulix", "wechat", "new_msg_01.png")
         self.new_msg_02 = os.path.join(PROJECT_ROOT, "lib", "sikulix", "wechat", "new_msg_02.png")
         self.replied = os.path.join(PROJECT_ROOT, "lib", "sikulix", "wechat", "replied.png")
@@ -56,6 +58,8 @@ class SikuliXChannel(ChatChannel):
         self.is_chating_pattern = self.Pattern(self.is_chating)
         self.isnt_replied_pattern = self.Pattern(self.isnt_replied)
         self.new_friend_pattern = self.Pattern(self.new_friend)
+        self.new_friend_01_pattern = self.Pattern(self.new_friend_01)
+        self.new_friend_accept_pattern = self.Pattern(self.new_friend_accept)
         self.new_msg_01_pattern = self.Pattern(self.new_msg_01)
         self.new_msg_02_pattern = self.Pattern(self.new_msg_02)
         self.replied_pattern = self.Pattern(self.replied)
@@ -68,17 +72,24 @@ class SikuliXChannel(ChatChannel):
 
     def _get_new_event(self):
         if self.screen.exists(self.isnt_replied_pattern) is not None:
+            print("=========没回复当前消息，进行处理")
             self._handdle_message()
             if not self.is_reply:
                 self._waiting_for_reply()
-        if self.screen.exists(self.new_msg_pattern) is not None: # 侧边栏有新消息
-            self.screen.click(self.new_msg_pattern)
+        if self.screen.exists(self.new_msg_01_pattern) or self.screen.exists(self.new_msg_02_pattern): # 侧边栏有新消息
+            print("=========侧边栏有消息，进行处理")
+            if self.screen.exists(self.new_msg_01_pattern):
+                self.screen.click(self.new_msg_01_pattern)
+            elif self.screen.exists(self.new_msg_02_pattern):
+                self.screen.click(self.new_msg_02_pattern)
             # 在这里先检测当前聊天有没有被回复，如果没有，直接执行回复逻辑，否则检测小红点
             unread_msg_list = self.screen.findAll(self.unread_msg_pattern) # 这里反回的是迭代器，只能被读取一次
+            print("=========找到所有的红点了，进行处理")
             if unread_msg_list is not None:
                 for msg_processing in unread_msg_list:
                     msg_processing.click()
                     if self.screen.exists(self.is_chating_pattern) is not None: # 进入的是聊天界面
+                        print("=========进去的是聊天界面，进行处理")
                         logger.debug("Already entered the chat interface.")
                         self._handdle_message()
                         if not self.is_reply:
@@ -86,19 +97,14 @@ class SikuliXChannel(ChatChannel):
                     else:
                         logger.debug("Not a chat interface, skip.")
                         continue
-        elif self.screen.exists(self.need_verify_pattern) is not None: # 侧边栏有新的验证消息，这里插入需要不需要进行接管的判断
-            self.screen.click(self.need_verify_pattern)
-            if self.screen.exists(self.new_customer_pattern) is not None:
-                self.screen.click(self.new_customer_pattern)
-                verify_list = self.screen.findAll(self.waitfor_verify_pattern)
+        elif self.screen.exists(self.new_friend_01_pattern) is not None: # 侧边栏有新的验证消息，这里插入需要不需要进行接管的判断
+            self.screen.click(self.new_friend_01_pattern)
+            if self.screen.exists(self.new_friend_pattern) is not None:
+                self.screen.click(self.new_friend_pattern)
+                verify_list = self.screen.findAll(self.new_friend_accept_pattern)
                 if verify_list is not None:
                     for verify in verify_list:
                         verify.click()
-                        if self.screen.exists(self.be_verify_pattern) is not None:
-                            logger.debug("Customer addition request detected, processing in progress.")
-                            self.screen.click(self.be_verify_pattern)
-                        else:
-                            pass
                 else:
                     logger.debug(f"New customer pattern but doesn't need verify?")
 
@@ -176,13 +182,11 @@ class SikuliXChannel(ChatChannel):
             return None
         lines = message.strip().split("\n")
         your_wx_name = conf().get("wx_name") + ":"
-        print(lines)
         if len(lines) <= 2: # 如果复制只有客户发送的一句消息，那么消息直接复制出来的是文本
             return f"""用户: \n{message}"""
         if your_wx_name not in lines[-2]: # 最后一句是自己回复的
             return None
         return message
-
 
     def send(self, reply: Reply, context: Context):
         receiver = context["receiver"]
