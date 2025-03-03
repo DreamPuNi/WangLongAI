@@ -1,9 +1,6 @@
 import re
 import hashlib
-from config import conf
-from common.log import logger
 from bridge.context import ContextType
-from lib.gewechat import GewechatClient
 from channel.chat_message import ChatMessage
 
 """

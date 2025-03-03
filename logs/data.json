@@ -1,0 +1,62 @@
+{
+    "2025-03-03": {
+        "reply_count": 1,
+        "prompt_usage": {
+            "dify": 1760,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 88,
+        "ended_conversations": 1
+    },
+    "2025-03-02": {
+        "reply_count": 63,
+        "prompt_usage": {
+            "dify": 4200,
+            "coze": 1537,
+            "openai": 7200
+        },
+        "new_friends": 88,
+        "ended_conversations": 18
+    },
+    "2025-03-01": {
+        "reply_count": 98,
+        "prompt_usage": {
+            "dify": 4182,
+            "coze": 3658,
+            "openai": 7200
+        },
+        "new_friends": 88,
+        "ended_conversations": 35
+    },
+    "2025-02-28": {
+        "reply_count": 102,
+        "prompt_usage": {
+            "dify": 3589,
+            "coze": 1346,
+            "openai": 7200
+        },
+        "new_friends": 88,
+        "ended_conversations": 35
+    },
+    "2025-02-27": {
+        "reply_count": 83,
+        "prompt_usage": {
+            "dify": 2981,
+            "coze": 1435,
+            "openai": 7200
+        },
+        "new_friends": 88,
+        "ended_conversations": 35
+    },
+    "2025-03-04": {
+        "reply_count": 20,
+        "prompt_usage": {
+            "dify": 40876,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
+    }
+}

@@ -3,18 +3,14 @@ import re
 import sys
 import time
 import jpype
-import datetime
 import threading
 import pyperclip
 import jpype.imports
-from jpype.types import *
 from common.log import logger
-from dateutil.utils import today
-from config import drag_sensitive
-from config import conf, save_config
+from config import conf
 from bridge.reply import Reply, ReplyType
 from channel.chat_channel import ChatChannel
-from bridge.context import Context, ContextType
+from bridge.context import Context
 from channel.sikulix_wechat.sikulix_chat_message import SikuliXMessage
 
 class SikuliXChannel(ChatChannel):

@@ -7,14 +7,11 @@ import datetime
 import threading
 import pyperclip
 import jpype.imports
-from jpype.types import *
 from common.log import logger
-from dateutil.utils import today
-from config import drag_sensitive
-from config import conf, save_config
+from bridge.context import Context
+from core.data.watch_dog import data
 from bridge.reply import Reply, ReplyType
 from channel.chat_channel import ChatChannel
-from bridge.context import Context, ContextType
 from channel.sikulix_wecom.sikulix_com_message import SikuliXMessage
 
 class SikuliXChannel(ChatChannel):
@@ -167,7 +164,9 @@ class SikuliXChannel(ChatChannel):
         logger.info(f"Ready to reply: {reply_text}")
         if "<end>" in reply_text:
             self.rename_customer()
+            data().update_stat("ended_conversations")
         reply_list = re.findall(r'「(.*?)」', reply_text)
+        data().update_stat("reply_count") if reply_list else None
         for content in reply_list:
             pyperclip.copy(content)
             logger.debug("Text copied to clipboard.")

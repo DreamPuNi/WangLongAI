@@ -7,7 +7,6 @@ import threading
 import time
 
 import requests
-import web
 from wechatpy.crypto import WeChatCrypto
 from wechatpy.exceptions import WeChatClientException
 from collections import defaultdict

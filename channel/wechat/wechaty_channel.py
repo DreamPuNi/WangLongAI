@@ -14,7 +14,6 @@ from wechaty import Contact, Wechaty
 from wechaty.user import Message
 from wechaty_puppet import FileBox
 
-from bridge.context import *
 from bridge.context import Context
 from bridge.reply import *
 from channel.chat_channel import ChatChannel

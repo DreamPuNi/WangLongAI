@@ -1,6 +1,5 @@
 import re
 import os
-import sys
 import web
 import time
 import json
@@ -9,6 +8,7 @@ import datetime
 from common.log import logger
 from common.tmp_dir import TmpDir
 from urllib.parse import urlparse
+from core.data.watch_dog import data
 from config import conf, save_config
 from common.singleton import singleton
 from lib.gewechat import GewechatClient
@@ -128,11 +128,14 @@ class GeWeChatChannel(ChatChannel):
                 conf().set("wxid_black_list",wxid_black_list)
                 save_config()
                 logger.info("[gewechat] Transfer to manual {}".format(receiver))
+                data().update_stat("ended_conversations")
+
                 user = context["msg"].other_user_nickname if context.get("msg") else "default"
                 self.send_transfer_notice(receiver, user) # 执行通知函数
-                self.rename_customer(receiver, user) # 执行重命名
+                # self.rename_customer(receiver, user) # 执行重命名
 
             reply_list = re.findall(r'「(.*?)」', text_after_details) # 对消息进行切分自适应发送
+            data().update_stat("reply_count") if reply_list else None
             for content in reply_list:
                 sleep_time = len(content) * 0.3
                 time.sleep(sleep_time)

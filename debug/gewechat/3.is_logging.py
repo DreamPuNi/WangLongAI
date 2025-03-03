@@ -3,8 +3,8 @@ import json
 
 conn = http.client.HTTPConnection("192.168.31.235", 2531)
 payload = json.dumps({
-   "appId": "wx_m-Kknmg7AoetHxv_l_UAo",
-   "uuid": "gZkb4t8wxHgx5XgAOQvd"
+   "appId": "wx_h_wNG48atr8kFFQWkELQ2",
+   "uuid": "QZkxmTa2iEH7ktQxHMNg"
 })
 headers = {
    'X-GEWE-TOKEN': '934c7ad0b1994c13a52374f5be9f39fb',

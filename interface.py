@@ -1,24 +1,20 @@
-import os
-import sys
-import time
-import json
 import signal
 import threading
+import time
+from core.flet.flet_components import grapg
 import flet as ft
-from PIL import Image
-import asyncio
-from common.log import log_queue
+from tkinter import *
 from plugins import *
 from common import const
 from channel import channel_factory
 from multiprocessing import Process
-from pystray import Icon, Menu, MenuItem
-from fuck_webui import check_gewechat_online
+from core.verify import VerifyAccess
+from watchdog.observers import Observer
+from core.gewe_manage import check_gewechat_online
+from core.data.watch_dog import get_today_stats
 from config import conf, load_config, save_config
+from watchdog.events import FileSystemEventHandler
 
-from common.verify import VerifyAccess
-from tkinter import *
-from tkinter.ttk import *
 
 # 线程管理
 current_process_instance = None
@@ -221,6 +217,59 @@ def main(page: ft.Page):
         page.snack_bar.open = True
         page.update()
 
+    def update_button_style(running=False): # 更新运行按钮样式
+        for btn in [channel_run_button, model_run_button]:
+            if running:
+                btn.content = ft.Row(
+                    [
+                        ft.Icon(ft.icons.STOP_CIRCLE, color="#FFFFFF", size=22),
+                        ft.Text("停止运行", size=22, color="#FFFFFF")
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    spacing=5
+                )
+                btn.bgcolor = "#2196F3"
+                btn.on_click = kill_process
+                btn.on_hover = lambda e: on_hover_pause(e)
+            else:
+                btn.content = ft.Row(
+                    [
+                        ft.Icon(ft.icons.PLAY_ARROW, color="#FFFFFF", size=22),
+                        ft.Text("开始运行", size=22, color="#FFFFFF")
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    spacing=5
+                )
+                btn.bgcolor = "#4CAF50"
+                btn.on_click = start_run_app
+                btn.on_hover = None
+            btn.update()
+
+    def on_hover_pause(e): # 运行按钮悬停样式
+        for btn in [channel_run_button, model_run_button]:
+            if e.data == "true":  # 鼠标进入
+                btn.bgcolor = "#FF5722"  # 红色
+                btn.content = ft.Row(
+                    [
+                        ft.Icon(ft.icons.PAUSE_CIRCLE, color="#FFFFFF", size=22),
+                        ft.Text("暂停运行", size=22, color="#FFFFFF")
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    spacing=5
+                )
+            else:  # 鼠标离开
+                btn.bgcolor = "#2196F3"  # 蓝色
+                btn.content = ft.Row(
+                    [
+                        ft.Icon(ft.icons.STOP_CIRCLE, color="#FFFFFF", size=22),
+                        ft.Text("正在运行", size=22, color="#FFFFFF")
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    spacing=5
+                )
+            btn.update()
+
+    # 运行管理
     def start_run_app(e):
         start_run()
 
@@ -233,14 +282,16 @@ def main(page: ft.Page):
 
         current_process_instance = Process(target=run)
         current_process_instance.start()
+        update_button_style(running=True)
 
-    def kill_process():
+    def kill_process(e=None):
         global current_process_instance
         if current_process_instance is not None and current_process_instance.is_alive():
             os.kill(current_process_instance.pid, signal.SIGTERM)  # 杀掉当前进程
+            update_button_style(running=False)
 
     # 数据中心页部分
-    class LogViewManager:
+    class LogViewManager: # 日志页更新管理及样式设置
         def __init__(self):
             self.base_width = 400
             self.base_height = 450
@@ -260,24 +311,15 @@ def main(page: ft.Page):
             self.log_view_container = ft.Container(
                 content=self.log_view,
                 height=self.log_base_height,  # 初始高度为 360
-                border=ft.border.all(1, "#FFFFFF"),
+                border=ft.border.all(1, "#000000"),
                 padding=10,
+                border_radius=5
             )
 
             self.log_container = ft.Container(
                 content=ft.Column(
                     [
-                        ft.Row(
-                            [
-                                ft.Text("运行日志", size=30, weight=ft.FontWeight.BOLD),
-                                ft.IconButton(
-                                    icon=ft.icons.ZOOM_OUT_MAP,
-                                    on_click=self.toggle_size,
-                                    tooltip="切换窗口大小",
-                                )
-                            ],
-                            alignment=ft.MainAxisAlignment.SPACE_BETWEEN
-                        ),
+                        ft.Text("运行日志", size=30, weight=ft.FontWeight.BOLD),
                         self.log_view_container,
                     ]
                 ),
@@ -285,16 +327,18 @@ def main(page: ft.Page):
                 height=self.base_height,
                 bgcolor="#000000",
                 border_radius=10,
-                padding=20
+                padding=20,
+                on_click=self.toggle_size,
             )
-            self.page.run_task(self.start_log_updater)
+            self.start_log_file_watcher()
             return self.log_container
 
-        async def start_log_updater(self):
-            """启动日志更新任务"""
-            while True:
-                await asyncio.sleep(1)  # 每隔 1 秒检查一次
-                self.update_logs()
+        def start_log_file_watcher(self):
+            """启动日志文件监控"""
+            event_handler = LogFileHandler(self)
+            observer = Observer()
+            observer.schedule(event_handler, path=".", recursive=False)
+            observer.start()
 
         def toggle_size(self, e):
             if self.is_expanded:
@@ -311,19 +355,24 @@ def main(page: ft.Page):
             self.is_expanded = not self.is_expanded
             self.log_container.update()
 
-        def update_logs(self):
-            try:
-                while not log_queue.empty():
-                    log_entry = log_queue.get_nowait()
-                    print("================", log_entry)
-                    self.log_view.controls.append(
-                        ft.Text(log_entry, color="white", selectable=True)
-                    )
-                    self.log_view.update()
-            except Exception as e:
-                logger.error(f"Log update error: {str(e)}")
-
     log_manager = LogViewManager()
+    chart_container = grapg(page)
+
+    reply_count = ft.Text("0", color="#000000", size=30)
+    friends_count = ft.Text("0", color="#000000", size=30)
+    ended_count = ft.Text("0", color="#000000", size=30)
+    run_time = ft.Text("0", color="#000000", size=30)
+
+    def realtime_data(): # 实时更新数据汇总页的数据
+        while True:
+            today_stats = get_today_stats()
+            reply_count.value = str(today_stats["reply_count"])
+            friends_count.value = str(today_stats["new_friends"])
+            ended_count.value = str(today_stats["ended_conversations"])
+            run_time.value = "__:__"
+            # chart_container = grapg(page)
+            page.update()
+            time.sleep(3)
 
     # 渠道管理页部分
     channel_dynamic_content = ft.Column(expand=True)
@@ -332,13 +381,36 @@ def main(page: ft.Page):
     model_dynamic_content = ft.Column(expand=True)
 
     # 页面构造部分
-    navbar_button_style = ft.ButtonStyle(
+    navbar_button_style = ft.ButtonStyle( # 导航栏按钮
         color="#000000",
         bgcolor="#FFFFFF",
         padding=ft.padding.all(10),
         shape=ft.RoundedRectangleBorder(radius=5),
         overlay_color="#EDEBEB",
     )
+
+    def create_run_button():
+        return ft.ElevatedButton(
+            content=ft.Row(
+                [
+                    ft.Icon(ft.icons.PLAY_ARROW, color="#FFFFFF", size=22),
+                    ft.Text("开始运行",size=22,color="#FFFFFF")
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,
+                spacing=5
+            ),
+            on_click=start_run_app,
+            bgcolor="#4CAF50",
+            color="#FFFFFF",
+            width=150,
+            height=60,
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=5)
+            )
+        )
+
+    channel_run_button = create_run_button()
+    model_run_button = create_run_button()
 
     navbar_container = ft.Container( # 左侧导航栏
         content=ft.Column(
@@ -354,7 +426,7 @@ def main(page: ft.Page):
                 ft.TextButton("渠道管理", on_click=show_channel,style=navbar_button_style,width=200,height=40),
                 ft.TextButton("模型管理", on_click=show_model,style=navbar_button_style,width=200,height=40),
                 ft.TextButton("使用文档", on_click=show_doc,style=navbar_button_style,width=200,height=40),
-                ft.Container(height=20),
+                ft.Container(height=80),
                 ft.Container(
                     content=ft.Row([
                         ft.IconButton(
@@ -391,14 +463,7 @@ def main(page: ft.Page):
                     content=ft.Row(
                         [
                             log_manager.create_log_view(page),
-                            ft.Container(
-                                content=ft.Text("流量监控", color="#000000", size=30, weight=ft.FontWeight.BOLD),
-                                bgcolor="#94CED8",
-                                border_radius=10,
-                                width=640,
-                                height=450,
-                                padding=20
-                            )
+                            chart_container
                         ]
                     )
                 ),
@@ -416,7 +481,14 @@ def main(page: ft.Page):
                                 height = 250
                             ),
                             ft.Container(
-                                content=ft.Text("回复次数", color="#000000", size=20),
+                                content=ft.Column(
+                                    [
+                                        ft.Text("回复次数", color="#000000", size=20, weight=ft.FontWeight.BOLD),
+                                        reply_count
+                                    ],
+                                    alignment=ft.MainAxisAlignment.CENTER,
+                                    horizontal_alignment=ft.CrossAxisAlignment.CENTER
+                                ),
                                 bgcolor="#FFFFFF",
                                 border_radius=10,
                                 width=150,
@@ -425,7 +497,14 @@ def main(page: ft.Page):
                                 padding=20
                             ),
                             ft.Container(
-                                content=ft.Text("新增好友", color="#000000", size=20),
+                                content=ft.Column(
+                                    [
+                                        ft.Text("新增好友", color="#000000", size=20, weight=ft.FontWeight.BOLD),
+                                        friends_count
+                                    ],
+                                    alignment=ft.MainAxisAlignment.CENTER,
+                                    horizontal_alignment=ft.CrossAxisAlignment.CENTER
+                                ),
                                 bgcolor="#FFFFFF",
                                 border_radius=10,
                                 width=150,
@@ -434,7 +513,14 @@ def main(page: ft.Page):
                                 padding=20
                             ),
                             ft.Container(
-                                content=ft.Text("留资数量", color="#000000", size=20),
+                                content=ft.Column(
+                                    [
+                                        ft.Text("留资数量", color="#000000", size=20, weight=ft.FontWeight.BOLD),
+                                        ended_count
+                                    ],
+                                    alignment=ft.MainAxisAlignment.CENTER,
+                                    horizontal_alignment=ft.CrossAxisAlignment.CENTER
+                                ),
                                 bgcolor="#FFFFFF",
                                 border_radius=10,
                                 width=150,
@@ -443,17 +529,15 @@ def main(page: ft.Page):
                                 padding=20
                             ),
                             ft.Container(
-                                content=ft.Text("运行时长", color="#000000", size=20),
+                                content=ft.Column(
+                                    [
+                                        ft.Text("运行时长", color="#000000", size=20, weight=ft.FontWeight.BOLD),
+                                        run_time
+                                    ],
+                                    alignment=ft.MainAxisAlignment.CENTER,
+                                    horizontal_alignment=ft.CrossAxisAlignment.CENTER
+                                ),
                                 bgcolor="#FFFFFF",
-                                border_radius=10,
-                                width=150,
-                                height=150,
-                                margin=15,
-                                padding=20
-                            ),
-                            ft.Container(
-                                content=ft.Text("更多教程", color="#000000", size=20),
-                                bgcolor="#94CED8",
                                 border_radius=10,
                                 width=150,
                                 height=150,
@@ -527,24 +611,7 @@ def main(page: ft.Page):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 )
                             ),
-                            ft.ElevatedButton(  # 运行/停止按钮
-                                content=ft.Row(
-                                    [
-                                        ft.Icon(ft.icons.PLAY_ARROW, color="#FFFFFF",size=22),
-                                        ft.Text("开始运行", size=22, color="#FFFFFF")
-                                    ],
-                                    alignment=ft.MainAxisAlignment.CENTER,
-                                    spacing=5
-                                ),
-                                on_click=start_run_app,
-                                bgcolor="#4CAF50",
-                                color="#FFFFFF",
-                                width=150,
-                                height=60,
-                                style=ft.ButtonStyle(
-                                    shape=ft.RoundedRectangleBorder(radius=5)
-                                )
-                            )
+                            channel_run_button
                         ],
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                         spacing=20
@@ -608,24 +675,7 @@ def main(page: ft.Page):
                                     shape=ft.RoundedRectangleBorder(radius=5)
                                 )
                             ),
-                            ft.ElevatedButton(  # 运行/停止按钮
-                                content=ft.Row(
-                                    [
-                                        ft.Icon(ft.icons.PLAY_ARROW, color="#FFFFFF",size=22),
-                                        ft.Text("开始运行", size=22, color="#FFFFFF")
-                                    ],
-                                    alignment=ft.MainAxisAlignment.CENTER,
-                                    spacing=5
-                                ),
-                                on_click=start_run_app,
-                                bgcolor="#4CAF50",
-                                color="#FFFFFF",
-                                width=150,
-                                height=60,
-                                style=ft.ButtonStyle(
-                                    shape=ft.RoundedRectangleBorder(radius=5)
-                                )
-                            )
+                            model_run_button
                         ],
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                         spacing=20
@@ -681,6 +731,7 @@ def main(page: ft.Page):
 
     page.add(rounded_container)
 
+    realtime_data()
 
 def main_entry():
     if not VerifyAccess().check_local_license():
@@ -693,6 +744,27 @@ def main_entry():
 # ==================================================
 # ==========>>>---    下面的不用看了   ---<<<==========
 # ==================================================
+
+class LogFileHandler(FileSystemEventHandler):
+    def __init__(self, log_view_manager):
+        self.log_view_manager = log_view_manager
+        self.last_position = 0  # 记录上次读取的位置
+
+    def on_modified(self, event):
+        """当文件被修改时触发"""
+        if not event.is_directory and event.src_path.endswith("run.log"):
+            with open("run.log", "r", encoding="utf-8") as f:
+                f.seek(self.last_position)  # 从上次读取的位置开始
+                new_logs = f.readlines()
+                self.last_position = f.tell()  # 更新读取位置
+
+            # 将新日志添加到界面
+            for log_entry in new_logs:
+                self.log_view_manager.log_view.controls.append(
+                    ft.Text(log_entry.strip(), color="white", selectable=True)
+                )
+            self.log_view_manager.log_view.update()
+
 
 class WinGUI(Tk):
     def __init__(self):

@@ -10,7 +10,7 @@ from channel.channel import Channel
 from common.dequeue import Dequeue
 from common import memory
 from channel.message_buffer import MessageBuffer
-
+from config import conf
 from plugins import *
 
 try:

@@ -1,7 +1,6 @@
 import asyncio
 import time
 
-import web
 from wechatpy import parse_message
 from wechatpy.replies import ImageReply, VoiceReply, create_reply
 import textwrap

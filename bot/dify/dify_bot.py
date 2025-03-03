@@ -8,7 +8,7 @@ import json
 
 import requests
 from urllib.parse import urlparse, unquote
-
+from core.data.watch_dog import data
 from bot.bot import Bot
 from lib.dify.dify_client import DifyClient, ChatClient
 from bot.dify.dify_session import DifySession, DifySessionManager
@@ -159,7 +159,10 @@ class DifyBot(Bot):
         #     "created_at": 1705407629
         # }
         rsp_data = response.json()
-        logger.debug("[DIFY] usage {}".format(rsp_data.get('metadata', {}).get('usage', 0)))
+        usage = rsp_data.get('metadata', {}).get('usage', {})
+        logger.debug("[DIFY] usage {}".format(usage))
+        prompt_tokens = int(usage.get("total_tokens", 0))
+        data().update_stat("prompt_usage", prompt_tokens, "dify")
 
         answer = rsp_data['answer']
         parsed_content = parse_markdown_text(answer)

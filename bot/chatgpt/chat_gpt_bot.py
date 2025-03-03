@@ -1,12 +1,10 @@
 # encoding:utf-8
 
-import base64
 import time
 
 import openai
 #import openai.error
 import requests
-from common import const
 from bot.bot import Bot
 from bot.chatgpt.chat_gpt_session import ChatGPTSession
 from bot.openai.open_ai_image import OpenAIImage
@@ -16,7 +14,7 @@ from bridge.context import ContextType
 from bridge.reply import Reply, ReplyType
 from common.log import logger
 from common.token_bucket import TokenBucket
-from common import memory, utils, const
+from common import const
 from config import conf, load_config
 from bot.baidu.baidu_wenxin_session import BaiduWenxinSession
 

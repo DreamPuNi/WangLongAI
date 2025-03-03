@@ -1,12 +1,10 @@
 # encoding:utf-8
 
 import plugins
+from plugins import *
+from config import conf
 from bridge.context import ContextType
 from bridge.reply import Reply, ReplyType
-from common.log import logger
-from config import conf
-from plugins import *
-
 
 @plugins.register(
     name="Finish",

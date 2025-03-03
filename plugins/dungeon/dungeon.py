@@ -6,7 +6,6 @@ from bridge.context import ContextType
 from bridge.reply import Reply, ReplyType
 from common import const
 from common.expired_dict import ExpiredDict
-from common.log import logger
 from config import conf
 from plugins import *
 

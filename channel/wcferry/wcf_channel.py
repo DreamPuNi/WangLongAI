@@ -4,22 +4,16 @@
 wechat channel
 """
 
-import io
-import json
-import os
 import threading
 import time
 from queue import Empty
-from typing import Any
 
 from bridge.context import *
 from bridge.reply import *
 from channel.chat_channel import ChatChannel
 from channel.wcferry.wcf_message import WechatfMessage
-from common.log import logger
 from common.singleton import singleton
 from common.utils import *
-from config import conf, get_appdata_dir
 from wcferry import Wcf, WxMsg
 
 

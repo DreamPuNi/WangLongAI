@@ -1,7 +1,6 @@
 """
 google voice service
 """
-import json
 
 import openai
 

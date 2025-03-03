@@ -1,6 +1,5 @@
 # encoding:utf-8
 
-import requests, json
 from bot.bot import Bot
 from bot.session_manager import SessionManager
 from bot.chatgpt.chat_gpt_session import ChatGPTSession

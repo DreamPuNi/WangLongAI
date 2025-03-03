@@ -1,5 +1,4 @@
 # encoding:utf-8
-
 import importlib
 import importlib.util
 import json
@@ -9,7 +8,7 @@ import sys
 from common.log import logger
 from common.singleton import singleton
 from common.sorted_dict import SortedDict
-from config import conf, remove_plugin_config, write_plugin_config
+from config import remove_plugin_config, write_plugin_config
 
 from .event import *
 

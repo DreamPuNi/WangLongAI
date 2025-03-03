@@ -1,12 +1,9 @@
 from plugins import *
 from common import const
 from channel import channel_factory
-from functools import partial
 from config import load_config, save_config, conf
-import signal
-import time
 import requests
-from multiprocessing import Process
+
 # 加载配置
 load_config()
 current_process_instance = None
@@ -83,8 +80,8 @@ def get_gewechat_profile():
 
         if avatar_url:
             try:
-                avatar_path = 'tmp/avatar.png'
-                os.makedirs('tmp', exist_ok=True)
+                avatar_path = '../tmp/avatar.png'
+                os.makedirs('../tmp', exist_ok=True)
                 response = requests.get(avatar_url)
                 if response.status_code == 200:
                     with open(avatar_path, 'wb') as f:
@@ -137,7 +134,7 @@ def run():
 
 
 def get_qrcode_image():
-    image_path = 'tmp/login.png'
+    image_path = '../tmp/login.png'
     if os.path.exists(image_path):
         return image_path
     else:
@@ -145,7 +142,7 @@ def get_qrcode_image():
 
 
 def get_avatar_image():
-    image_path = 'tmp/avatar.png'
+    image_path = '../tmp/avatar.png'
     if os.path.exists(image_path):
         return image_path
     else:

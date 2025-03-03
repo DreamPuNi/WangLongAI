@@ -1,5 +1,4 @@
 import threading
-import time
 import requests
 import time
 from wechatpy.enterprise import WeChatClient

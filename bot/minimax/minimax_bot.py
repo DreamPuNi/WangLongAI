@@ -2,8 +2,6 @@
 
 import time
 
-import openai
-import openai.error
 from bot.bot import Bot
 from bot.minimax.minimax_session import MinimaxSession
 from bot.session_manager import SessionManager
@@ -11,7 +9,6 @@ from bridge.context import Context, ContextType
 from bridge.reply import Reply, ReplyType
 from common.log import logger
 from config import conf, load_config
-from bot.chatgpt.chat_gpt_session import ChatGPTSession
 import requests
 from common import const
 

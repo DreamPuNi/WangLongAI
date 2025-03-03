@@ -8,22 +8,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core/flet/flet_components.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/bytedance/bytedance_coze_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/bytedance/bytedance_coze_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/chatgpt/chat_gpt_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/chatgpt/chat_gpt_bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/dify/dify_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/dify/dify_bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/channel_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/channel_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/gemini/google_gemini_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/gemini/google_gemini_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/minimax/minimax_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/minimax/minimax_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/moonshot/moonshot_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/moonshot/moonshot_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/xunfei/xunfei_spark_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/xunfei/xunfei_spark_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/chat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/chat_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/dingtalk/dingtalk_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/dingtalk/dingtalk_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/gewechat/gewechat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/gewechat/gewechat_channel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_channel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_message.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/sikulix_wecom/sikulix_com_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix_wecom/sikulix_com_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/sikulix_wecom/sikulix_com_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix_wecom/sikulix_com_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wcferry/wcf_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wcferry/wcf_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/web/web_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/web/web_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wechat/wechaty_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wechat/wechaty_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wechatcom/wechatcomapp_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wechatcom/wechatcomapp_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wechatcs/wechatcomservice_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wechatcs/wechatcomservice_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wechatcs/wechatcomservice_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wechatcs/wechatcomservice_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wechatmp/active_reply.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wechatmp/active_reply.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wechatmp/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wechatmp/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wechatmp/passive_reply.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wechatmp/passive_reply.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wechatmp/wechatmp_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wechatmp/wechatmp_channel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/tmp_dir.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/tmp_dir.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/verify.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/verify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_grouping.json" beforeDir="false" afterPath="$PROJECT_DIR$/config_grouping.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/2.get_logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/2.get_logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/3.is_logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/3.is_logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/4.call_back.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/4.call_back.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/6.log_out.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/6.log_out.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuck_webui.py" beforeDir="false" afterPath="$PROJECT_DIR$/fuck_webui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/is_chating.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sikulix/wechat/is_chating.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/license.lic" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/run.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/dungeon/dungeon.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/dungeon/dungeon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/finish/finish.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/finish/finish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/godcmd/godcmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/godcmd/godcmd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/hello/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/hello/hello.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/linkai/linkai.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/linkai/linkai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/plugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/plugin_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/plugin_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/role/role.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/role/role.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/login.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/login.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voice/openai/openai_voice.py" beforeDir="false" afterPath="$PROJECT_DIR$/voice/openai/openai_voice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voice/xunfei/xunfei_voice.py" beforeDir="false" afterPath="$PROJECT_DIR$/voice/xunfei/xunfei_voice.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +92,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.2.get_logging.executor": "Run",
+    "Python.3.is_logging.executor": "Run",
+    "Python.4.call_back.executor": "Run",
     "Python.6.log_out.executor": "Run",
     "Python.app.executor": "Run",
     "Python.chat_channel.executor": "Run",
     "Python.config.executor": "Run",
     "Python.dify_bot.executor": "Run",
     "Python.flet.executor": "Run",
+    "Python.flet_components.executor": "Run",
     "Python.fuck_webui.executor": "Run",
     "Python.gewechat_channel.executor": "Run",
     "Python.gewechat_webui.executor": "Run",
@@ -78,6 +116,7 @@
     "Python.test.executor": "Run",
     "Python.tkinter.executor": "Run",
     "Python.verify.executor": "Run",
+    "Python.watch_dog.executor": "Run",
     "Python.web_ui.executor": "Run",
     "Python.web_ui_failed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -96,11 +135,11 @@
       <recent name="D:\Program\dify-on-wechat\files_manager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program\dify-on-wechat\core\flet" />
       <recent name="D:\Program\dify-on-wechat" />
-      <recent name="D:\Program\dify-on-wechat\debug\gewechat" />
-      <recent name="D:\Program\dify-on-wechat\debug\data" />
-      <recent name="D:\Program\dify-on-wechat\files_manager" />
-      <recent name="D:\Program\dify-on-wechat\external" />
+      <recent name="D:\Program\dify-on-wechat\core\data" />
+      <recent name="D:\Program\dify-on-wechat\core\config" />
+      <recent name="D:\Program\dify-on-wechat\core" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -120,15 +159,5 @@
       <updated>1738905203675</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/interface_t1.py</url>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

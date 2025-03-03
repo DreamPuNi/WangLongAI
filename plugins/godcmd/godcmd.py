@@ -1,13 +1,10 @@
 # encoding:utf-8
 
-import json
-import os
 import random
 import string
 import logging
 from typing import Tuple
 
-import bridge.bridge
 import plugins
 from bridge.bridge import Bridge
 from bridge.context import ContextType
