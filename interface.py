@@ -10,22 +10,19 @@ from channel import channel_factory
 from multiprocessing import Process
 from core.verify import VerifyAccess
 from watchdog.observers import Observer
-from core.gewe_manage import check_gewechat_online
+from core.channel_infomanage.gewe_manage import check_gewechat_online
 from core.data.watch_dog import get_today_stats
 from config import conf, load_config, save_config
 from watchdog.events import FileSystemEventHandler
-
+import os
 
 # 线程管理
 current_process_instance = None
 
 def run():
     try:
-        # load config
         load_config()
-        # create channel
         channel_name = conf().get("channel_type", "wx")
-
         start_channel(channel_name)
     except Exception as e:
         logger.error("App startup failed!")
@@ -49,6 +46,7 @@ def start_channel(channel_name: str):
 # 主页面
 def main(page: ft.Page):
     load_config()
+    running=True
     page.window.center()
     page.title = "龙商学院-AI客服"
     page.window.frameless = True # 隐藏标题栏
@@ -114,8 +112,10 @@ def main(page: ft.Page):
         page.update()
 
     def close_app(e):
-        kill_process()
+        nonlocal running
+        running=False
         page.window.destroy()
+        # kill_process()
 
     def update_parameters(dynamic_content, config_class, e):
         current_select = e.control.value
@@ -150,14 +150,14 @@ def main(page: ft.Page):
             for arg in config_grouping[config_class]["wechat_common"]:
                 scrollable_content.controls.append(
                     ft.Text(
-                        value=f"{config_grouping[config_class]["wechat_common"][arg]["tittle"]}",
+                        value=f"{config_grouping[config_class]['wechat_common'][arg]['tittle']}",
                         size=16,
                         color="#000000",
                         weight=ft.FontWeight.BOLD)
                 )
                 scrollable_content.controls.append(
                     ft.Text(
-                        value=f"{config_grouping[config_class]["wechat_common"][arg]["describe"]}",
+                        value=f"{config_grouping[config_class]['wechat_common'][arg]['describe']}",
                         size=12,
                         color="#9B9FA1"
                     )
@@ -167,7 +167,7 @@ def main(page: ft.Page):
                         label=arg,
                         value=conf().get(arg),
                         color="#000000",
-                        on_change=lambda e,key=arg:conf().set(key,e.control.value)
+                        on_change=lambda e,key=arg:handle_value_change(e,key)
                     )
                 )
             scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
@@ -183,7 +183,7 @@ def main(page: ft.Page):
         for arg in config_grouping[config_class][current_select]:
             scrollable_content.controls.append(
                 ft.Text(
-                    value=f"{config_grouping[config_class][current_select][arg]["tittle"]}",
+                    value=f"{config_grouping[config_class][current_select][arg]['tittle']}",
                     size=16,
                     color="#000000",
                     weight=ft.FontWeight.BOLD
@@ -191,7 +191,7 @@ def main(page: ft.Page):
             )
             scrollable_content.controls.append(
                 ft.Text(
-                    value=f"{config_grouping[config_class][current_select][arg]["describe"]}",
+                    value=f"{config_grouping[config_class][current_select][arg]['describe']}",
                     size=12,
                     color="#9B9FA1"
                 )
@@ -201,11 +201,37 @@ def main(page: ft.Page):
                     label=arg,
                     value=conf().get(arg),
                     color="#000000",
-                    on_change=lambda e,key=arg:conf().set(key, e.control.value)
+                    on_change=lambda e,key=arg:handle_value_change(e,key)
                 )
             )
         dynamic_content.controls.append(scrollable_content)
         page.update()
+
+        def handle_value_change(event, key, current_select='wechat_common'):
+            raw_value = event.control.value
+            print("raw_value:",raw_value)
+            config_type = config_grouping[config_class][current_select][key]['type']
+            try:
+                if config_type == "str":
+                    converted_value = str(raw_value)
+                elif config_type == "int":
+                    converted_value = int(raw_value)
+                elif config_type == "bool":
+                    # 布尔值需要特殊处理，支持常见的布尔字符串（如 "true", "false", "1", "0"）
+                    raw_value_lower = raw_value.lower()
+                    if raw_value_lower in ("true", "1"):
+                        converted_value = True
+                    elif raw_value_lower in ("false", "0"):
+                        converted_value = False
+                    else:
+                        raise ValueError(f"Invalid boolean value: {raw_value}")
+                else:
+                    raise ValueError(f"Unsupported type: {config_type}")
+            except ValueError as e:
+                # 如果转换失败，可以在这里处理错误（例如显示提示信息）
+                print(f"Error converting value for key '{key}': {e}")
+                return
+            conf().set(key, converted_value)
 
     def update_config(e):
         save_config()
@@ -286,7 +312,7 @@ def main(page: ft.Page):
 
     def kill_process(e=None):
         global current_process_instance
-        if current_process_instance is not None and current_process_instance.is_alive():
+        if current_process_instance is not None:
             os.kill(current_process_instance.pid, signal.SIGTERM)  # 杀掉当前进程
             update_button_style(running=False)
 
@@ -364,7 +390,8 @@ def main(page: ft.Page):
     run_time = ft.Text("0", color="#000000", size=30)
 
     def realtime_data(): # 实时更新数据汇总页的数据
-        while True:
+        nonlocal running
+        while running:
             today_stats = get_today_stats()
             reply_count.value = str(today_stats["reply_count"])
             friends_count.value = str(today_stats["new_friends"])
@@ -426,7 +453,7 @@ def main(page: ft.Page):
                 ft.TextButton("渠道管理", on_click=show_channel,style=navbar_button_style,width=200,height=40),
                 ft.TextButton("模型管理", on_click=show_model,style=navbar_button_style,width=200,height=40),
                 ft.TextButton("使用文档", on_click=show_doc,style=navbar_button_style,width=200,height=40),
-                ft.Container(height=80),
+                ft.Container(height=160),
                 ft.Container(
                     content=ft.Row([
                         ft.IconButton(
@@ -574,9 +601,9 @@ def main(page: ft.Page):
                                         ft.Dropdown(
                                             options=[
                                                 ft.dropdown.Option("gewechat"),
-                                                ft.dropdown.Option("sikulix_wecom"),
-                                                ft.dropdown.Option("sikulix_wechat"),
-                                                ft.dropdown.Option("wcf")
+                                                ft.dropdown.Option("sikulix"),
+                                                ft.dropdown.Option("wcf"),
+                                                ft.dropdown.Option("wework")
                                             ],
                                             on_change=lambda e: update_parameters(
                                                 dynamic_content=channel_dynamic_content,

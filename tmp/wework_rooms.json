@@ -1,0 +1,18 @@
+{
+    "page_num": 1,
+    "page_size": 500,
+    "room_list": [
+        {
+            "conversation_id": "R:10699145801794555",
+            "create_time": 1739948831,
+            "create_user_id": "1688856140600643",
+            "is_admin": 0,
+            "is_creator": 1,
+            "is_external": 1,
+            "nickname": "张豆豆、何颂生、望龙（ai销售版）",
+            "total": 5
+        }
+    ],
+    "total": 1,
+    "total_page": 1
+}

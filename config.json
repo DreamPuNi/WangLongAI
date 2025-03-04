@@ -1,9 +1,9 @@
 {
-    "channel_type": "gewechat",
+    "channel_type": "sikulix",
     "coze_api_base": "https://api.coze.cn",
     "coze_api_key": "pat_zZKXkQv3GHizH4nYLWoHvLs6shC63enocbWySFR92HlpAK5TgT8dhnOlC5xspmRp",
     "coze_bot_id": "7472418615191896074",
-    "debug": 1,
+    "debug": false,
     "dify_api_base": "http://localhost/v1",
     "dify_api_key": "app-bLLTcRZ8l67LQidSo67B68CH",
     "dify_app_type": "chatbot",
@@ -12,11 +12,10 @@
     "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
     "gewechat_download_url": "http://192.168.31.235:2532/download",
     "gewechat_token": "934c7ad0b1994c13a52374f5be9f39fb",
-    "message_buffer_second": 5,
-    "model": "dify",
+    "message_buffer_second": 10,
+    "model": "coze",
     "nick_name_black_list": [],
-    "sikulix_describe": "wecom",
-    "wx_name": "望龙（ai销售版）",
+    "sikulix_describe": "wec",
     "wxid_black_list": [],
     "wxid_recip_note": ""
 }

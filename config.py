@@ -214,8 +214,6 @@ available_setting = {
     "web_port": 9899,
     # sikulix-wecom配置
     "sikulix_describe":"", # 注意：wcf不需要任何设置，这个只是占位
-    # sikulix-wecom配置
-    "wx_name":"", # 你的微信名字
     # wcf配置
     "wcf_describe":"", # 注意：wcf不需要任何设置，这个只是占位
 }

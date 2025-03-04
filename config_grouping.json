@@ -54,17 +54,10 @@
         "type": "str"
       }
     },
-    "sikulix_wecom": {
+    "sikulix": {
       "sikulix_describe": {
-        "tittle": "高贵的sikulix不需要任何设置",
-        "describe": "高贵的sikulix不需要任何设置",
-        "type": "str"
-      }
-    },
-    "sikulix_wechat": {
-      "wx_name": {
-        "tittle": "你的微信昵称",
-        "describe": "你的微信昵称",
+        "tittle": "sikulix不需要任何设置",
+        "describe": "sikulix不需要任何设置",
         "type": "str"
       }
     },
@@ -73,6 +66,13 @@
         "tittle": "高贵的wcf不需要任何设置",
         "describe": "高贵的wcf不需要任何设置",
         "type": "str"
+      }
+    },
+    "wework": {
+      "wework_smart": {
+        "tittle": "使用的账号",
+        "describe": "配置wework是否使用已登录的企业微信，False为多开",
+        "type": "bool"
       }
     }
   },
@@ -90,7 +90,7 @@
       },
       "dify_app_type": {
         "tittle": "Dify应用类型",
-        "describe": "你当前配置的Dify应用的类型",
+        "describe": "dify助手类型 chatbot(对应聊天助手或对话流)/agent(对应Agent)/workflow(对应工作流，则默认为chatbot",
         "type": "str"
       }
     },

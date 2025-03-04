@@ -51,12 +51,9 @@ def create_channel(channel_type) -> Channel:
     elif channel_type == "gewechat":
         from channel.gewechat.gewechat_channel import GeWeChatChannel
         ch = GeWeChatChannel()
-    elif channel_type == "sikulix_wecom":
-        from channel.sikulix_wecom.sikulix_com_channel import SikuliXChannel
-        ch = SikuliXChannel(jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll")
-    elif channel_type == "sikulix_wechat":
-        from channel.sikulix_wechat.sikulix_chat_channel import SikuliXChannel
-        ch = SikuliXChannel(jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll")
+    elif channel_type == "sikulix":
+        from channel.sikulix.sikulix_channel import SikuliXChannel
+        ch = SikuliXChannel()
     else:
         raise RuntimeError
     ch.channel_type = channel_type

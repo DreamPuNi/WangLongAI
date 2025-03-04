@@ -17,7 +17,7 @@ from common.singleton import singleton
 from common.log import logger
 from common.time_check import time_checker
 from common.utils import compress_imgfile, fsize
-from config import conf
+from config import conf,save_config
 from channel.wework.run import wework
 from channel.wework import run
 from PIL import Image
@@ -273,19 +273,37 @@ class WeworkChannel(ChatChannel):
 
     # 统一的发送函数，每个Channel自行实现，根据reply的type字段发送不同类型的消息
     def send(self, reply: Reply, context: Context):
+        from core.data.watch_dog import data
         logger.debug(f"context: {context}")
         receiver = context["receiver"]
         actual_user_id = context["msg"].actual_user_id
         if reply.type == ReplyType.TEXT or reply.type == ReplyType.TEXT_:
             match = re.search(r"^@(.*?)\n", reply.content)
             logger.debug(f"match: {match}")
+            # ==================>   在这里添加过滤器   <==================
             if match:
                 new_content = re.sub(r"^@(.*?)\n", "\n", reply.content)
                 at_list = [actual_user_id]
                 logger.debug(f"new_content: {new_content}")
                 wework.send_room_at_msg(receiver, new_content, at_list)
+                # 这里带@的先不管
             else:
-                wework.send_text(receiver, reply.content)
+                if "<end>" in reply.content:  # 先判断是不是对话结束,如果是就转人工
+                    wxid_black_list = conf().get("wxid_black_list")
+                    wxid_black_list.append(receiver)
+                    conf().set("wxid_black_list", wxid_black_list)
+                    save_config()
+                    logger.info("[gewechat] Transfer to manual {}".format(receiver))
+                    data().update_stat("ended_conversations")
+                    #user = context["msg"].other_user_nickname if context.get("msg") else "default"
+                    #self.send_transfer_notice(receiver, user)  # 执行通知函数
+                reply_list = re.findall(r'「(.*?)」', reply.content)
+                data().update_stat("reply_count") if reply_list else None
+                for content in reply_list:
+                    sleep_time = len(content) * 0.3
+                    time.sleep(sleep_time)
+                    wework.send_text(receiver, content)
+            # ==================>   在这里添加过滤器   <==================
             logger.info("[WX] sendMsg={}, receiver={}".format(reply, receiver))
         elif reply.type == ReplyType.ERROR or reply.type == ReplyType.INFO:
             wework.send_text(receiver, reply.content)
@@ -330,3 +348,8 @@ class WeworkChannel(ChatChannel):
             reply.content = os.path.join(current_dir, "tmp", voice_file)
             wework.send_file(receiver, reply.content)
             logger.info("[WX] sendFile={}, receiver={}".format(reply.content, receiver))
+
+    def get_customer_list(self):
+        contacts = wework.get_external_contacts()
+        print("外部(客户)联系人列表: ")
+        print(contacts)
