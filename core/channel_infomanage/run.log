@@ -1,0 +1,10 @@
+[INFO][2025-03-05 09:20:12][config.py:309] - 配置文件不存在，将使用config-template.json模板
+[INFO][2025-03-05 09:23:04][config.py:309] - 配置文件不存在，将使用config-template.json模板
+[ERROR][2025-03-05 09:23:20][gewe_manage.py:125] - 获取二维码失败: {"ret":500,"msg":"设备ID不可为空"}
+[ERROR][2025-03-05 09:24:16][gewe_manage.py:125] - 获取二维码失败: {"ret":500,"msg":"设备已离线，appId:wx_h_wNG48atr8kFFQWkELQ2"}
+[ERROR][2025-03-05 09:27:45][gewe_manage.py:125] - 获取二维码失败: {"ret":500,"msg":"设备已离线，appId:wx_s1xmJ50YU5cepHa9OsnHD"}
+[ERROR][2025-03-05 10:06:57][gewe_manage.py:123] - 获取二维码失败: 'str' object does not support item assignment
+[ERROR][2025-03-05 10:08:26][gewe_manage.py:123] - 获取二维码失败: 'str' object does not support item assignment
+[ERROR][2025-03-05 10:08:50][gewe_manage.py:125] - 获取二维码失败: 'str' object does not support item assignment
+[ERROR][2025-03-05 10:09:26][gewe_manage.py:125] - 获取二维码失败: 'str' object does not support item assignment
+[ERROR][2025-03-05 10:13:08][gewe_manage.py:124] - 获取二维码失败: {"ret":500,"msg":"检测登录失败","data":{"code":"-1","msg":"cipher: message authentication failed"}}

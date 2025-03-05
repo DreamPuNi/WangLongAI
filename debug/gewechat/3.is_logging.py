@@ -3,11 +3,11 @@ import json
 
 conn = http.client.HTTPConnection("192.168.31.235", 2531)
 payload = json.dumps({
-   "appId": "wx_h_wNG48atr8kFFQWkELQ2",
-   "uuid": "QZkxmTa2iEH7ktQxHMNg"
+   "appId": "wx_VzTqgHBeCxViPUHpEqbnT",
+   "uuid": "gf5vWG8ufiBJerpfUKi4"
 })
 headers = {
-   'X-GEWE-TOKEN': '934c7ad0b1994c13a52374f5be9f39fb',
+   'X-GEWE-TOKEN': '77454c4c65a94089919faffcc5d58749',
    'Content-Type': 'application/json'
 }
 conn.request("POST", "/v2/api/login/checkLogin", payload, headers)

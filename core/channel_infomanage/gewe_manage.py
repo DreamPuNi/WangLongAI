@@ -5,18 +5,7 @@ from config import load_config, save_config, conf
 import requests
 
 # 加载配置
-load_config()
-current_process_instance = None
-
-def on_channel_change(selected_value):
-    conf().set("channel_type", selected_value)
-    save_config()
-    return f"你选择了客户端: {selected_value}"
-
-
-def update_config(key, value):
-    conf().set(key, value)
-    save_config()
+#load_config()
 
 
 def check_gewechat_online():
@@ -27,20 +16,17 @@ def check_gewechat_online():
     try:
         if conf().get("channel_type") != "gewechat":
             return False, "非gewechat，无需检查"
-
         base_url = conf().get("gewechat_base_url")
         token = conf().get("gewechat_token")
         app_id = conf().get("gewechat_app_id")
         if not all([base_url, token, app_id]):
             return False, "gewechat配置不完整"
-
         from lib.gewechat.client import GewechatClient
         client = GewechatClient(base_url, token)
-        online_status = client.check_online(app_id)
 
+        online_status = client.check_online(app_id)
         if not online_status:
             return False, "获取在线状态失败"
-
         if not online_status.get('data', False):
             logger.info("Gewechat用户未在线")
             return False, "用户未登录"
@@ -96,48 +82,46 @@ def get_gewechat_profile():
         return None, None
 
 
-def start_channel(channel_name: str):
-    channel = channel_factory.create_channel(channel_name)
-    available_channels = [
-        "wx",
-        "terminal",
-        "wechatmp",
-        "wechatmp_service",
-        "wechatcom_app",
-        "wework",
-        "wechatcom_service",
-        "gewechat",
-        "sikulix",
-        const.FEISHU,
-        const.DINGTALK
-    ]
-    if channel_name in available_channels:
-        PluginManager().load_plugins()
-    channel.startup()
-
-
-def run():
+def gewe_log_out():
+    """gewe退出登陆"""
     try:
-        # load config
-        load_config()
-        # create channel
-        channel_name = conf().get("channel_type", "wx")
+        is_online, error_msg = check_gewechat_online()
+        if not is_online:
+            logger.info(f"Gewechat状态检查: {error_msg}")
+            return None, None
 
-        # 获取gewechat用户信息
-        if channel_name == "gewechat":
-            get_gewechat_profile()
+        from lib.gewechat.client import GewechatClient
+        base_url = conf().get("gewechat_base_url")
+        token = conf().get("gewechat_token")
+        app_id = conf().get("gewechat_app_id")
+        client = GewechatClient(base_url, token)
 
-        start_channel(channel_name)
+        logout_status = client.log_out(app_id)
+        if not logout_status:
+            return False, "退出登陆失败"
+        if logout_status.get('msg') == "操作成功":
+            return True, "操作成功"
+
+        return None, None
     except Exception as e:
-        logger.error("App startup failed!")
-        logger.exception(e)
+        logger.error(f"登出失败: {str(e)}")
+        return None, None
 
 
-def get_qrcode_image():
-    image_path = '../../tmp/login.png'
-    if os.path.exists(image_path):
-        return image_path
-    else:
+def get_qrcode_url():
+    try:
+        from lib.gewechat.client import GewechatClient
+        base_url = "http://192.168.31.235:2531/v2/api"#conf().get("gewechat_base_url")
+        token = "77454c4c65a94089919faffcc5d58749"#conf().get("gewechat_token")
+        app_id = "wx_s1xmJ50YU5cepHa9OsnHD"#conf().get("gewechat_app_id")
+        client = GewechatClient(base_url, token)
+
+        client.login(app_id)
+        from lib.gewechat.util.terminal_printer import url
+        print(url)
+        return 1
+    except Exception as e:
+        logger.error(f"获取二维码失败: {str(e)}")
         return None
 
 
@@ -155,3 +139,8 @@ def verify_login(username, password):
     if username == correct_username and password == correct_password:
         return True
     return False
+
+
+if __name__ == "__main__":
+    url = get_qrcode_url()
+    print(url)

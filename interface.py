@@ -10,7 +10,7 @@ from channel import channel_factory
 from multiprocessing import Process
 from core.verify import VerifyAccess
 from watchdog.observers import Observer
-from core.channel_infomanage.gewe_manage import check_gewechat_online
+from core.channel_infomanage.gewe_manage import *
 from core.data.watch_dog import get_today_stats
 from config import conf, load_config, save_config
 from watchdog.events import FileSystemEventHandler
@@ -132,18 +132,37 @@ def main(page: ft.Page):
                     ft.Text(value="Gewe登录信息", size=22, weight=ft.FontWeight.BOLD, color="#000000")
                 )
                 if check_gewechat_online()[0]:
+                    nick_name, avatar_path = get_gewechat_profile()
                     scrollable_content.controls.append(
-                        ft.Column([
+                        ft.Row([
                             ft.Container(
-                                content=ft.Image(src="tmp/avatar.png",width=150,height=150),
+                                content=ft.Image(src=avatar_path,width=150,height=150),
                                 margin=ft.margin.only(right=40)
                             ),
-
+                            ft.Column(
+                                [
+                                    ft.Text(value=f"当前登陆账号：{nick_name}", size=16, color="#000000"),
+                                    ft.FilledButton(text="刷新状态",on_click=lambda e: check_gewechat_online()),
+                                    ft.FilledButton(text="退出登录",on_click=lambda e: gewe_log_out())
+                                ]
+                            )
                         ])
                     )
-                # 首先检查是否在线，如果在线就显示头像和其他信息，并且添加一个退出登陆的按钮
-                # 如果不在线就显示二维码
-                pass
+                else:
+                    scrollable_content.controls.append(
+                        ft.Row([
+                            ft.Container(
+                                content=ft.Image(src=url, width=150, height=150),
+                                margin=ft.margin.only(right=40)
+                            ),
+                            ft.Column(
+                                [
+                                    ft.Text(value=f"请扫码登陆", size=16, color="#000000"),
+                                    ft.FilledButton(text="刷新状态", on_click=lambda e: check_gewechat_online()),
+                                ]
+                            )
+                        ])
+                    )
             scrollable_content.controls.append(
                 ft.Text(value="微信公共参数设置", size=22, weight=ft.FontWeight.BOLD, color="#000000")
             )
@@ -201,7 +220,7 @@ def main(page: ft.Page):
                     label=arg,
                     value=conf().get(arg),
                     color="#000000",
-                    on_change=lambda e,key=arg:handle_value_change(e,key)
+                    on_change=lambda e,key=arg:handle_value_change(e,key,current_select)
                 )
             )
         dynamic_content.controls.append(scrollable_content)

@@ -2,7 +2,6 @@ from ..util.terminal_printer import make_and_print_qr, print_green, print_yellow
 from ..util.http_util import post_json
 import time
 
-
 class LoginApi:
     def __init__(self, base_url, token):
         self.base_url = base_url

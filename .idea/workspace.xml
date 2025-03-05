@@ -8,40 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dify-on-wechat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dify-on-wechat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/bytedance/bytedance_coze_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/bytedance/bytedance_coze_bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/dify/dify_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot/dify/dify_bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/channel_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/channel_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/sikulix_wechat/READEME.md" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix/READEME.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/sikulix_wechat/run.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_channel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/sikulix_wechat/sikulix_chat_message.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/sikulix_wecom/READEME.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/sikulix_wecom/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix/run.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/sikulix_wecom/sikulix_com_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix/sikulix_channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/sikulix_wecom/sikulix_com_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/sikulix/sikulix_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/wework/wework_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wework/wework_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/gewechat/gewechat_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/gewechat/gewechat_message.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_grouping.json" beforeDir="false" afterPath="$PROJECT_DIR$/config_grouping.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/gewe_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/channel_infomanage/gewe_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/channel_infomanage/gewe_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/channel_infomanage/gewe_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/flet/flet_components.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/flet/flet_components.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/1.get_token.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/1.get_token.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/2.get_logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/2.get_logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/3.is_logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/3.is_logging.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/drag_end.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/drag_start.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/is_chating.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/isnt_replied.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/new_friend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/new_friend_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/new_friend_accept.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/new_msg_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/new_msg_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/replied.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sikulix/wechat/unread_msg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gewechat/api/login_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gewechat/api/login_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/run.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/login.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/工作进度.txt" beforeDir="false" afterPath="$PROJECT_DIR$/工作进度.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,10 +54,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.1.get_token.executor": "Run",
     "Python.2.get_logging.executor": "Run",
     "Python.3.is_logging.executor": "Run",
     "Python.4.call_back.executor": "Run",
     "Python.6.log_out.executor": "Run",
+    "Python.8.appid_what.executor": "Run",
     "Python.app.executor": "Run",
     "Python.chat_channel.executor": "Run",
     "Python.config.executor": "Run",
@@ -86,6 +67,7 @@
     "Python.flet.executor": "Run",
     "Python.flet_components.executor": "Run",
     "Python.fuck_webui.executor": "Run",
+    "Python.gewe_manage.executor": "Run",
     "Python.gewechat_channel.executor": "Run",
     "Python.gewechat_webui.executor": "Run",
     "Python.interface.executor": "Run",
@@ -144,5 +126,26 @@
       <updated>1738905203675</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/channel_infomanage/gewe_manage.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/interface.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/interface.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

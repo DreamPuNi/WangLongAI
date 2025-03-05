@@ -58,5 +58,15 @@
         },
         "new_friends": 0,
         "ended_conversations": 0
+    },
+    "2025-03-05": {
+        "reply_count": 19,
+        "prompt_usage": {
+            "dify": 15829,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
     }
 }

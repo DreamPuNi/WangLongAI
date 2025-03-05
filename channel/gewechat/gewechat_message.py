@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 {
     "TypeName": "AddMsg",
     "Appid": "wx_xxx",
-    "Data": {
+    "data": {
         "MsgId": 177581074,
         "FromUserName": {
             "string": "wxid_fromuser"
@@ -47,7 +47,7 @@ import xml.etree.ElementTree as ET
 {
     "TypeName": "AddMsg",
     "Appid": "wx_xxx",
-    "Data": {
+    "data": {
         "MsgId": 585326344,
         "FromUserName": {
             "string": "xxx@chatroom"
@@ -79,7 +79,7 @@ import xml.etree.ElementTree as ET
 {
     "TypeName": "AddMsg",
     "Appid": "wx_xxx",
-    "Data": {
+    "data": {
         "MsgId": 488566999,
         "FromUserName": {
             "string": "xxx@chatroom"
@@ -109,7 +109,7 @@ import xml.etree.ElementTree as ET
 {
     "TypeName": "ModContacts",
     "Appid": "wx_xxx",
-    "Data": {
+    "data": {
         "UserName": {
             "string": "xxx@chatroom"
         },
@@ -236,7 +236,7 @@ import xml.etree.ElementTree as ET
 {
     "TypeName": "ModContacts",
     "Appid": "wx_xxx",
-    "Data": {
+    "data": {
         "UserName": {
             "string": "xxx@chatroom"
         },
@@ -302,41 +302,41 @@ class GeWeChatMessage(ChatMessage):
     def __init__(self, msg, client: GewechatClient):
         super().__init__(msg)
         self.msg = msg
-        self.create_time = msg.get('Data', {}).get('CreateTime', 0)
-        if not msg.get('Data'):
-            logger.warning(f"[gewechat] Missing 'Data' in message")
+        self.create_time = msg.get('data', {}).get('CreateTime', 0)
+        if not msg.get('data'):
+            logger.warning(f"[gewechat] Missing 'data' in message")
             return
-        if 'NewMsgId' not in msg['Data']:
+        if 'NewMsgId' not in msg['data']:
             logger.warning(f"[gewechat] Missing 'NewMsgId' in message data")
             return
-        self.msg_id = msg['Data']['NewMsgId']
-        self.is_group = True if "@chatroom" in msg['Data']['FromUserName']['string'] else False
+        self.msg_id = msg['data']['NewMsgId']
+        self.is_group = True if "@chatroom" in msg['data']['FromUserName']['string'] else False
 
         notes_join_group = ["加入群聊", "加入了群聊", "invited", "joined"]  # 可通过添加对应语言的加入群聊通知中的关键词适配更多
         notes_bot_join_group = ["邀请你", "invited you", "You've joined", "你通过扫描"]
 
         self.client = client
-        msg_type = msg['Data']['MsgType']
+        msg_type = msg['data']['MsgType']
         self.app_id = conf().get("gewechat_app_id")
 
-        self.from_user_id = msg['Data']['FromUserName']['string']
-        self.to_user_id = msg['Data']['ToUserName']['string']
+        self.from_user_id = msg['data']['FromUserName']['string']
+        self.to_user_id = msg['data']['ToUserName']['string']
         self.other_user_id = self.from_user_id
 
         # 检查是否是公众号等非用户账号的消息
-        if self._is_non_user_message(msg['Data'].get('MsgSource', ''), self.from_user_id):
+        if self._is_non_user_message(msg['data'].get('MsgSource', ''), self.from_user_id):
             self.ctype = ContextType.NON_USER_MSG
-            self.content = msg['Data']['Content']['string']
+            self.content = msg['data']['Content']['string']
             logger.debug(f"[gewechat] detected non-user message from {self.from_user_id}: {self.content}")
             return
 
         if msg_type == 1:  # Text message
             self.ctype = ContextType.TEXT
-            self.content = msg['Data']['Content']['string']
+            self.content = msg['data']['Content']['string']
         elif msg_type == 34:  # Voice message
             self.ctype = ContextType.VOICE
-            if 'ImgBuf' in msg['Data'] and 'buffer' in msg['Data']['ImgBuf'] and msg['Data']['ImgBuf']['buffer']:
-                silk_data = base64.b64decode(msg['Data']['ImgBuf']['buffer'])
+            if 'ImgBuf' in msg['data'] and 'buffer' in msg['data']['ImgBuf'] and msg['data']['ImgBuf']['buffer']:
+                silk_data = base64.b64decode(msg['data']['ImgBuf']['buffer'])
                 silk_file_name = f"voice_{str(uuid.uuid4())}.silk"
                 silk_file_path = TmpDir().path() + silk_file_name
                 with open(silk_file_path, "wb") as f:
@@ -349,7 +349,7 @@ class GeWeChatMessage(ChatMessage):
             self._prepare_fn = self.download_image
         elif msg_type == 49:  # 引用消息，小程序，公众号等
             # After getting content_xml
-            content_xml = msg['Data']['Content']['string']
+            content_xml = msg['data']['Content']['string']
             # Find the position of '<?xml' declaration and remove any prefix
             xml_start = content_xml.find('<?xml version=')
             if xml_start != -1:
@@ -393,11 +393,11 @@ class GeWeChatMessage(ChatMessage):
             # 1. 打开/退出某个聊天窗口
             # 是微信客户端的状态同步消息，可以忽略
             self.ctype = ContextType.STATUS_SYNC
-            self.content = msg['Data']['Content']['string']
+            self.content = msg['data']['Content']['string']
             return
         elif msg_type == 10002:  # Group System Message
             if self.is_group:
-                content = msg['Data']['Content']['string']
+                content = msg['data']['Content']['string']
                 if any(note_bot_join_group in content for note_bot_join_group in notes_bot_join_group):  # 邀请机器人加入群聊
                     logger.warn("机器人加入群聊消息，不处理~")
                     pass
@@ -448,7 +448,7 @@ class GeWeChatMessage(ChatMessage):
             # 群聊信息结构
             """
             {
-                "Data": {
+                "data": {
                     "Content": {
                         "string": "wxid_xxx:\n@name msg_content" // 发送消息人的wxid和消息内容(包含@name)
                     }
@@ -456,7 +456,7 @@ class GeWeChatMessage(ChatMessage):
             }
             """
             # 获取实际发送者wxid
-            self.actual_user_id = self.msg.get('Data', {}).get('Content', {}).get('string', '').split(':', 1)[0]  # 实际发送者ID
+            self.actual_user_id = self.msg.get('data', {}).get('Content', {}).get('string', '').split(':', 1)[0]  # 实际发送者ID
             # 从群成员列表中获取实际发送者信息
             """
             {
@@ -496,13 +496,13 @@ class GeWeChatMessage(ChatMessage):
             # 群聊at结构
             """
             {
-                'Data': {
+                'data': {
                     'MsgSource': '<msgsource>\n\t<atuserlist><![CDATA[,wxid_xxx,wxid_xxx]]></atuserlist>\n\t<pua>1</pua>\n\t<silence>0</silence>\n\t<membercount>3</membercount>\n\t<signature>V1_cqxXBat9|v1_cqxXBat9</signature>\n\t<tmp_node>\n\t\t<publisher-id></publisher-id>\n\t</tmp_node>\n</msgsource>\n',
                 },
             }
             """
             # 优先从MsgSource的XML中解析是否被at
-            msg_source = self.msg.get('Data', {}).get('MsgSource', '')
+            msg_source = self.msg.get('data', {}).get('MsgSource', '')
             self.is_at = False
             xml_parsed = False
             if msg_source:
@@ -519,7 +519,7 @@ class GeWeChatMessage(ChatMessage):
 
             # 只有在XML解析失败时才从PushContent中判断
             if not xml_parsed:
-                self.is_at = '在群聊中@了你' in self.msg.get('Data', {}).get('PushContent', '')
+                self.is_at = '在群聊中@了你' in self.msg.get('data', {}).get('PushContent', '')
                 logger.debug(f"[gewechat] Parse is_at from PushContent. self.is_at: {self.is_at}")
 
             # 如果是群消息，使用正则表达式去掉wxid前缀和@信息
@@ -544,7 +544,7 @@ class GeWeChatMessage(ChatMessage):
         try:
             try:
                 # 尝试下载高清图片
-                content_xml = self.msg['Data']['Content']['string']
+                content_xml = self.msg['data']['Content']['string']
                 # Find the position of '<?xml' declaration and remove any prefix
                 xml_start = content_xml.find('<?xml version=')
                 if xml_start != -1:
