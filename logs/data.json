@@ -60,7 +60,7 @@
         "ended_conversations": 0
     },
     "2025-03-05": {
-        "reply_count": 19,
+        "reply_count": 30,
         "prompt_usage": {
             "dify": 15829,
             "coze": 0,
@@ -68,5 +68,35 @@
         },
         "new_friends": 0,
         "ended_conversations": 0
+    },
+    "2025-03-06": {
+        "reply_count": 0,
+        "prompt_usage": {
+            "dify": 0,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
+    },
+    "2025-03-07": {
+        "reply_count": 46,
+        "prompt_usage": {
+            "dify": 147184,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
+    },
+    "2025-03-08": {
+        "reply_count": 16,
+        "prompt_usage": {
+            "dify": 65284,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 14
     }
 }

@@ -6,7 +6,12 @@ import os
 class DataMonitoring(dict):
     def __init__(self):
         super().__init__()
-        PROJECT_ROOT = sys.path[0]
+        if getattr(sys, 'frozen', False):
+            # 打包后的环境
+            PROJECT_ROOT = os.path.dirname(sys.executable)
+        else:
+            # 开发环境
+            PROJECT_ROOT = os.path.dirname(os.path.abspath(sys.argv[0]))
         self.DATA_FILE_PATH = os.path.join(PROJECT_ROOT, "logs", "data.json")
         self.load_data()
 

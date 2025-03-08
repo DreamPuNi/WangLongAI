@@ -17,14 +17,17 @@ from channel.sikulix.sikulix_message import SikuliXMessage
 class SikuliXChannel(ChatChannel):
     def __init__(self):
         # 启动 JVM，并加载 sikulixapi.jar
+
         if getattr(sys, 'frozen', False):
             # 打包后的环境
             PROJECT_ROOT = os.path.dirname(sys.executable)
         else:
             # 开发环境
             PROJECT_ROOT = os.path.dirname(os.path.abspath(sys.argv[0]))
-        self.jvm_path = jpype.getDefaultJVMPath()
-        self.sikulix_jar_path = os.path.join(PROJECT_ROOT,"lib","sikulix","sikulixide-2.0.5-win.jar")
+        #self.jvm_path = jpype.getDefaultJVMPath()
+        self.jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll"
+        #self.sikulix_jar_path = os.path.join(PROJECT_ROOT,"lib","sikulix","sikulixide-2.0.5-win.jar")
+        self.sikulix_jar_path = r"D:\Program\WangLongAI-1\lib\sikulix\sikulixide-2.0.5-win.jar"
         logger.info(f"JVM path: {self.jvm_path}, sikulix_jar_path:{self.sikulix_jar_path}")
         super().__init__()
         jpype.startJVM(self.jvm_path, classpath=[self.sikulix_jar_path])
@@ -211,7 +214,7 @@ class SikuliXChannel(ChatChannel):
             self.today_counter = 0
         self.today_counter += 1
         formatted_counter = f"{self.today_counter:02d}"
-        remark = f"留资{self.current_date}-{formatted_counter}-"
+        remark = f"{self.current_date}-{formatted_counter}-留资"
         return remark
 
     def _get_formatted_reply_if_needed(self,message):

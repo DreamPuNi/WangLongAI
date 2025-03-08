@@ -118,6 +118,9 @@ available_setting = {
     "coze_return_show_img": "false",
     # wework的通用配置
     "wework_smart": True,  # 配置wework是否使用已登录的企业微信，False为多开
+    # wecommix设置
+    "skip_ai_keywords": "",  # 跳过AI处理的备注关键词
+    "wecommix_broadcast": False,
     # 语音设置
     "speech_recognition": False,  # 是否开启语音识别
     "group_speech_recognition": False,  # 是否开启群组语音识别

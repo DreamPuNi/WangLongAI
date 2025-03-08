@@ -1,7 +1,7 @@
 {
     "page_num": 1,
     "page_size": 500,
-    "total": 18,
+    "total": 19,
     "total_page": 1,
     "user_list": [
         {
@@ -67,6 +67,22 @@
             "unionid": "ozynqskumvNnSSdPGaPOXs9Ej1bM",
             "user_id": "7881300210000617",
             "username": "哈喽🤩斌"
+        },
+        {
+            "acctid": "",
+            "add_time": 1741424828,
+            "avatar": "http://wx.qlogo.cn/mmhead/EWo3hwIVSD1jZEO9tLvE0gpILx8qU0FXJ65P1jjDlXMIHnFHYbmmIAuRt9zIlicicUwNjjNzHmrHE/0",
+            "conversation_id": "S:1688856140600643_7881300831231229",
+            "corp_id": "1970325134026788",
+            "mobile": "",
+            "nickname": "",
+            "position": "",
+            "realname": "",
+            "remark": "03.08-01-留资望龙（ai销售版）",
+            "sex": 1,
+            "unionid": "ozynqstnkaNw9fGQuOp3PO7AAQzs",
+            "user_id": "7881300831231229",
+            "username": "望龙（ai销售版）"
         },
         {
             "acctid": "",
@@ -206,7 +222,7 @@
             "nickname": "",
             "position": "",
             "realname": "",
-            "remark": "二月",
+            "remark": "12二月",
             "sex": 1,
             "unionid": "ozynqsiTlg_oEp-CkbEoqXGwgBA8",
             "user_id": "7881302023898533",
@@ -226,7 +242,7 @@
             "sex": 1,
             "unionid": "ozynqsurt_jVgNT83oAw6V_YpNYA",
             "user_id": "7881302158195199",
-            "username": "最后的莫西干"
+            "username": "阿猫阿狗"
         },
         {
             "acctid": "",

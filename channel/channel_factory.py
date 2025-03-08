@@ -54,6 +54,9 @@ def create_channel(channel_type) -> Channel:
     elif channel_type == "sikulix":
         from channel.sikulix.sikulix_channel import SikuliXChannel
         ch = SikuliXChannel()
+    elif channel_type == "wecommix":
+        from channel.wecommix.wecommix_channel import WecomMixChannel
+        ch = WecomMixChannel()
     else:
         raise RuntimeError
     ch.channel_type = channel_type

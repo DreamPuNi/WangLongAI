@@ -117,6 +117,7 @@ def main(page: ft.Page):
         page.window.destroy()
         # kill_process()
 
+    img = ft.Image(src="/tmp/login.png", width=150, height=150)
     def update_parameters(dynamic_content, config_class, e):
         current_select = e.control.value
         with open("config_grouping.json", "r", encoding="utf-8") as f:
@@ -136,7 +137,7 @@ def main(page: ft.Page):
                     scrollable_content.controls.append(
                         ft.Row([
                             ft.Container(
-                                content=ft.Image(src=avatar_path,width=150,height=150),
+                                content=img,
                                 margin=ft.margin.only(right=40)
                             ),
                             ft.Column(
@@ -152,13 +153,13 @@ def main(page: ft.Page):
                     scrollable_content.controls.append(
                         ft.Row([
                             ft.Container(
-                                content=ft.Image(src=url, width=150, height=150),
+                                content=ft.Image(src="/tmp/login.png", width=150, height=150),
                                 margin=ft.margin.only(right=40)
                             ),
                             ft.Column(
                                 [
-                                    ft.Text(value=f"请扫码登陆", size=16, color="#000000"),
-                                    ft.FilledButton(text="刷新状态", on_click=lambda e: check_gewechat_online()),
+                                    ft.Text(value=f"请先启动运行，然后在3秒后刷新状态，尝试扫码，如果提示二维码过期，请重新刷新状态", size=16, color="#000000"),
+                                    ft.FilledButton(text="刷新状态", on_click=load_qrcode),
                                 ]
                             )
                         ])
@@ -251,6 +252,10 @@ def main(page: ft.Page):
                 print(f"Error converting value for key '{key}': {e}")
                 return
             conf().set(key, converted_value)
+
+    def load_qrcode(e):
+        img.src = "/tmp/login.png"
+        img.update()
 
     def update_config(e):
         save_config()
@@ -364,7 +369,7 @@ def main(page: ft.Page):
             self.log_container = ft.Container(
                 content=ft.Column(
                     [
-                        ft.Text("运行日志", size=30, weight=ft.FontWeight.BOLD),
+                        ft.Text("运行日志", size=30, weight=ft.FontWeight.BOLD,color="#FFFFFF"),
                         self.log_view_container,
                     ]
                 ),
@@ -622,7 +627,8 @@ def main(page: ft.Page):
                                                 ft.dropdown.Option("gewechat"),
                                                 ft.dropdown.Option("sikulix"),
                                                 ft.dropdown.Option("wcf"),
-                                                ft.dropdown.Option("wework")
+                                                ft.dropdown.Option("wework"),
+                                                ft.dropdown.Option("wecommix")
                                             ],
                                             on_change=lambda e: update_parameters(
                                                 dynamic_content=channel_dynamic_content,
@@ -780,12 +786,14 @@ def main(page: ft.Page):
     realtime_data()
 
 def main_entry():
-    if not VerifyAccess().check_local_license():
-        win = Win()
-        win.mainloop()
-    else:
-        ft.app(target=main)
-
+    try:
+        if not VerifyAccess().check_local_license():
+            win = Win()
+            win.mainloop()
+        else:
+            ft.app(target=main)
+    except Exception as e:
+        print(e)
 
 # ==================================================
 # ==========>>>---    下面的不用看了   ---<<<==========

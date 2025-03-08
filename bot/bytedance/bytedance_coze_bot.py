@@ -43,7 +43,7 @@ class ByteDanceCozeBot(Bot):
             user_id = None
             # print(f"other user nickname:{context["msg"].other_user_nickname}")
             # print(f"other user nickname:{context["msg"].other_user_id}")
-            if channel_type in ["wx", "wework", "gewechat","sikulix","wcf"]:
+            if channel_type in ["wx", "wework", "gewechat","sikulix","wcf","wecommix"]:
                 user_id = context["msg"].other_user_nickname
                 if user_id is None or user_id == '':
                     user_id = context["msg"].actual_user_nickname

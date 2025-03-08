@@ -74,6 +74,18 @@
         "describe": "配置wework是否使用已登录的企业微信，False为多开",
         "type": "bool"
       }
+    },
+    "wecommix": {
+      "wecommix_broadcast": {
+        "tittle": "是否开启群发",
+        "describe": "是否开启群发",
+        "type": "bool"
+      },
+      "skip_ai_keywords": {
+        "tittle": "跳过AI的关键词",
+        "describe": "当用户的备注包含此关键词时，不调用AI",
+        "type": "str"
+      }
     }
   },
   "model":{
@@ -92,9 +104,41 @@
         "tittle": "Dify应用类型",
         "describe": "dify助手类型 chatbot(对应聊天助手或对话流)/agent(对应Agent)/workflow(对应工作流，则默认为chatbot",
         "type": "str"
+      },
+      "dify_conversation_max_messages": {
+        "tittle": "Dify最大消息数",
+        "describe": "dify目前不支持设置历史消息长度，暂时使用超过最大消息数清空会话的策略，缺点是没有滑动窗口，会突然丢失历史消息，当设置的值小于等于0，则不限制历史消息长度",
+        "type": "int"
+      },
+      "dify_error_reply": {
+        "tittle": "Dify错误回复",
+        "describe": "当Dify返回错误时的回复",
+        "type": "str"
       }
     },
     "coze": {
+      "coze_api_base": {
+        "tittle": "Coze地址",
+        "describe": "Coze的API地址",
+        "type": "str"
+      },
+      "coze_api_key": {
+        "tittle": "Coze密钥",
+        "describe": "Coze的API密钥",
+        "type": "str"
+      },
+      "coze_bot_id": {
+        "tittle": "CozeBotID",
+        "describe": "你的Coze机器人ID",
+        "type": "str"
+      },
+      "coze_return_show_img": {
+        "tittle": "Coze_return_show_img",
+        "describe": "Coze_return_show_img",
+        "type": "bool"
+      }
+    },
+    "linkai-holdon": {
       "coze_api_base": {
         "tittle": "Coze地址",
         "describe": "Coze的API地址",

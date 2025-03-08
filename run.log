@@ -146,3 +146,973 @@
 [INFO][2025-03-05 11:37:22][message_buffer.py:38] - Reset timer and add message 0b3b0d0e3ad0a304e53f wait for 3 seconds.
 [INFO][2025-03-05 11:37:25][dify_bot.py:35] - [DIFY] query=[{'assistant': '在的老板，想了解项目吗？'}, {'望龙（ai销售版）': '你好'}, {'望龙（ai销售版）': '我是准备旅游的'}, {'assistant': '嗨喽 您好，您是打算近期来三亚玩吗?'}, {'望龙（ai销售版）': '是的，打算下个月去下'}, {'assistant': '好的 了解一下 您看下什么时候过来玩?大概是几大几小一起过来呢?我这边也好根据您的抵达时间来给您规划行程'}, {'望龙（ai销售版）': '一大一小两个人，报价多少呢'}]
 [INFO][2025-03-05 11:37:31][sikulix_channel.py:170] - Ready to reply: 「好的 您这边方便留个微信号或者电话么?因为这边用的是企业微信号，是没办法给您发咱们的行程路线和报价，发了您也是看不到信息的」「所以要用旅游业务微信号 来添加您 给您介绍行程路线和报价给您 让您这边对三亚有一个全新的了解 您辛苦发一下」
+[INFO][2025-03-05 18:01:29][config.py:338] - [INIT] load config: {'channel_type': 'sikulix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-05 18:01:29][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-05 18:02:16][config.py:351] - [Config] Configuration saved.
+[INFO][2025-03-05 18:02:49][config.py:351] - [Config] Configuration saved.
+[INFO][2025-03-05 18:03:02][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-05 18:03:02][config.py:267] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-05 18:03:02][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-05 18:03:02][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 77454c4c65a94089919faffcc5d58749, app_id: wx_VzTqgHBeCxViPUHpEqbnT, download_url: http://192.168.31.235:2532/download
+[INFO][2025-03-05 18:03:02][plugin_manager.py:49] - Loading plugins config...
+[INFO][2025-03-05 18:03:02][plugin_manager.py:87] - Scaning plugins ...
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2025-03-05 18:03:02][plugin_manager.py:40] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2025-03-05 18:03:02][plugin_manager.py:112] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[INFO][2025-03-05 18:03:02][godcmd.py:191] - [Godcmd] 因未设置口令，本次的临时口令为5126。
+[INFO][2025-03-05 18:03:02][godcmd.py:207] - [Godcmd] inited
+[INFO][2025-03-05 18:03:02][keyword.py:41] - [keyword] {}
+[INFO][2025-03-05 18:03:02][keyword.py:43] - [keyword] inited.
+[INFO][2025-03-05 18:03:02][custom_dify_app.py:25] - [CustomDifyApp] config is None
+[INFO][2025-03-05 18:03:02][hello.py:37] - [Hello] inited
+[INFO][2025-03-05 18:03:02][finish.py:21] - [Finish] inited
+[INFO][2025-03-05 18:03:02][gewechat_channel.py:89] - [gewechat] sleep 3 seconds waiting for server to start, then set callback
+[INFO][2025-03-05 18:03:02][gewechat_channel.py:107] - [gewechat] start callback server: http://192.168.31.235:9919/v2/api/callback/collect, using port 9919
+[INFO][2025-03-05 18:03:05][gewechat_channel.py:97] - [gewechat] callback set successfully
+[INFO][2025-03-05 18:03:50][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:03:53][bridge.py:73] - create bot coze for chat
+[INFO][2025-03-05 18:03:55][bytedance_coze_bot.py:41] - [COZE] query=在吗
+[INFO][2025-03-05 18:04:03][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「在的老板」
+[INFO][2025-03-05 18:04:23][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:04:26][bytedance_coze_bot.py:41] - [COZE] query=你这边是做什么项目的？
+[INFO][2025-03-05 18:04:43][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「有减肥食谱养生粉、小红书债务优化、前端打粉、视频号等项目。 」
+[INFO][2025-03-05 18:05:02][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:05:05][bytedance_coze_bot.py:41] - [COZE] query=视频号是做什么呢
+[INFO][2025-03-05 18:05:20][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「教视频号引流打粉，利润千把块，数据好3 - 4千。 」
+[INFO][2025-03-05 18:05:36][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:05:40][bytedance_coze_bot.py:41] - [COZE] query=蝴蝶号怎么割？
+[INFO][2025-03-05 18:05:57][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「不太明白你说的“蝴蝶号怎么割”是什么意思🤣 能说清楚点不。 」
+[INFO][2025-03-05 18:06:35][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:06:38][bytedance_coze_bot.py:41] - [COZE] query=减肥怎么做呢
+[INFO][2025-03-05 18:06:52][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「在的老板，有减肥食谱养生粉项目比较适合你。 」
+[INFO][2025-03-05 18:07:11][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:07:14][bytedance_coze_bot.py:41] - [COZE] query=详细介绍一下减肥么
+[INFO][2025-03-05 18:07:40][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「减肥食谱养生粉项目，教视频号引流打粉，回收粉 25 一个，适合个人做，前期准备手机和电脑就行，个人准备 3 - 5 台设备。 」
+[INFO][2025-03-05 18:07:56][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:07:59][bytedance_coze_bot.py:41] - [COZE] query=学费多少啊
+[INFO][2025-03-05 18:08:11][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「不同项目学费不同，你想了解哪个项目？ 」
+[INFO][2025-03-05 18:08:22][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:08:25][bytedance_coze_bot.py:41] - [COZE] query=减肥的多少钱
+[INFO][2025-03-05 18:08:33][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「5980。」
+[INFO][2025-03-05 18:09:01][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:09:05][bytedance_coze_bot.py:41] - [COZE] query=包回本？
+[INFO][2025-03-05 18:09:13][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:09:16][bytedance_coze_bot.py:41] - [COZE] query=不赚钱退款吗
+[INFO][2025-03-05 18:09:23][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「这个根据个人能力和执行力决定的，只要你跟着我这边操作走，回本还是比较简单的」
+[INFO][2025-03-05 18:09:33][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「这个根据个人能力和执行力决定的，只要跟着操作走，回本比较简单。 」
+[INFO][2025-03-05 18:10:01][message_buffer.py:38] - Reset timer and add message wxid_j9m9a65vqqvc22 wait for 3 seconds.
+[INFO][2025-03-05 18:10:04][bytedance_coze_bot.py:41] - [COZE] query=不回本包退吗兄弟
+[INFO][2025-03-05 18:10:23][gewechat_channel.py:144] - [gewechat] Do send text to wxid_j9m9a65vqqvc22: 「这个根据个人能力和执行力决定的，只要你跟着我这边操作走，回本还是比较简单的」
+[INFO][2025-03-07 11:12:05][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 11:12:05][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 11:12:07][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 11:12:17][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 11:12:17][config.py:267] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 11:12:17][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 11:12:17][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 77454c4c65a94089919faffcc5d58749, app_id: wx_VzTqgHBeCxViPUHpEqbnT, download_url: http://192.168.31.235:2532/download
+[INFO][2025-03-07 11:12:17][plugin_manager.py:49] - Loading plugins config...
+[INFO][2025-03-07 11:12:17][plugin_manager.py:87] - Scaning plugins ...
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2025-03-07 11:12:17][plugin_manager.py:40] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2025-03-07 11:12:17][plugin_manager.py:112] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[INFO][2025-03-07 11:12:17][godcmd.py:191] - [Godcmd] 因未设置口令，本次的临时口令为5974。
+[INFO][2025-03-07 11:12:17][godcmd.py:207] - [Godcmd] inited
+[INFO][2025-03-07 11:12:17][keyword.py:41] - [keyword] {}
+[INFO][2025-03-07 11:12:17][keyword.py:43] - [keyword] inited.
+[INFO][2025-03-07 11:12:17][custom_dify_app.py:25] - [CustomDifyApp] config is None
+[INFO][2025-03-07 11:12:17][hello.py:37] - [Hello] inited
+[INFO][2025-03-07 11:12:17][finish.py:21] - [Finish] inited
+[INFO][2025-03-07 11:12:19][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 11:12:22][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 11:13:05][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 11:13:05][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 11:13:07][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 11:13:16][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 11:13:17][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 11:13:17][config.py:267] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 11:13:17][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 11:13:17][gewechat_channel.py:62] - [gewechat] init: base_url: http://192.168.31.235:2531/v2/api, token: 77454c4c65a94089919faffcc5d58749, app_id: wx_VzTqgHBeCxViPUHpEqbnT, download_url: http://192.168.31.235:2532/download
+[INFO][2025-03-07 11:13:17][plugin_manager.py:49] - Loading plugins config...
+[INFO][2025-03-07 11:13:17][plugin_manager.py:87] - Scaning plugins ...
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2025-03-07 11:13:17][plugin_manager.py:40] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2025-03-07 11:13:17][plugin_manager.py:112] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[INFO][2025-03-07 11:13:17][godcmd.py:191] - [Godcmd] 因未设置口令，本次的临时口令为8431。
+[INFO][2025-03-07 11:13:17][godcmd.py:207] - [Godcmd] inited
+[INFO][2025-03-07 11:13:17][keyword.py:41] - [keyword] {}
+[INFO][2025-03-07 11:13:17][keyword.py:43] - [keyword] inited.
+[INFO][2025-03-07 11:13:17][custom_dify_app.py:25] - [CustomDifyApp] config is None
+[INFO][2025-03-07 11:13:17][hello.py:37] - [Hello] inited
+[INFO][2025-03-07 11:13:17][finish.py:21] - [Finish] inited
+[INFO][2025-03-07 11:13:18][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 11:13:20][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 11:18:24][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 11:18:24][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 11:18:33][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 11:19:06][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 11:19:06][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 11:19:07][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 13:32:45][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 13:32:45][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 13:34:53][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 13:34:53][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 13:36:16][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 13:36:16][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 13:37:34][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 13:37:34][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 20:31:05][config.py:338] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 20:31:05][config.py:267] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 20:31:10][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 22:19:19][config.py:340] - [INIT] load config: {'channel_type': 'gewechat', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wxid_black_list': [], 'wxid_recip_note': '', 'wecommix_broadcast': True}
+[INFO][2025-03-07 22:19:19][config.py:269] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 22:19:22][gewe_manage.py:31] - Gewechat用户未在线
+[INFO][2025-03-07 22:19:30][config.py:353] - [Config] Configuration saved.
+[INFO][2025-03-07 22:19:48][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:19:48][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:19:48][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[ERROR][2025-03-07 22:19:48][interface.py:28] - App startup failed!
+[ERROR][2025-03-07 22:19:48][interface.py:29] - cannot import name 'WeComMixChannel' from 'channel.wecommix.wecommix_channel' (D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py)
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\interface.py", line 26, in run
+    start_channel(channel_name)
+  File "D:\Program\WangLongAI\interface.py", line 32, in start_channel
+    channel = channel_factory.create_channel(channel_name)
+  File "D:\Program\WangLongAI\channel\channel_factory.py", line 58, in create_channel
+    from channel.wecommix.wecommix_channel import WeComMixChannel
+ImportError: cannot import name 'WeComMixChannel' from 'channel.wecommix.wecommix_channel' (D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py)
+[INFO][2025-03-07 22:24:37][config.py:353] - [Config] Configuration saved.
+[INFO][2025-03-07 22:24:45][config.py:340] - [INIT] load config: {'channel_type': 'wework', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:24:45][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:24:45][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 22:24:45][plugin_manager.py:49] - Loading plugins config...
+[INFO][2025-03-07 22:24:45][plugin_manager.py:87] - Scaning plugins ...
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin CustomDifyApp_v0.2 registered, path=./plugins\custom_dify_app
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin JinaSum_v0.0.1 registered, path=./plugins\jina_sum
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin linkai_v0.1.0 registered, path=./plugins\linkai
+[INFO][2025-03-07 22:24:45][plugin_manager.py:40] - Plugin Role_v1.0 registered, path=./plugins\role
+[WARNING][2025-03-07 22:24:45][plugin_manager.py:112] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+[INFO][2025-03-07 22:24:45][godcmd.py:191] - [Godcmd] 因未设置口令，本次的临时口令为2591。
+[INFO][2025-03-07 22:24:45][godcmd.py:207] - [Godcmd] inited
+[INFO][2025-03-07 22:24:45][keyword.py:41] - [keyword] {}
+[INFO][2025-03-07 22:24:45][keyword.py:43] - [keyword] inited.
+[INFO][2025-03-07 22:24:45][custom_dify_app.py:25] - [CustomDifyApp] config is None
+[INFO][2025-03-07 22:24:45][hello.py:37] - [Hello] inited
+[INFO][2025-03-07 22:24:45][finish.py:21] - [Finish] inited
+[INFO][2025-03-07 22:24:45][wework_channel.py:190] - 等待登录······
+[INFO][2025-03-07 22:24:47][wework_channel.py:195] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 22:24:47][wework_channel.py:196] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-07 22:25:55][config.py:353] - [Config] Configuration saved.
+[INFO][2025-03-07 22:26:04][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:26:04][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:26:04][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 22:26:05][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 22:26:06][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 22:26:06][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-07 22:27:07][wecommix_channel.py:248] - wework程序初始化完成········
+[ERROR][2025-03-07 22:27:07][interface.py:28] - App startup failed!
+[ERROR][2025-03-07 22:27:07][interface.py:29] - The following arguments have not been supplied: context
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\interface.py", line 26, in run
+    start_channel(channel_name)
+  File "D:\Program\WangLongAI\interface.py", line 43, in start_channel
+    channel.startup()
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 251, in startup
+    self.scheduler.add_job(self.schedule_broadcast, 'interval', minutes=1)
+  File "D:\Program\0-venv\dow310_env\lib\site-packages\apscheduler\schedulers\base.py", line 501, in add_job
+    job = Job(self, **job_kwargs)
+  File "D:\Program\0-venv\dow310_env\lib\site-packages\apscheduler\job.py", line 62, in __init__
+    self._modify(id=id or uuid4().hex, **kwargs)
+  File "D:\Program\0-venv\dow310_env\lib\site-packages\apscheduler\job.py", line 195, in _modify
+    check_callable_args(func, args, kwargs)
+  File "D:\Program\0-venv\dow310_env\lib\site-packages\apscheduler\util.py", line 415, in check_callable_args
+    raise ValueError(
+ValueError: The following arguments have not been supplied: context
+[INFO][2025-03-07 22:30:17][config.py:353] - [Config] Configuration saved.
+[INFO][2025-03-07 22:30:25][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:30:25][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:30:25][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 22:30:26][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 22:30:27][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 22:30:27][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-07 22:31:27][wecommix_channel.py:248] - wework程序初始化完成········
+[INFO][2025-03-07 22:34:35][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:34:35][config.py:269] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 22:35:34][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:35:34][config.py:269] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 22:35:44][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:35:44][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:35:44][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 22:35:45][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 22:35:46][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 22:35:46][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-07 22:36:46][wecommix_channel.py:204] - 获取数据失败，重试第1次······
+[WARNING][2025-03-07 22:36:51][wecommix_channel.py:204] - 获取数据失败，重试第2次······
+[WARNING][2025-03-07 22:36:56][wecommix_channel.py:204] - 获取数据失败，重试第3次······
+[WARNING][2025-03-07 22:37:01][wecommix_channel.py:204] - 获取数据失败，重试第4次······
+[WARNING][2025-03-07 22:37:06][wecommix_channel.py:204] - 获取数据失败，重试第5次······
+[WARNING][2025-03-07 22:37:11][wecommix_channel.py:204] - 获取数据失败，重试第1次······
+[WARNING][2025-03-07 22:37:16][wecommix_channel.py:204] - 获取数据失败，重试第2次······
+[WARNING][2025-03-07 22:37:21][wecommix_channel.py:204] - 获取数据失败，重试第3次······
+[WARNING][2025-03-07 22:37:26][wecommix_channel.py:204] - 获取数据失败，重试第4次······
+[WARNING][2025-03-07 22:37:31][wecommix_channel.py:204] - 获取数据失败，重试第5次······
+[ERROR][2025-03-07 22:37:36][wecommix_channel.py:232] - 获取contacts或rooms失败，程序退出
+[ERROR][2025-03-07 22:37:36][interface.py:28] - App startup failed!
+[ERROR][2025-03-07 22:37:36][interface.py:29] - module 'os' has no attribute 'exit'
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\interface.py", line 26, in run
+    start_channel(channel_name)
+  File "D:\Program\WangLongAI\interface.py", line 43, in start_channel
+    channel.startup()
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 234, in startup
+    os.exit(0)
+AttributeError: module 'os' has no attribute 'exit'. Did you mean: '_exit'?
+[INFO][2025-03-07 22:42:25][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:42:25][config.py:269] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 22:42:39][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:42:39][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:42:39][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 22:42:40][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 22:42:41][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 22:42:41][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-07 22:43:41][wecommix_channel.py:248] - wework程序初始化完成········
+[INFO][2025-03-07 22:44:00][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-07 22:44:03][bridge.py:73] - create bot coze for chat
+[INFO][2025-03-07 22:44:05][bytedance_coze_bot.py:41] - [COZE] query=在吗
+[INFO][2025-03-07 22:44:13][wecommix_channel.py:328] - [WX] sendMsg=Reply(type=TEXT, content=「在的老板」), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-07 22:45:01][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-07 22:45:04][bytedance_coze_bot.py:41] - [COZE] query=you
+finally
+awake
+W(QAQ)W
+[INFO][2025-03-07 22:45:16][wecommix_channel.py:328] - [WX] sendMsg=Reply(type=TEXT, content=「不太明白你意思，说清楚点，是想了解项目？ 」), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-07 22:45:50][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:45:50][config.py:269] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 22:46:03][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:46:03][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:46:03][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 22:46:03][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 22:46:05][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 22:46:05][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-07 22:47:05][wecommix_channel.py:204] - 获取数据失败，重试第1次······
+[WARNING][2025-03-07 22:47:10][wecommix_channel.py:204] - 获取数据失败，重试第2次······
+[WARNING][2025-03-07 22:47:15][wecommix_channel.py:204] - 获取数据失败，重试第3次······
+[INFO][2025-03-07 22:47:45][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:47:45][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:47:45][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 22:47:45][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 22:47:46][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 22:47:46][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-07 22:48:46][wecommix_channel.py:248] - wework程序初始化完成········
+[INFO][2025-03-07 22:49:16][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-07 22:49:19][bridge.py:73] - create bot coze for chat
+[INFO][2025-03-07 22:49:19][bytedance_coze_bot.py:41] - [COZE] query=对
+[INFO][2025-03-07 22:49:33][wecommix_channel.py:328] - [WX] sendMsg=Reply(type=TEXT, content=「不太明白你说“对”是什么意思，是想了解项目？ 」), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-07 22:58:05][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:58:05][config.py:269] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 22:58:31][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 22:58:31][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 22:58:31][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 22:58:31][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 22:58:32][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 22:58:32][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-07 22:59:32][wecommix_channel.py:248] - wework程序初始化完成········
+[INFO][2025-03-07 23:00:32][wecommix_channel.py:402] - 检查定时任务: 23:00
+[INFO][2025-03-07 23:01:32][wecommix_channel.py:402] - 检查定时任务: 23:01
+[INFO][2025-03-07 23:02:00][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 23:02:00][config.py:269] - [Config] User datas file not found, ignore.
+[INFO][2025-03-07 23:02:11][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 23:02:11][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 23:02:11][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 23:02:12][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 23:02:13][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 23:02:13][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-07 23:03:13][wecommix_channel.py:204] - 获取数据失败，重试第1次······
+[WARNING][2025-03-07 23:03:18][wecommix_channel.py:204] - 获取数据失败，重试第2次······
+[WARNING][2025-03-07 23:03:23][wecommix_channel.py:204] - 获取数据失败，重试第3次······
+[WARNING][2025-03-07 23:03:28][wecommix_channel.py:204] - 获取数据失败，重试第4次······
+[INFO][2025-03-07 23:03:51][config.py:340] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-07 23:03:51][config.py:269] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-07 23:03:51][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-07 23:03:51][wecommix_channel.py:220] - 等待登陆企业微信
+[INFO][2025-03-07 23:03:52][wecommix_channel.py:225] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-07 23:03:52][wecommix_channel.py:226] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-07 23:04:52][wecommix_channel.py:248] - wework程序初始化完成········
+[INFO][2025-03-07 23:05:52][wecommix_channel.py:402] - 检查定时任务: 23:05
+[INFO][2025-03-07 23:05:54][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-07 23:05:57][bridge.py:73] - create bot coze for chat
+[INFO][2025-03-07 23:05:57][bytedance_coze_bot.py:41] - [COZE] query=？
+[INFO][2025-03-07 23:06:09][wecommix_channel.py:328] - [WX] sendMsg=Reply(type=TEXT, content=「在的老板，有什么项目想了解？ 」), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:29:01][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': '', 'skip_ai_keywords': '1-*****1-'}
+[INFO][2025-03-08 02:29:01][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 02:38:05][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': '', 'skip_ai_keywords': '1-*****1-'}
+[INFO][2025-03-08 02:38:05][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 02:38:23][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****tGc', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'coze', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': '', 'skip_ai_keywords': '1-*****1-'}
+[INFO][2025-03-08 02:38:23][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 02:38:23][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 02:38:23][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 02:38:24][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 02:38:24][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 02:39:24][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 02:40:24][wecommix_channel.py:413] - 检查定时任务: 02:40
+[INFO][2025-03-08 02:41:05][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:41:09][bridge.py:73] - create bot coze for chat
+[INFO][2025-03-08 02:41:09][bytedance_coze_bot.py:41] - [COZE] query=在么
+[INFO][2025-03-08 02:41:17][wecommix_channel.py:332] - [WX] sendMsg=Reply(type=TEXT, content=「在的老板」), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:41:24][wecommix_channel.py:413] - 检查定时任务: 02:41
+[INFO][2025-03-08 02:42:24][wecommix_channel.py:413] - 检查定时任务: 02:42
+[INFO][2025-03-08 02:43:24][wecommix_channel.py:413] - 检查定时任务: 02:43
+[INFO][2025-03-08 02:44:08][config.py:354] - [Config] Configuration saved.
+[INFO][2025-03-08 02:44:41][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 02:44:41][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 02:44:41][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 02:44:42][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 02:44:43][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 02:44:43][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-08 02:45:43][wecommix_channel.py:205] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 02:45:48][wecommix_channel.py:205] - 获取数据失败，重试第2次······
+[WARNING][2025-03-08 02:45:53][wecommix_channel.py:205] - 获取数据失败，重试第3次······
+[INFO][2025-03-08 02:46:14][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 02:46:14][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 02:46:33][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 02:46:33][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 02:46:33][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 02:46:34][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 02:46:35][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 02:46:35][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 02:47:35][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 02:47:51][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:47:54][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 02:47:55][dify_bot.py:35] - [DIFY] query=hello
+[INFO][2025-03-08 02:48:20][wecommix_channel.py:332] - [WX] sendMsg=Reply(type=TEXT, content=【嗨喽 您好，您是打算近期来三亚玩吗?】), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:48:35][wecommix_channel.py:413] - 检查定时任务: 02:48
+[INFO][2025-03-08 02:49:35][wecommix_channel.py:413] - 检查定时任务: 02:49
+[INFO][2025-03-08 02:50:35][wecommix_channel.py:413] - 检查定时任务: 02:50
+[INFO][2025-03-08 02:50:43][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:50:46][dify_bot.py:35] - [DIFY] query=在吗
+[INFO][2025-03-08 02:50:51][wecommix_channel.py:332] - [WX] sendMsg=Reply(type=TEXT, content=【嗨喽 您好，您是打算近期来三亚玩吗?】), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:51:35][wecommix_channel.py:413] - 检查定时任务: 02:51
+[INFO][2025-03-08 02:51:48][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:51:51][dify_bot.py:35] - [DIFY] query=老板，在吗
+[INFO][2025-03-08 02:51:55][wecommix_channel.py:332] - [WX] sendMsg=Reply(type=TEXT, content=【嗨喽 您好，您是打算近期来三亚玩吗?】), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:52:35][wecommix_channel.py:413] - 检查定时任务: 02:52
+[INFO][2025-03-08 02:53:35][wecommix_channel.py:413] - 检查定时任务: 02:53
+[INFO][2025-03-08 02:54:35][wecommix_channel.py:413] - 检查定时任务: 02:54
+[INFO][2025-03-08 02:54:50][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:54:53][dify_bot.py:35] - [DIFY] query=hi
+[WARNING][2025-03-08 02:55:34][dify_bot.py:143] - [DIFY] payload={'inputs': {'user_id': 'S:1688856140600643_7881300831231229', 'user_name': '望龙（ai销售版）', 'room_id': '', 'room_name': ''}, 'query': "[{'望龙（ai销售版）': 'hello'}, {'望龙（ai销售版）': '在吗'}, {'望龙（ai销售版）': '老板，在吗'}, {'望龙（ai销售版）': 'hi'}]", 'response_mode': 'blocking', 'conversation_id': 'bdb53b4e-5d17-497c-b93d-1ad293c22c4d', 'user': '望龙（ai销售版）'} response text={"code": "invalid_param", "message": "Run failed: [openai_api_compatible] Error: API request failed with status code 500: {\"error\":{\"message\":\"\u670d\u52a1\u5668\u7e41\u5fd9\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5\uff01\",\"type\":\"chatanywhere_error\",\"param\":null,\"code\":\"500 INTERNAL_SERVER_ERROR\"}}", "status": 400}
+ status_code=400
+[INFO][2025-03-08 02:55:34][wecommix_channel.py:332] - [WX] sendMsg=Reply(type=TEXT, content=我暂时遇到了一些问题，请您稍后重试~), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:55:35][wecommix_channel.py:413] - 检查定时任务: 02:55
+[INFO][2025-03-08 02:55:43][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:55:46][dify_bot.py:35] - [DIFY] query=发个
+[INFO][2025-03-08 02:56:06][wecommix_channel.py:332] - [WX] sendMsg=Reply(type=TEXT, content=【嗨喽 您好，您是打算近期来三亚玩吗?】), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:56:19][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:56:22][dify_bot.py:35] - [DIFY] query=是的
+[INFO][2025-03-08 02:56:35][wecommix_channel.py:413] - 检查定时任务: 02:56
+[INFO][2025-03-08 02:56:43][wecommix_channel.py:332] - [WX] sendMsg=Reply(type=TEXT, content=【1.当前对话进行到了客户确认要来三亚的阶段。
+2.客户的出行信息已经获取到了客户有来三亚的意向。
+3.客户的出行信息还没有获取具体的出行时间和人数，需要进行发问。
+4.客户没有提出其他问题。
+5.在当前的对话阶段我应该询问客户的出行时间和人数。】
+
+「好的 了解一下 您看下什么时候过来玩?大概是几大几小一起过来呢?我这边也好根据您的抵达时间来给您规划行程」), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:57:35][wecommix_channel.py:413] - 检查定时任务: 02:57
+[INFO][2025-03-08 02:58:06][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:58:09][dify_bot.py:35] - [DIFY] query=明天，三个人
+[INFO][2025-03-08 02:58:29][wecommix_channel.py:332] - [WX] sendMsg=Reply(type=TEXT, content=【1.当前对话进行到了客户确认出行时间和人数的阶段。
+2.客户的出行信息已经获取到了具体的出行时间是明天，人数是三个人。
+3.客户的出行信息已获取完毕，不需要重复发问。
+4.客户没有提出其他问题。
+5.在当前的对话阶段我应该索要客户的联系方式。】
+
+「好的 您这边方便留个微信号或者电话么?我用业务微信号来添加您 将行程酒店价格发您参考一下」), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 02:58:35][wecommix_channel.py:413] - 检查定时任务: 02:58
+[INFO][2025-03-08 02:58:41][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 02:58:44][dify_bot.py:35] - [DIFY] query=4646465656
+[ERROR][2025-03-08 02:59:08][chat_channel.py:377] - [chat_channel] sendMsg error: dictionary update sequence element #0 has length 0; 2 is required
+[ERROR][2025-03-08 02:59:08][chat_channel.py:380] - dictionary update sequence element #0 has length 0; 2 is required
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\channel\chat_channel.py", line 375, in _send
+    self.send(reply, context)
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 323, in send
+    self.add_remark_task(user_nickname=nick_name,status="end")
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 378, in add_remark_task
+    self.remark_queue.put((user_nickname, status))
+  File "D:\Program\WangLongAI\lib\itchat\storage\messagequeue.py", line 13, in put
+    queue.Queue.put(self, Message(message))
+ValueError: dictionary update sequence element #0 has length 0; 2 is required
+[ERROR][2025-03-08 02:59:11][chat_channel.py:377] - [chat_channel] sendMsg error: dictionary update sequence element #0 has length 0; 2 is required
+[ERROR][2025-03-08 02:59:11][chat_channel.py:380] - dictionary update sequence element #0 has length 0; 2 is required
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\channel\chat_channel.py", line 375, in _send
+    self.send(reply, context)
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 323, in send
+    self.add_remark_task(user_nickname=nick_name,status="end")
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 378, in add_remark_task
+    self.remark_queue.put((user_nickname, status))
+  File "D:\Program\WangLongAI\lib\itchat\storage\messagequeue.py", line 13, in put
+    queue.Queue.put(self, Message(message))
+ValueError: dictionary update sequence element #0 has length 0; 2 is required
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\channel\chat_channel.py", line 375, in _send
+    self.send(reply, context)
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 323, in send
+    self.add_remark_task(user_nickname=nick_name,status="end")
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 378, in add_remark_task
+    self.remark_queue.put((user_nickname, status))
+  File "D:\Program\WangLongAI\lib\itchat\storage\messagequeue.py", line 13, in put
+    queue.Queue.put(self, Message(message))
+ValueError: dictionary update sequence element #0 has length 0; 2 is required
+[ERROR][2025-03-08 02:59:17][chat_channel.py:377] - [chat_channel] sendMsg error: dictionary update sequence element #0 has length 0; 2 is required
+[ERROR][2025-03-08 02:59:17][chat_channel.py:380] - dictionary update sequence element #0 has length 0; 2 is required
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\channel\chat_channel.py", line 375, in _send
+    self.send(reply, context)
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 323, in send
+    self.add_remark_task(user_nickname=nick_name,status="end")
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 378, in add_remark_task
+    self.remark_queue.put((user_nickname, status))
+  File "D:\Program\WangLongAI\lib\itchat\storage\messagequeue.py", line 13, in put
+    queue.Queue.put(self, Message(message))
+ValueError: dictionary update sequence element #0 has length 0; 2 is required
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\channel\chat_channel.py", line 375, in _send
+    self.send(reply, context)
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 323, in send
+    self.add_remark_task(user_nickname=nick_name,status="end")
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 378, in add_remark_task
+    self.remark_queue.put((user_nickname, status))
+  File "D:\Program\WangLongAI\lib\itchat\storage\messagequeue.py", line 13, in put
+    queue.Queue.put(self, Message(message))
+ValueError: dictionary update sequence element #0 has length 0; 2 is required
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\channel\chat_channel.py", line 375, in _send
+    self.send(reply, context)
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 323, in send
+    self.add_remark_task(user_nickname=nick_name,status="end")
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 378, in add_remark_task
+    self.remark_queue.put((user_nickname, status))
+  File "D:\Program\WangLongAI\lib\itchat\storage\messagequeue.py", line 13, in put
+    queue.Queue.put(self, Message(message))
+ValueError: dictionary update sequence element #0 has length 0; 2 is required
+[INFO][2025-03-08 02:59:35][wecommix_channel.py:413] - 检查定时任务: 02:59
+[INFO][2025-03-08 14:45:10][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 14:45:10][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 14:48:06][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 14:48:06][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 14:48:07][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 14:48:08][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 14:48:09][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 14:48:09][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 14:49:10][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 14:50:10][wecommix_channel.py:418] - 检查定时任务: 14:50
+[INFO][2025-03-08 14:51:10][wecommix_channel.py:418] - 检查定时任务: 14:51
+[INFO][2025-03-08 14:52:10][wecommix_channel.py:418] - 检查定时任务: 14:52
+[INFO][2025-03-08 14:53:10][wecommix_channel.py:418] - 检查定时任务: 14:53
+[INFO][2025-03-08 14:53:34][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 14:53:37][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 14:53:37][dify_bot.py:35] - [DIFY] query=8616533564
+[INFO][2025-03-08 14:53:47][wecommix_channel.py:323] - 对话结束，转人工
+[INFO][2025-03-08 14:53:47][wecommix_channel.py:384] - 添加备注任务: 客户： -> 状态：end
+[INFO][2025-03-08 14:53:52][wecommix_channel.py:333] - [WX] sendMsg=Reply(type=TEXT, content=【1. 当前对话进行到了开场阶段
+2. 尚未获取到客户的出行时间和人数
+3. 需要询问客户的出行时间和人数
+4. 客户未提出其他问题
+
+在当前的对话阶段，我应该先询问客户的出行时间和人数】
+
+「嗨喽 您好，您是打算近期来三亚玩吗?」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 14:54:10][wecommix_channel.py:418] - 检查定时任务: 14:54
+[INFO][2025-03-08 14:55:10][wecommix_channel.py:418] - 检查定时任务: 14:55
+[INFO][2025-03-08 14:55:30][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 14:55:30][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 14:55:39][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 14:55:39][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 14:55:39][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 14:55:41][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 14:55:42][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 14:55:42][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 14:56:42][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 14:56:49][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 14:56:52][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 14:56:52][dify_bot.py:35] - [DIFY] query=4646866554
+[INFO][2025-03-08 14:57:00][wecommix_channel.py:323] - :S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 14:57:00][wecommix_channel.py:384] - 添加备注任务: 客户： -> 状态：end
+[INFO][2025-03-08 14:57:06][wecommix_channel.py:333] - [WX] sendMsg=Reply(type=TEXT, content=【
+1.当前对话刚刚开始，还未进行任何互动。
+2.客户的出行信息还没有获取到。
+3.客户的出行时间和人数还没有获取，应该进行发问。
+4.客户没有提出其他问题。
+
+在当前的对话阶段，我应该先进行开场白。
+】
+
+「嗨喽 您好，您是打算近期来三亚玩吗?」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 14:57:42][wecommix_channel.py:418] - 检查定时任务: 14:57
+[INFO][2025-03-08 14:58:42][wecommix_channel.py:418] - 检查定时任务: 14:58
+[INFO][2025-03-08 14:59:04][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 14:59:04][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 14:59:20][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 14:59:20][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 14:59:20][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 14:59:21][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 14:59:22][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 14:59:22][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-08 15:00:22][wecommix_channel.py:205] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 15:00:27][wecommix_channel.py:205] - 获取数据失败，重试第2次······
+[WARNING][2025-03-08 15:00:32][wecommix_channel.py:205] - 获取数据失败，重试第3次······
+[WARNING][2025-03-08 15:00:37][wecommix_channel.py:205] - 获取数据失败，重试第4次······
+[WARNING][2025-03-08 15:00:42][wecommix_channel.py:205] - 获取数据失败，重试第5次······
+[WARNING][2025-03-08 15:00:47][wecommix_channel.py:205] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 15:00:52][wecommix_channel.py:205] - 获取数据失败，重试第2次······
+[WARNING][2025-03-08 15:00:57][wecommix_channel.py:205] - 获取数据失败，重试第3次······
+[WARNING][2025-03-08 15:01:02][wecommix_channel.py:205] - 获取数据失败，重试第4次······
+[WARNING][2025-03-08 15:01:07][wecommix_channel.py:205] - 获取数据失败，重试第5次······
+[ERROR][2025-03-08 15:01:12][wecommix_channel.py:235] - 获取contacts或rooms失败，程序退出
+[ERROR][2025-03-08 15:01:12][interface.py:28] - App startup failed!
+[ERROR][2025-03-08 15:01:12][interface.py:29] - module 'os' has no attribute 'exit'
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\interface.py", line 26, in run
+    start_channel(channel_name)
+  File "D:\Program\WangLongAI\interface.py", line 43, in start_channel
+    channel.startup()
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 237, in startup
+    os.exit(0)
+AttributeError: module 'os' has no attribute 'exit'. Did you mean: '_exit'?
+[INFO][2025-03-08 15:02:59][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:02:59][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 15:03:11][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:03:11][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 15:03:11][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 15:03:11][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 15:03:12][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 15:03:12][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-08 15:04:12][wecommix_channel.py:205] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 15:04:17][wecommix_channel.py:205] - 获取数据失败，重试第2次······
+[INFO][2025-03-08 15:04:38][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:04:38][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 15:05:14][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:05:14][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 15:05:14][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 15:05:15][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 15:05:16][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 15:05:16][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 15:06:16][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 15:07:16][wecommix_channel.py:418] - 检查定时任务: 15:07
+[INFO][2025-03-08 15:07:16][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 15:07:19][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 15:07:19][dify_bot.py:35] - [DIFY] query=552697866
+[INFO][2025-03-08 15:07:31][wecommix_channel.py:323] - :S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 15:07:31][wecommix_channel.py:384] - 添加备注任务: 客户： -> 状态：end
+[INFO][2025-03-08 15:07:36][wecommix_channel.py:333] - [WX] sendMsg=Reply(type=TEXT, content=【当前对话进行到了获取客户联系方式的阶段】
+
+「嗨喽 您好，您是打算近期来三亚玩吗?」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 15:08:16][wecommix_channel.py:418] - 检查定时任务: 15:08
+[INFO][2025-03-08 15:09:16][wecommix_channel.py:418] - 检查定时任务: 15:09
+[INFO][2025-03-08 15:10:16][wecommix_channel.py:418] - 检查定时任务: 15:10
+[INFO][2025-03-08 15:11:16][wecommix_channel.py:418] - 检查定时任务: 15:11
+[INFO][2025-03-08 15:12:16][wecommix_channel.py:418] - 检查定时任务: 15:12
+[INFO][2025-03-08 15:13:16][wecommix_channel.py:418] - 检查定时任务: 15:13
+[INFO][2025-03-08 15:14:16][wecommix_channel.py:418] - 检查定时任务: 15:14
+[INFO][2025-03-08 15:15:16][wecommix_channel.py:418] - 检查定时任务: 15:15
+[INFO][2025-03-08 15:16:16][wecommix_channel.py:418] - 检查定时任务: 15:16
+[INFO][2025-03-08 15:17:16][wecommix_channel.py:418] - 检查定时任务: 15:17
+[INFO][2025-03-08 15:18:16][wecommix_channel.py:418] - 检查定时任务: 15:18
+[INFO][2025-03-08 15:19:16][wecommix_channel.py:418] - 检查定时任务: 15:19
+[INFO][2025-03-08 15:20:16][wecommix_channel.py:418] - 检查定时任务: 15:20
+[INFO][2025-03-08 15:21:16][wecommix_channel.py:418] - 检查定时任务: 15:21
+[INFO][2025-03-08 15:22:16][wecommix_channel.py:418] - 检查定时任务: 15:22
+[INFO][2025-03-08 15:23:16][wecommix_channel.py:418] - 检查定时任务: 15:23
+[INFO][2025-03-08 15:24:16][wecommix_channel.py:418] - 检查定时任务: 15:24
+[INFO][2025-03-08 15:25:16][wecommix_channel.py:418] - 检查定时任务: 15:25
+[INFO][2025-03-08 15:26:16][wecommix_channel.py:418] - 检查定时任务: 15:26
+[INFO][2025-03-08 15:27:16][wecommix_channel.py:418] - 检查定时任务: 15:27
+[INFO][2025-03-08 15:28:16][wecommix_channel.py:418] - 检查定时任务: 15:28
+[INFO][2025-03-08 15:29:16][wecommix_channel.py:418] - 检查定时任务: 15:29
+[INFO][2025-03-08 15:29:49][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:29:49][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 15:30:05][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:30:05][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 15:30:05][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 15:30:06][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 15:30:07][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 15:30:07][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-08 15:31:07][wecommix_channel.py:205] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 15:31:12][wecommix_channel.py:205] - 获取数据失败，重试第2次······
+[WARNING][2025-03-08 15:31:17][wecommix_channel.py:205] - 获取数据失败，重试第3次······
+[WARNING][2025-03-08 15:31:22][wecommix_channel.py:205] - 获取数据失败，重试第4次······
+[WARNING][2025-03-08 15:31:27][wecommix_channel.py:205] - 获取数据失败，重试第5次······
+[WARNING][2025-03-08 15:31:32][wecommix_channel.py:205] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 15:31:37][wecommix_channel.py:205] - 获取数据失败，重试第2次······
+[WARNING][2025-03-08 15:31:42][wecommix_channel.py:205] - 获取数据失败，重试第3次······
+[WARNING][2025-03-08 15:31:47][wecommix_channel.py:205] - 获取数据失败，重试第4次······
+[WARNING][2025-03-08 15:31:52][wecommix_channel.py:205] - 获取数据失败，重试第5次······
+[ERROR][2025-03-08 15:31:57][wecommix_channel.py:235] - 获取contacts或rooms失败，程序退出
+[ERROR][2025-03-08 15:31:57][interface.py:28] - App startup failed!
+[ERROR][2025-03-08 15:31:57][interface.py:29] - module 'os' has no attribute 'exit'
+Traceback (most recent call last):
+  File "D:\Program\WangLongAI\interface.py", line 26, in run
+    start_channel(channel_name)
+  File "D:\Program\WangLongAI\interface.py", line 43, in start_channel
+    channel.startup()
+  File "D:\Program\WangLongAI\channel\wecommix\wecommix_channel.py", line 237, in startup
+    os.exit(0)
+AttributeError: module 'os' has no attribute 'exit'. Did you mean: '_exit'?
+[INFO][2025-03-08 15:32:44][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:32:44][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 15:33:01][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:33:01][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 15:33:01][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 15:33:01][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 15:33:03][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 15:33:03][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 15:34:03][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 15:34:57][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 15:35:00][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 15:35:00][dify_bot.py:35] - [DIFY] query=8643438335
+[INFO][2025-03-08 15:35:03][wecommix_channel.py:418] - 检查定时任务: 15:35
+[INFO][2025-03-08 15:35:11][wecommix_channel.py:323] - 望龙（ai销售版）:S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 15:35:11][wecommix_channel.py:384] - 添加备注任务: 客户：望龙（ai销售版） -> 状态：end
+[INFO][2025-03-08 15:35:17][wecommix_channel.py:333] - [WX] sendMsg=Reply(type=TEXT, content=【1.当前对话刚刚开始
+2.客户的出行信息还没有获取到
+3.需要询问客户的出行时间和人数
+4.客户没有提出其他问题
+5.】「嗨喽 您好，您是打算近期来三亚玩吗?」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 15:36:03][wecommix_channel.py:418] - 检查定时任务: 15:36
+[INFO][2025-03-08 15:37:03][wecommix_channel.py:418] - 检查定时任务: 15:37
+[INFO][2025-03-08 15:38:03][wecommix_channel.py:418] - 检查定时任务: 15:38
+[INFO][2025-03-08 15:39:03][wecommix_channel.py:418] - 检查定时任务: 15:39
+[INFO][2025-03-08 15:40:03][wecommix_channel.py:418] - 检查定时任务: 15:40
+[INFO][2025-03-08 15:41:03][wecommix_channel.py:418] - 检查定时任务: 15:41
+[INFO][2025-03-08 15:42:03][wecommix_channel.py:418] - 检查定时任务: 15:42
+[INFO][2025-03-08 15:43:03][wecommix_channel.py:418] - 检查定时任务: 15:43
+[INFO][2025-03-08 15:45:23][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:45:23][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 15:45:44][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:45:44][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 15:45:44][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 15:45:45][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 15:45:46][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 15:45:46][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 15:46:46][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 15:46:58][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 15:47:01][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 15:47:01][dify_bot.py:35] - [DIFY] query=868683534
+[INFO][2025-03-08 15:47:13][wecommix_channel.py:323] - 望龙（ai销售版）:S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 15:47:13][wecommix_channel.py:384] - 添加备注任务: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}
+[INFO][2025-03-08 15:47:19][wecommix_channel.py:333] - [WX] sendMsg=Reply(type=TEXT, content=【1. 当前对话刚开始，客户仅提供了联系方式。
+2. 客户的出行时间和人数还没有获取到。
+3. 我需要向客户询问具体的出行时间和人数。
+4. 客户没有提出其他问题。
+5. 在当前的对话阶段，我应该询问客户的出行时间和人数。】
+
+「嗨喽 您好，您是打算近期来三亚玩吗?」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 15:47:46][wecommix_channel.py:418] - 检查定时任务: 15:47
+[INFO][2025-03-08 15:48:46][wecommix_channel.py:418] - 检查定时任务: 15:48
+[INFO][2025-03-08 15:49:46][wecommix_channel.py:418] - 检查定时任务: 15:49
+[INFO][2025-03-08 15:50:46][wecommix_channel.py:418] - 检查定时任务: 15:50
+[INFO][2025-03-08 15:51:46][wecommix_channel.py:418] - 检查定时任务: 15:51
+[INFO][2025-03-08 15:52:46][wecommix_channel.py:418] - 检查定时任务: 15:52
+[INFO][2025-03-08 15:53:46][wecommix_channel.py:418] - 检查定时任务: 15:53
+[INFO][2025-03-08 15:54:52][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:54:52][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 15:55:04][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:55:04][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 15:55:04][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 15:55:04][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 15:55:06][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 15:55:06][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-08 15:56:06][wecommix_channel.py:205] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 15:56:11][wecommix_channel.py:205] - 获取数据失败，重试第2次······
+[WARNING][2025-03-08 15:56:16][wecommix_channel.py:205] - 获取数据失败，重试第3次······
+[WARNING][2025-03-08 15:56:21][wecommix_channel.py:205] - 获取数据失败，重试第4次······
+[INFO][2025-03-08 15:56:34][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:56:34][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 15:56:34][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 15:56:35][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 15:56:36][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 15:56:36][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-08 15:57:36][wecommix_channel.py:205] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 15:57:41][wecommix_channel.py:205] - 获取数据失败，重试第2次······
+[WARNING][2025-03-08 15:57:46][wecommix_channel.py:205] - 获取数据失败，重试第3次······
+[INFO][2025-03-08 15:58:08][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 15:58:08][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 15:58:08][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 15:58:08][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 15:58:09][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 15:58:09][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 15:59:09][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 15:59:31][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 15:59:34][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 15:59:34][dify_bot.py:35] - [DIFY] query=768386844
+[INFO][2025-03-08 15:59:46][wecommix_channel.py:324] - 望龙（ai销售版）:S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 15:59:46][wecommix_channel.py:386] - [队列内容] 当前队列数据: [<Message: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}>]
+[INFO][2025-03-08 15:59:46][wecommix_channel.py:387] - [队列状态] 当前队列大小: 1
+[INFO][2025-03-08 15:59:46][wecommix_channel.py:388] - 添加备注任务: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}
+[INFO][2025-03-08 15:59:51][wecommix_channel.py:334] - [WX] sendMsg=Reply(type=TEXT, content=【1. 当前对话已经开始，但没有具体内容。
+2. 客户的出行信息还未获取。
+3. 需要发问客户的出行时间和人数。
+4. 客户没有提出其他问题。
+5. 需要进行开场白。】
+
+「嗨喽 您好，您是打算近期来三亚玩吗?」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 16:00:09][wecommix_channel.py:422] - 检查定时任务: 16:00
+[INFO][2025-03-08 16:01:09][wecommix_channel.py:422] - 检查定时任务: 16:01
+[INFO][2025-03-08 16:02:09][wecommix_channel.py:422] - 检查定时任务: 16:02
+[INFO][2025-03-08 16:03:09][wecommix_channel.py:422] - 检查定时任务: 16:03
+[INFO][2025-03-08 16:04:09][wecommix_channel.py:422] - 检查定时任务: 16:04
+[INFO][2025-03-08 16:06:30][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 16:06:30][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 16:06:51][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 16:06:51][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 16:06:51][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 16:06:53][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 16:06:54][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 16:06:54][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 16:07:54][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 16:07:54][wecommix_channel.py:466] - JVM path: C:\Program Files\Java\jdk-23\bin\server\jvm.dll, sikulix_jar_path:D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar
+[INFO][2025-03-08 16:07:56][wecommix_channel.py:500] - SikuliXWorker 线程已启动！
+[INFO][2025-03-08 16:08:39][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 16:08:42][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 16:08:42][dify_bot.py:35] - [DIFY] query=9764656864
+[INFO][2025-03-08 16:08:54][wecommix_channel.py:423] - 检查定时任务: 16:08
+[INFO][2025-03-08 16:09:01][wecommix_channel.py:325] - 望龙（ai销售版）:S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 16:09:01][wecommix_channel.py:387] - [队列内容] 当前队列数据: [<Message: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}>]
+[INFO][2025-03-08 16:09:01][wecommix_channel.py:388] - [队列状态] 当前队列大小: 1
+[INFO][2025-03-08 16:09:01][wecommix_channel.py:389] - 添加备注任务: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}
+[INFO][2025-03-08 16:09:21][wecommix_channel.py:335] - [WX] sendMsg=Reply(type=TEXT, content=【1.当前对话进行到了什么阶段？】
+当前对话刚刚开始，客户发送了联系方式。
+【2.客户的出行信息已经获取到了那些？获取到的就不要重复发问了】
+尚未获取客户的出行时间和人数。
+【3.客户的出行信息有哪些没有获取？是否应该进行发问】
+没有获取出行时间和人数，应该进行发问。
+【4.客户是否提出了其他问题？如果不能使用参考资料回答，就暂时跳过，禁止虚拟生成答案】
+没有提出其他问题。
+【5.在当前的对话阶段我应该输出怎样的回复】
+应该询问客户的出行时间和人数。
+
+「嗨喽 您好，您是打算近期来三亚玩吗? 您看下什么时候过来玩? 大概是几大几小一起过来呢? 我这边也好根据您的抵达时间来给您规划行程。」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 16:12:27][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 16:12:27][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 16:13:16][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 16:13:16][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 16:13:16][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 16:13:17][wecommix_channel.py:223] - 等待登陆企业微信
+[INFO][2025-03-08 16:13:18][wecommix_channel.py:228] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 16:13:18][wecommix_channel.py:229] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 16:14:18][wecommix_channel.py:251] - wework程序初始化完成········
+[INFO][2025-03-08 16:14:18][wecommix_channel.py:466] - JVM path: C:\Program Files\Java\jdk-23\bin\server\jvm.dll, sikulix_jar_path:D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar
+[INFO][2025-03-08 16:14:20][wecommix_channel.py:500] - SikuliXWorker 线程已启动！
+[INFO][2025-03-08 16:14:33][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 16:14:36][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 16:14:36][dify_bot.py:35] - [DIFY] query=123456789
+[INFO][2025-03-08 16:14:47][wecommix_channel.py:325] - 望龙（ai销售版）:S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 16:14:47][wecommix_channel.py:387] - [队列内容] 当前队列数据: [<Message: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}>]
+[INFO][2025-03-08 16:14:47][wecommix_channel.py:388] - [队列状态] 当前队列大小: 1
+[INFO][2025-03-08 16:14:47][wecommix_channel.py:389] - 添加备注任务: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}
+[INFO][2025-03-08 16:14:53][wecommix_channel.py:335] - [WX] sendMsg=Reply(type=TEXT, content=【思维链：
+1. 当前对话刚开始，还没有进行到具体的阶段。
+2. 客户的出行信息还没有获取到。
+3. 需要询问客户的出行时间和人数。
+4. 客户没有提出其他问题。
+
+在当前的对话阶段我应该输出怎样的回复】
+
+「嗨喽 您好，您是打算近期来三亚玩吗?」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 16:15:18][wecommix_channel.py:423] - 检查定时任务: 16:15
+[INFO][2025-03-08 16:16:18][wecommix_channel.py:423] - 检查定时任务: 16:16
+[INFO][2025-03-08 16:17:18][wecommix_channel.py:423] - 检查定时任务: 16:17
+[INFO][2025-03-08 16:18:18][wecommix_channel.py:423] - 检查定时任务: 16:18
+[INFO][2025-03-08 16:19:18][wecommix_channel.py:423] - 检查定时任务: 16:19
+[INFO][2025-03-08 16:56:45][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 16:56:45][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 16:56:45][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 16:56:46][wecommix_channel.py:224] - 等待登陆企业微信
+[INFO][2025-03-08 16:56:47][wecommix_channel.py:229] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 16:56:47][wecommix_channel.py:230] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 16:57:47][wecommix_channel.py:252] - wework程序初始化完成········
+[INFO][2025-03-08 16:57:47][wecommix_channel.py:467] - JVM path: C:\Program Files\Java\jdk-23\bin\server\jvm.dll, sikulix_jar_path:D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar
+[INFO][2025-03-08 16:57:48][wecommix_channel.py:501] - SikuliXWorker 线程已启动！
+[ERROR][2025-03-08 16:58:27][wecommix_channel.py:513] - 企业微信SikuliXWorker出现异常: 'SikuliXWorker' object has no attribute 'Key'
+[INFO][2025-03-08 17:03:51][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 17:03:51][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 17:03:51][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 17:03:53][wecommix_channel.py:224] - 等待登陆企业微信
+[INFO][2025-03-08 17:03:54][wecommix_channel.py:229] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 17:03:54][wecommix_channel.py:230] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[WARNING][2025-03-08 17:04:54][wecommix_channel.py:206] - 获取数据失败，重试第1次······
+[WARNING][2025-03-08 17:04:59][wecommix_channel.py:206] - 获取数据失败，重试第2次······
+[WARNING][2025-03-08 17:05:04][wecommix_channel.py:206] - 获取数据失败，重试第3次······
+[INFO][2025-03-08 17:05:36][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 17:05:36][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 17:05:36][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 17:05:36][wecommix_channel.py:224] - 等待登陆企业微信
+[INFO][2025-03-08 17:05:38][wecommix_channel.py:229] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 17:05:38][wecommix_channel.py:230] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 17:06:38][wecommix_channel.py:252] - wework程序初始化完成········
+[INFO][2025-03-08 17:06:38][wecommix_channel.py:467] - JVM path: C:\Program Files\Java\jdk-23\bin\server\jvm.dll, sikulix_jar_path:D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar
+[INFO][2025-03-08 17:06:39][wecommix_channel.py:504] - SikuliXWorker 线程已启动！
+[INFO][2025-03-08 17:07:08][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 17:07:11][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 17:07:11][dify_bot.py:35] - [DIFY] query=我是望龙（ai销售版）
+[INFO][2025-03-08 17:07:23][wecommix_channel.py:336] - [WX] sendMsg=Reply(type=TEXT, content=【1. 当前对话刚开始。
+2. 客户的出行信息还没有获取到。
+3. 客户的出行时间和人数没有获取，应该进行发问。
+4. 客户没有提出其他问题。
+5. 在当前的对话阶段，我应该进行开场白，询问客户是否打算近期来三亚。】
+
+「嗨喽 您好，您是打算近期来三亚玩吗?」), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 17:07:38][wecommix_channel.py:424] - 检查定时任务: 17:07
+[INFO][2025-03-08 17:07:56][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 17:07:59][dify_bot.py:35] - [DIFY] query=4653535644
+[INFO][2025-03-08 17:08:08][wecommix_channel.py:326] - 望龙（ai销售版）:S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 17:08:08][wecommix_channel.py:388] - [队列内容] 当前队列数据: [<Message: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}>]
+[INFO][2025-03-08 17:08:08][wecommix_channel.py:389] - [队列状态] 当前队列大小: 1
+[INFO][2025-03-08 17:08:08][wecommix_channel.py:390] - 添加备注任务: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}
+[INFO][2025-03-08 17:08:10][wecommix_channel.py:549] - Rename the customer to 望龙（ai销售版）
+[INFO][2025-03-08 17:08:13][wecommix_channel.py:336] - [WX] sendMsg=Reply(type=TEXT, content=【1. 当前对话刚开始。
+2. 客户的出行信息还没有获取到。
+3. 客户的出行时间和人数没有获取，应该进行发问。
+4. 客户没有提出其他问题。
+5. 在当前的对话阶段，我应该进行开场白，询问客户是否打算近期来三亚。】
+
+「嗨喽 您好，您是打算近期来三亚玩吗?」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 17:08:38][wecommix_channel.py:424] - 检查定时任务: 17:08
+[INFO][2025-03-08 17:09:12][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 17:09:15][dify_bot.py:35] - [DIFY] query=是的捏
+[INFO][2025-03-08 17:09:24][wecommix_channel.py:326] - 望龙（ai销售版）:S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 17:09:24][wecommix_channel.py:388] - [队列内容] 当前队列数据: [<Message: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}>]
+[INFO][2025-03-08 17:09:24][wecommix_channel.py:389] - [队列状态] 当前队列大小: 1
+[INFO][2025-03-08 17:09:24][wecommix_channel.py:390] - 添加备注任务: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}
+[INFO][2025-03-08 17:09:27][wecommix_channel.py:549] - Rename the customer to 望龙（ai销售版）
+[INFO][2025-03-08 17:09:38][wecommix_channel.py:424] - 检查定时任务: 17:09
+[INFO][2025-03-08 17:09:40][wecommix_channel.py:336] - [WX] sendMsg=Reply(type=TEXT, content=【1. 当前对话已经确认客户打算近期来三亚。
+2. 客户的出行信息还没有获取到。
+3. 客户的出行时间和人数没有获取，应该进行发问。
+4. 客户没有提出其他问题。
+5. 在当前的对话阶段，我应该继续询问客户的出行时间和人数。】
+
+「好的 了解一下 您看下什么时候过来玩?大概是几大几小一起过来呢?我这边也好根据您的抵达时间来给您规划行程」<end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 17:10:38][wecommix_channel.py:424] - 检查定时任务: 17:10
+[INFO][2025-03-08 17:11:13][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 17:11:16][dify_bot.py:35] - [DIFY] query=明天吧，两个人
+[INFO][2025-03-08 17:11:26][wecommix_channel.py:326] - 望龙（ai销售版）:S:1688856140600643_7881300831231229对话结束，转人工
+[INFO][2025-03-08 17:11:26][wecommix_channel.py:388] - [队列内容] 当前队列数据: [<Message: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}>]
+[INFO][2025-03-08 17:11:26][wecommix_channel.py:389] - [队列状态] 当前队列大小: 1
+[INFO][2025-03-08 17:11:26][wecommix_channel.py:390] - 添加备注任务: {'user_nickname': '望龙（ai销售版）', 'status': 'end'}
+[INFO][2025-03-08 17:11:30][wecommix_channel.py:549] - Rename the customer to 望龙（ai销售版）
+[INFO][2025-03-08 17:11:38][wecommix_channel.py:424] - 检查定时任务: 17:11
+[INFO][2025-03-08 17:11:39][wecommix_channel.py:336] - [WX] sendMsg=Reply(type=TEXT, content=【1. 当前对话已经确认客户的出行时间是明天，出行人数是两个人。
+2. 客户的出行时间和人数已经获取。
+3. 客户的出行信息已经完整。
+4. 客户没有提出其他问题。
+5. 在当前的对话阶段，我应该请求客户提供联系方式，以便发送行程和报价。】
+
+「好的 您这边方便留个微信号或者电话么?我用业务微信号来添加您 将行程酒店价格发您参考一下」<end><end>), receiver=S:1688856140600643_7881300831231229
+[INFO][2025-03-08 17:12:38][wecommix_channel.py:424] - 检查定时任务: 17:12
+[INFO][2025-03-08 17:13:38][wecommix_channel.py:424] - 检查定时任务: 17:13
+[INFO][2025-03-08 17:14:38][wecommix_channel.py:424] - 检查定时任务: 17:14
+[INFO][2025-03-08 17:15:38][wecommix_channel.py:424] - 检查定时任务: 17:15
+[INFO][2025-03-08 17:16:38][wecommix_channel.py:424] - 检查定时任务: 17:16
+[INFO][2025-03-08 17:17:38][wecommix_channel.py:424] - 检查定时任务: 17:17
+[INFO][2025-03-08 17:18:38][wecommix_channel.py:424] - 检查定时任务: 17:18
+[INFO][2025-03-08 17:19:38][wecommix_channel.py:424] - 检查定时任务: 17:19
+[INFO][2025-03-08 17:20:38][wecommix_channel.py:424] - 检查定时任务: 17:20
+[INFO][2025-03-08 17:21:38][wecommix_channel.py:424] - 检查定时任务: 17:21
+[INFO][2025-03-08 17:22:38][wecommix_channel.py:424] - 检查定时任务: 17:22
+[INFO][2025-03-08 17:23:38][wecommix_channel.py:424] - 检查定时任务: 17:23
+[INFO][2025-03-08 17:24:38][wecommix_channel.py:424] - 检查定时任务: 17:24
+[INFO][2025-03-08 17:25:38][wecommix_channel.py:424] - 检查定时任务: 17:25
+[INFO][2025-03-08 17:39:53][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 17:39:53][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 17:40:17][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 17:40:17][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 17:40:17][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 17:40:18][wecommix_channel.py:224] - 等待登陆企业微信
+[INFO][2025-03-08 17:40:19][wecommix_channel.py:229] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 17:40:19][wecommix_channel.py:230] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 17:41:19][wecommix_channel.py:252] - wework程序初始化完成········
+[INFO][2025-03-08 17:41:19][wecommix_channel.py:465] - JVM path: C:\Program Files\Java\jdk-23\bin\server\jvm.dll, sikulix_jar_path:D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar
+[INFO][2025-03-08 17:41:21][wecommix_channel.py:502] - SikuliXWorker 线程已启动！
+[INFO][2025-03-08 17:42:19][wecommix_channel.py:422] - 检查定时任务: 17:42
+[INFO][2025-03-08 17:43:19][wecommix_channel.py:422] - 检查定时任务: 17:43
+[INFO][2025-03-08 17:44:19][wecommix_channel.py:422] - 检查定时任务: 17:44
+[INFO][2025-03-08 17:45:19][wecommix_channel.py:422] - 检查定时任务: 17:45
+[INFO][2025-03-08 17:46:19][wecommix_channel.py:422] - 检查定时任务: 17:46
+[INFO][2025-03-08 17:47:19][wecommix_channel.py:422] - 检查定时任务: 17:47
+[INFO][2025-03-08 17:48:19][wecommix_channel.py:422] - 检查定时任务: 17:48
+[INFO][2025-03-08 17:49:06][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 17:49:09][bridge.py:73] - create bot dify for chat
+[INFO][2025-03-08 17:49:10][dify_bot.py:35] - [DIFY] query=hello
+[INFO][2025-03-08 17:53:21][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 17:53:21][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 17:54:21][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 17:54:21][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 17:54:21][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 17:54:23][wecommix_channel.py:224] - 等待登陆企业微信
+[INFO][2025-03-08 17:54:24][wecommix_channel.py:229] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 17:54:24][wecommix_channel.py:230] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 17:55:24][wecommix_channel.py:252] - wework程序初始化完成········
+[INFO][2025-03-08 17:55:24][wecommix_channel.py:466] - JVM path: C:\Program Files\Java\jdk-23\bin\server\jvm.dll, sikulix_jar_path:D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar
+[INFO][2025-03-08 17:55:27][wecommix_channel.py:503] - SikuliXWorker 线程已启动！
+[INFO][2025-03-08 17:56:24][wecommix_channel.py:423] - 检查定时任务: 17:56
+[INFO][2025-03-08 17:57:24][wecommix_channel.py:423] - 检查定时任务: 17:57
+[INFO][2025-03-08 17:58:24][wecommix_channel.py:423] - 检查定时任务: 17:58
+[INFO][2025-03-08 17:58:40][message_buffer.py:38] - Reset timer and add message S:1688856140600643_7881300831231229 wait for 3 seconds.
+[INFO][2025-03-08 18:07:43][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 18:07:43][config.py:270] - [Config] User datas file not found, ignore.
+[INFO][2025-03-08 18:07:57][config.py:341] - [INIT] load config: {'channel_type': 'wecommix', 'coze_api_base': 'https://api.coze.cn', 'coze_api_key': 'pat*****mRp', 'coze_bot_id': '7472418615191896074', 'debug': False, 'dify_api_base': 'http://localhost/v1', 'dify_api_key': 'app*****91b', 'dify_app_type': 'chatbot', 'gewechat_app_id': 'wx_VzTqgHBeCxViPUHpEqbnT', 'gewechat_base_url': 'http://192.168.31.235:2531/v2/api', 'gewechat_callback_url': 'http://192.168.31.235:9919/v2/api/callback/collect', 'gewechat_download_url': 'http://192.168.31.235:2532/download', 'gewechat_token': '77454c4c65a94089919faffcc5d58749', 'message_buffer_second': 3, 'model': 'dify', 'nick_name_black_list': [], 'sikulix_describe': 'wec', 'skip_ai_keywords': '1-*****1-', 'wecommix_broadcast': True, 'wxid_black_list': [], 'wxid_recip_note': ''}
+[INFO][2025-03-08 18:07:57][config.py:270] - [Config] User datas file not found, ignore.
+[WARNING][2025-03-08 18:07:57][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[INFO][2025-03-08 18:07:58][wecommix_channel.py:224] - 等待登陆企业微信
+[INFO][2025-03-08 18:08:00][wecommix_channel.py:229] - 登录信息:>>>user_id:1688856140600643>>>>>>>>name:何颂生
+[INFO][2025-03-08 18:08:00][wecommix_channel.py:230] - 静默延迟60s，等待客户端刷新数据，请勿进行任何操作······
+[INFO][2025-03-08 18:09:00][wecommix_channel.py:252] - wework程序初始化完成········
+[INFO][2025-03-08 18:09:00][wecommix_channel.py:474] - JVM path: C:\Program Files\Java\jdk-23\bin\server\jvm.dll, sikulix_jar_path:D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar
+[INFO][2025-03-08 18:09:02][wecommix_channel.py:511] - SikuliXWorker 线程已启动！
+[INFO][2025-03-08 18:09:11][wecommix_channel.py:273] - 检测到人工关键词:03.08-01-留资望龙（ai销售版）,跳过回复
+[INFO][2025-03-08 18:10:00][wecommix_channel.py:424] - 检查定时任务: 18:10
+[INFO][2025-03-08 18:11:00][wecommix_channel.py:424] - 检查定时任务: 18:11
