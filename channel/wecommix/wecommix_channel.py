@@ -11,21 +11,21 @@ import threading
 import pyperclip
 import jpype.imports
 from PIL import Image
+from queue import Queue
 from bridge.reply import *
 from bridge.context import *
 from channel.wecommix import run
-from config import conf,save_config
 from common.singleton import singleton
 from channel.wecommix.run import wework
 from common.time_check import time_checker
 from channel.chat_channel import ChatChannel
 from channel.wecommix.wecommix_message import *
 from common.utils import compress_imgfile, fsize
+from config import conf,save_config, get_broadcast_config
 from channel.wecommix.wecommix_message import WecomMixMessage
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from lib.itchat.storage import Queue
-
+ntwork.set_wework_exe_path(wework_version='4.0.8.6027')
 os.environ['ntwork_LOG'] = "ERROR"
 
 def get_wxid_by_name(room_members, group_wxid, name):
@@ -175,6 +175,7 @@ def all_msg_handler(wework_instance: ntwork.WeWork, message):
             return
         # 首先查找conversation_id，如果没有找到，则查找room_conversation_id
         conversation_id = message['data'].get('conversation_id', message['data'].get('room_conversation_id'))
+
         if conversation_id is not None:
             is_group = "R:" in conversation_id
             try:
@@ -259,19 +260,17 @@ class WecomMixChannel(ChatChannel):
         self.sikulix_thread.start()
         run.forever()
 
-
     @time_checker
     @_check
-    def handle_single(self, cmsg: ChatMessage): # 这里要添加消息的屏蔽词
-        if cmsg.from_user_id == cmsg.to_user_id:
-            # ignore self reply
+    def handle_single(self, cmsg: ChatMessage):
+        if cmsg.from_user_id == cmsg.to_user_id: # ignore self reply
             return
-        print("cmsg.from_user_nickname:",cmsg.from_user_nickname)
-        # v
+        # print("cmsg.from_user_nickname:",cmsg.from_user_nickname)
         user_marker = self.find_remarkname_by_coverid(cmsg.other_user_id)
-        if conf().get("skip_ai_keywords") in user_marker:
-            logger.info("检测到人工关键词:{},跳过回复".format(user_marker))
-            return
+        if conf().get("skip_ai_keywords"):
+            if conf().get("skip_ai_keywords") in user_marker:
+                logger.info("检测到人工关键词:{},跳过回复".format(user_marker))
+                return
         if cmsg.ctype == ContextType.VOICE:
             if not conf().get("speech_recognition"):
                 return
@@ -323,17 +322,20 @@ class WecomMixChannel(ChatChannel):
                 wework.send_room_at_msg(receiver, new_content, at_list)
                 # 这里带@的先不管
             else:
+                nick_name = self.find_nickname_by_coverid(receiver)
+                print("receiver:",receiver)
+                print("conf_receiver:",conf().user_datas[receiver])
+                conf().user_datas[receiver]['history'].append({ "assistant": reply.content})
                 if "<end>" in reply.content:  # 先判断是不是对话结束,如果是就转人工
                     data().update_stat("ended_conversations")
-                    nick_name = self.find_nickname_by_coverid(receiver)
                     logger.info(f"{nick_name}:{receiver}对话结束，转人工")
                     self.add_remark_task(user_nickname=nick_name,status="end")
-                    #self.send_transfer_notice(receiver, user)  # 执行通知函数
+                    # self.send_transfer_notice(receiver, user)  # 执行通知函数
                 reply_list = re.findall(r'「(.*?)」', reply.content)
                 data().update_stat("reply_count") if reply_list else None
                 for content in reply_list:
-                    sleep_time = len(content) * 0.3
-                    time.sleep(sleep_time)
+                    # sleep_time = len(content) * 0.3
+                    # time.sleep(sleep_time)
                     wework.send_text(receiver, content)
             # ==================>   在这里添加过滤器   <==================
             logger.info("[WX] sendMsg={}, receiver={}".format(reply, receiver))
@@ -382,6 +384,7 @@ class WecomMixChannel(ChatChannel):
             logger.info("[WX] sendFile={}, receiver={}".format(reply.content, receiver))
 
     def add_remark_task(self,user_nickname, status):
+        """添加备注任务"""
         message = {
             "user_nickname": user_nickname,
             "status": status
@@ -394,7 +397,7 @@ class WecomMixChannel(ChatChannel):
         定时群发事件
 
         Args:
-            直接在setting.json中配置定时任务
+            直接在setting.json中配置定时任务，图片的话<img>图片地址</img>
         """
         if not self.inited:
             logger.error("企业微信未初始化或联系人未获取")
@@ -405,24 +408,10 @@ class WecomMixChannel(ChatChannel):
         except Exception as e:
             logger.error("获取联系人失败: {}".format(e))
 
-        if getattr(sys, 'frozen', False):
-            # 打包后的环境
-            PROJECT_ROOT = os.path.dirname(sys.executable)
-        else:
-            # 开发环境
-            PROJECT_ROOT = os.path.dirname(os.path.abspath(sys.argv[0]))
-        setting_path = os.path.join(PROJECT_ROOT, "core","wecom_broadcast", "setting.json")
-
-        try:
-            with open(setting_path, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-        except Exception as e:
-            logger.error(f"加载配置文件失败: {e}")
-            return
+        broadcast_config = get_broadcast_config()
 
         now_time = datetime.datetime.now().strftime("%H:%M")
-        logger.info(f"检查定时任务: {now_time}")
-        for entry in config:
+        for entry in broadcast_config:
             if entry['time'] != now_time:
                 continue
 
@@ -441,6 +430,11 @@ class WecomMixChannel(ChatChannel):
                 remark_name = contact["remark"]
                 for msg in messages:
                     try:
+                        if "<img>" in msg:
+                            img_path = msg[len("<img>"):-len("</img>")]
+                            logger.debug(f"发送图片{img_path}至{remark_name}成功")
+                            wework.send_image(conversation_id, img_path)
+                            time.sleep(1)
                         wework.send_text(conversation_id,msg)
                         logger.debug(f"发送消息{msg}至{remark_name}成功")
                         time.sleep(1)
@@ -448,30 +442,34 @@ class WecomMixChannel(ChatChannel):
                         logger.error(f"发送消息{msg}至{remark_name}失败: {e}")
 
     def find_nickname_by_coverid(self,conversation_id):
+        """用对话ID找到其对应的昵称"""
         for contact in self.contacts.get("user_list",[]):
-            print("current contact:",contact)
+            # print("current contact:",contact)
             if contact["conversation_id"] == conversation_id:
                 return contact["username"]
         return None
 
     def find_remarkname_by_coverid(self,conversation_id):
+        """用对话ID找到其对应的备注名"""
         for contact in self.contacts.get("user_list",[]):
-            print("current contact:",contact)
+            # print("current contact:",contact)
             if contact["conversation_id"] == conversation_id:
                 return contact["remark"]
         return None
 
 class SikuliXWorker(threading.Thread):
     def __init__(self, task_queue):
+
         if getattr(sys, 'frozen', False):
             PROJECT_ROOT = os.path.dirname(sys.executable)
         else:
             PROJECT_ROOT = os.path.dirname(os.path.abspath(sys.argv[0]))
         self.jvm_path = jpype.getDefaultJVMPath()
-        #self.jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll"
+        self.jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll"
         self.sikulix_jar_path = os.path.join(PROJECT_ROOT,"lib","sikulix","sikulixide-2.0.5-win.jar")
-        #self.sikulix_jar_path = r"D:\Program\WangLongAI-1\lib\sikulix\sikulixide-2.0.5-win.jar"
+        # self.sikulix_jar_path = r"D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar"
         logger.info(f"JVM path: {self.jvm_path}, sikulix_jar_path:{self.sikulix_jar_path}")
+
         super().__init__()
         jpype.startJVM(self.jvm_path, classpath=[self.sikulix_jar_path])
         from org.sikuli.script import Screen, Pattern, Key, Location
@@ -513,10 +511,8 @@ class SikuliXWorker(threading.Thread):
             try:
                 if not self.task_queue.empty():
                     raw_data = self.task_queue.get()
-                    print("raw_data:",raw_data)
                     user_nickname = raw_data.get("user_nickname")
                     status = raw_data.get("status")
-                    print("user_nickname:",user_nickname)
                     self.update_customer_remark(user_nickname, status)
                 self.handle_friend_requests()
             except Exception as e:
@@ -529,7 +525,6 @@ class SikuliXWorker(threading.Thread):
             self.screen.click(self.need_verify_pattern)
             match = self.screen.exists(self.new_customer_pattern)
             if match is not None:
-                print("ckp-02")
                 self.screen.click(self.new_customer_pattern)
                 width, height = match.getW(), match.getH()
                 click_x = match.getX() + width * 4
@@ -537,7 +532,6 @@ class SikuliXWorker(threading.Thread):
                 location = self.Location(click_x, click_y)
                 self.screen.click(location)
                 while self.screen.exists(self.be_verify_pattern):
-                    print("ckp-02-1")
                     self.screen.click(self.be_verify_pattern)
                     self.screen.click(self.finish_verify_pattern)
                     self.screen.type(self.Key.DOWN)
@@ -547,28 +541,28 @@ class SikuliXWorker(threading.Thread):
 
     def update_customer_remark(self, nick_name, status):
         """更新客户备注"""
-        print("ckp-03")
+        # print("ckp-03")
         if self.screen.exists(self.search_box_pattern) is not None:
             self.screen.click(self.search_box_pattern)
-            print("ckp-04")
+            # print("ckp-04")
             pyperclip.copy(nick_name)
+            time.sleep(0.5)
             self.screen.type("v", self.Key.CTRL)
             logger.info("Rename the customer to {}".format(nick_name))
             if self.screen.exists(self.msg_moreinfo_pattern) is not None:
-                print("ckp-05")
                 self.screen.click(self.msg_moreinfo_pattern)
             if self.screen.exists(self.set_remark_pattern):
-                print("ckp-06")
                 self.screen.click(self.set_remark_pattern)
+                time.sleep(0.5)
                 self.screen.type(self.Key.HOME)
                 prefix = self._generate_name_remark()
                 pyperclip.copy(prefix)
                 self.screen.type("v", self.Key.CTRL)
+                time.sleep(0.5)
                 self.screen.type("\n")
         # 添加清除搜索框和点击空白
         match = self.screen.exists(self.cancer_search_pattern)
         if match:
-            print("ckp-07")
             self.screen.click(self.cancer_search_pattern)
             width, height = match.getW(), match.getH()
             click_x = match.getX() + width

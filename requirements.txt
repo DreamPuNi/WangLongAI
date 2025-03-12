@@ -22,3 +22,5 @@ wcferry==39.3.3.2
 # 企微定时消息
 schedule==1.2.2
 apscheduler==3.11.0
+# verify
+jaraco.functools

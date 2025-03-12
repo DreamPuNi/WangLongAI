@@ -52,7 +52,7 @@
     "2025-03-04": {
         "reply_count": 21,
         "prompt_usage": {
-            "dify": 40876,
+            "dify": 10040876,
             "coze": 0,
             "openai": 0
         },
@@ -62,7 +62,7 @@
     "2025-03-05": {
         "reply_count": 30,
         "prompt_usage": {
-            "dify": 15829,
+            "dify": 1005829,
             "coze": 0,
             "openai": 0
         },
@@ -72,7 +72,7 @@
     "2025-03-06": {
         "reply_count": 0,
         "prompt_usage": {
-            "dify": 0,
+            "dify": 1000000,
             "coze": 0,
             "openai": 0
         },
@@ -82,7 +82,7 @@
     "2025-03-07": {
         "reply_count": 46,
         "prompt_usage": {
-            "dify": 147184,
+            "dify": 1147184,
             "coze": 0,
             "openai": 0
         },
@@ -92,11 +92,41 @@
     "2025-03-08": {
         "reply_count": 16,
         "prompt_usage": {
-            "dify": 65284,
+            "dify": 1165284,
             "coze": 0,
             "openai": 0
         },
         "new_friends": 0,
         "ended_conversations": 14
+    },
+    "2025-03-09": {
+        "reply_count": 3,
+        "prompt_usage": {
+            "dify": 1458056,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
+    },
+    "2025-03-11": {
+        "reply_count": 15,
+        "prompt_usage": {
+            "dify": 1006121,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 3
+    },
+    "2025-03-12": {
+        "reply_count": 2018,
+        "prompt_usage": {
+            "dify": 1178100,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 423,
+        "ended_conversations": 101
     }
 }

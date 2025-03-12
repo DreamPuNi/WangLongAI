@@ -5,6 +5,7 @@ import logging
 import os
 import pickle
 import copy
+import sys
 
 from common.log import logger
 
@@ -265,7 +266,7 @@ class Config(dict):
         try:
             with open(os.path.join(get_appdata_dir(), "user_datas.pkl"), "rb") as f:
                 self.user_datas = pickle.load(f)
-                logger.info("[Config] User datas loaded.")
+                logger.info(f"[Config] User datas loaded.{self.user_datas}")
         except FileNotFoundError as e:
             logger.info("[Config] User datas file not found, ignore.")
         except Exception as e:
@@ -376,6 +377,43 @@ def subscribe_msg():
     trigger_prefix = conf().get("single_chat_prefix", [""])[0]
     msg = conf().get("subscribe_msg", "")
     return msg.format(trigger_prefix=trigger_prefix)
+
+def get_broadcast_config():
+    """获取群发事件配置"""
+    if getattr(sys, 'frozen', False):
+        # 打包后的环境
+        PROJECT_ROOT = os.path.dirname(sys.executable)
+    else:
+        # 开发环境
+        PROJECT_ROOT = os.path.dirname(os.path.abspath(sys.argv[0]))
+    setting_path = os.path.join(PROJECT_ROOT, "lib", "sikulix", "broadcast_setting.json")
+
+    try:
+        with open(setting_path, 'r', encoding='utf-8') as f:
+            broadcast_config = json.load(f)
+        return broadcast_config
+    except Exception as e:
+        logger.error(f"加载配置文件失败: {e}")
+        return
+
+def save_broadcast_config(config):
+    """保存群发事件配置"""
+    if getattr(sys, 'frozen', False):
+        # 打包后的环境
+        PROJECT_ROOT = os.path.dirname(sys.executable)
+    else:
+        # 开发环境
+        PROJECT_ROOT = os.path.dirname(os.path.abspath(sys.argv[0]))
+    setting_path = os.path.join(PROJECT_ROOT, "lib", "sikulix", "broadcast_setting.json")
+
+    try:
+        with open(setting_path, 'w', encoding='utf-8') as f:
+            json.dump(config, f, indent=4, ensure_ascii=False)
+        return True
+    except Exception as e:
+        logger.error(f"保存配置文件失败: {e}")
+        return False
+
 
 # global plugin config
 plugin_config = {}

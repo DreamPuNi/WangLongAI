@@ -2,11 +2,33 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    page.title = "基本填充按钮"
-    page.add(
-        ft.FilledButton(text="填充按钮"),
-        ft.FilledButton("禁用按钮", disabled=True),
-        ft.FilledButton("带图标的按钮", icon="add"),
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    def handle_change(e):
+        page.add(ft.Text(f"TimePicker change: {time_picker.value}"))
+
+    def handle_dismissal(e):
+        page.add(ft.Text(f"TimePicker dismissed: {time_picker.value}"))
+
+    def handle_entry_mode_change(e):
+        page.add(ft.Text(f"TimePicker Entry mode changed to {e.entry_mode}"))
+
+    time_picker = ft.TimePicker(
+        confirm_text="Confirm",
+        error_invalid_text="Time out of range",
+        help_text="Pick your time slot",
+        on_change=handle_change,
+        on_dismiss=handle_dismissal,
+        on_entry_mode_change=handle_entry_mode_change,
     )
 
-ft.app(target=main)
+    page.add(
+        ft.ElevatedButton(
+            "Pick time",
+            icon=ft.Icons.TIME_TO_LEAVE,
+            on_click=lambda _: page.open(time_picker),
+        )
+    )
+
+
+ft.app(main)

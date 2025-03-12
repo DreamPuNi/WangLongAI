@@ -4,6 +4,7 @@ import time
 import pilk
 import json
 import datetime
+from config import conf
 from common.log import logger
 from ntwork.const import send_type
 from bridge.context import ContextType
@@ -143,12 +144,16 @@ class WecomMixMessage(ChatMessage):
             self.create_time = wework_msg['data'].get('send_time')
             self.is_group = is_group
             self.wework = wework
-
             if wework_msg['type'] == 11041: # 文本类型消息
+                conf().user_data = conf().get_user_data(self.msg_id)
+                conf().user_data["history"].append(
+                    {wework_msg['data'].get("sender_name"): wework_msg['data']['content']}
+                )
                 if any(substring in wework_msg['data']['content'] for substring in ("该消息类型暂不能展示", "不支持的消息类型")):
                     return
                 self.ctype = ContextType.TEXT
-                self.content = wework_msg['data']['content']
+                # self.content = wework_msg['data']['content']
+                self.content = str(conf().user_datas[self.msg_id]["history"])
             elif wework_msg['type'] == 11044: # 语音类消息，需要缓存文件
                 file_name = datetime.datetime.now().strftime('%Y%m%d%H%M%S') + ".silk"
                 base_name, _ = os.path.splitext(file_name) # base_name是不带后缀的文件名,_获取的是后缀，直接就扔了
@@ -213,7 +218,7 @@ class WecomMixMessage(ChatMessage):
             sender_id = data.get('sender')
             conversation_id = data.get('conversation_id')
             sender_name = data.get("sender_name")
-            print("=====data: ", data)
+            # print("=====data: ", data)
             self.from_user_id = user_id if sender_id == user_id else conversation_id
             self.from_user_nickname = nickname if sender_id == user_id else sender_name
             self.to_user_id = user_id

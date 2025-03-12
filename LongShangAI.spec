@@ -1,11 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
+from PyInstaller.utils.hooks import collect_data_files
+
+datas = [('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\flet', 'flet'), ('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\wcferry', 'wcferry'), ('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\wcferry\\\\sdk.dll', 'wcferry'), ('D:\\\\Program\\\\dify-on-wechat\\\\plugins', 'plugins')]
+datas += collect_data_files('ntwork')
 
 
 a = Analysis(
     ['interface.py'],
     pathex=[],
     binaries=[],
-    datas=[('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\flet', 'flet'), ('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\wcferry', 'wcferry'), ('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\wcferry\\\\sdk.dll', 'wcferry'), ('D:\\\\Program\\\\dify-on-wechat\\\\plugins', 'plugins')],
+    datas=datas,
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

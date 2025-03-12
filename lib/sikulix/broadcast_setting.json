@@ -1,0 +1,42 @@
+[
+    {
+        "time": "18:55",
+        "filter_by_remark": {
+            "include": "",
+            "exclude": "何颂生"
+        },
+        "msg_list": [
+            "我测试一下定时发送"
+        ]
+    },
+    {
+        "time": "01:00",
+        "filter_by_remark": {
+            "include": "望龙",
+            "exclude": "123321"
+        },
+        "msg_list": [
+            "我测试一下定时发送"
+        ]
+    },
+    {
+        "time": "06:00",
+        "filter_by_remark": {
+            "include": "暂不启用此选项",
+            "exclude": "暂不启用.此选项"
+        },
+        "msg_list": [
+            "6415241543"
+        ]
+    },
+    {
+        "time": "06:00",
+        "filter_by_remark": {
+            "include": "暂不启用此选项",
+            "exclude": "暂不启用.此选项"
+        },
+        "msg_list": [
+            ""
+        ]
+    }
+]

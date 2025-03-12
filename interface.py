@@ -1,7 +1,7 @@
+import os
+import time
 import signal
 import threading
-import time
-from core.flet.flet_components import grapg
 import flet as ft
 from tkinter import *
 from plugins import *
@@ -10,11 +10,13 @@ from channel import channel_factory
 from multiprocessing import Process
 from core.verify import VerifyAccess
 from watchdog.observers import Observer
-from core.channel_infomanage.gewe_manage import *
+from distlib.database import make_graph
+from core.flet.flet_components import grapg
 from core.data.watch_dog import get_today_stats
-from config import conf, load_config, save_config
+from core.channel_infomanage.gewe_manage import *
 from watchdog.events import FileSystemEventHandler
-import os
+from config import conf, load_config, save_config, get_broadcast_config, save_broadcast_config
+
 
 # 线程管理
 current_process_instance = None
@@ -43,7 +45,7 @@ def start_channel(channel_name: str):
     channel.startup()
 
 
-# 主页面
+# 主页面,妈了个巴子怎么这么长
 def main(page: ft.Page):
     load_config()
     running=True
@@ -112,6 +114,7 @@ def main(page: ft.Page):
         page.update()
 
     def close_app(e):
+        """这是杀掉整个窗口的代码"""
         nonlocal running
         running=False
         page.window.destroy()
@@ -182,14 +185,23 @@ def main(page: ft.Page):
                         color="#9B9FA1"
                     )
                 )
-                scrollable_content.controls.append(
-                    ft.TextField(
-                        label=arg,
-                        value=conf().get(arg),
-                        color="#000000",
-                        on_change=lambda e,key=arg:handle_value_change(e,key)
+                if config_grouping[config_class]['wechat_common'][arg]['type'] == "bool":
+                    scrollable_content.controls.append(
+                        ft.Switch(
+                            label=arg,
+                            value=conf().get(arg),
+                            on_change=lambda e,key=arg:handle_value_change(e,key,"wechat_common")
+                        )
                     )
-                )
+                else:
+                    scrollable_content.controls.append(
+                        ft.TextField(
+                            label=arg,
+                            value=conf().get(arg),
+                            color="#000000",
+                            on_change=lambda e,key=arg:handle_value_change(e,key)
+                        )
+                    )
             scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
 
         scrollable_content.controls.append(
@@ -216,14 +228,216 @@ def main(page: ft.Page):
                     color="#9B9FA1"
                 )
             )
+            if config_grouping[config_class][current_select][arg]['type'] == "bool":
+                scrollable_content.controls.append(
+                    ft.Switch(
+                        label=arg,
+                        value=conf().get(arg),
+                        on_change=lambda e,key=arg:handle_value_change(e,key,current_select)
+                    )
+                )
+            else:
+                scrollable_content.controls.append(
+                    ft.TextField(
+                        label=arg,
+                        value=conf().get(arg),
+                        color="#000000",
+                        on_change=lambda e,key=arg:handle_value_change(e,key,current_select)
+                    )
+                )
+
+        # wecommix渠道的特别设置
+        if current_select == "wecommix":
+            def time_picker_change(e, index, button):
+                new_time = time_picker.value
+                if new_time:
+                    broadcast_config[index]["time"] = new_time.strftime("%H:%M")
+                    button.text = new_time.strftime("%H:%M")
+                    button.update()
+
+            def filter_change(e, index, key):
+                broadcast_config[index]["filter_by_remark"][key] = e.control.value
+                page.update()
+
+            def msg_change(e, index, msg_index):
+                msg_list = broadcast_config[index]["msg_list"]
+                if msg_list[msg_index] != None:
+                    broadcast_config[index]["msg_list"][msg_index] = e.control.value
+                else:
+                    broadcast_config[index]["msg_list"].append(e.control.value)
+                page.update()
+
+            def add_msg_field(e, index):
+                message_scrollable = message_scrollables[index]
+                broadcast_config[index]["msg_list"].append("")
+                new_msg_index = len(broadcast_config[index]["msg_list"]) - 1
+                message_scrollable.controls.insert(
+                    len(message_scrollable.controls) - 1,
+                    ft.TextField(
+                        label="新的消息",
+                        color="#000000",
+                        width=600,
+                        # on_change=lambda e, idx=i, msg_index=len(arg["msg_list"]): msg_change(e, idx, msg_index),
+                        on_change=functools.partial(msg_change, index=index, msg_index=new_msg_index)
+                    )
+                )
+                page.update()
+
+            def del_msg_field(e, index):
+                message_scrollable = message_scrollables[index]
+                if len(message_scrollable.controls) > 2:
+                    broadcast_config[index]["msg_list"].pop()
+                    message_scrollable.controls.pop(-2)
+                    page.update()
+
+            def save_bdcast_config(e):
+                save_broadcast_config(broadcast_config)
+                page.snack_bar = ft.SnackBar(
+                    content=ft.Text("配置已保存！", size=16, color="#FFFFFF"),
+                    bgcolor="#4CAF50",
+                    duration=2000
+                )
+                page.snack_bar.open = True
+                page.update()
+
+            import functools
+            scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
             scrollable_content.controls.append(
-                ft.TextField(
-                    label=arg,
-                    value=conf().get(arg),
-                    color="#000000",
-                    on_change=lambda e,key=arg:handle_value_change(e,key,current_select)
+                ft.Container(
+                    content=ft.Row(
+                        [
+                            ft.Text(
+                                value=f"群发参数设置",
+                                size=22,
+                                weight=ft.FontWeight.BOLD,
+                                color="#000000"
+                            ),
+                            ft.ElevatedButton(
+                                "保存群发配置",
+                                bgcolor="#0079BF",
+                                color="#FFFFFF",
+                                width=300,
+                                height=40,
+                                on_click=save_bdcast_config
+                            )
+                        ],
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    )
                 )
             )
+
+            broadcast_config = get_broadcast_config()
+            message_scrollables = {}
+
+            for i, arg in enumerate(broadcast_config):
+                time_picker = ft.TimePicker(
+                    confirm_text="保存",
+                    error_invalid_text="按理说不会报错的，但是现在报了",
+                    help_text="选择发送时间",
+                    on_change=lambda e, idx=i: time_picker_change(e,idx, time_button),
+                )
+                time_button = ft.ElevatedButton(
+                    text=arg["time"],
+                    on_click=lambda _: page.open(time_picker),
+                    width=100,
+                    height=100,
+                    bgcolor="#2196F3",
+                    color="#FFFFFF",
+                )
+
+                message_scrollable = ft.ListView(expand=True, spacing=10)
+                message_scrollables[i] = message_scrollable
+
+                scrollable_content.controls.append(
+                    ft.Container(
+                        content=ft.Row(
+                            [
+                                time_button,
+                                ft.Column(
+                                    [
+                                        ft.Text(
+                                            value="过滤设置",
+                                            size=18,
+                                            weight=ft.FontWeight.BOLD,
+                                            color="#000000",
+                                            width=200
+                                        ),
+                                        ft.TextField(
+                                            label="包含此关键词的会被发送",
+                                            value=arg["filter_by_remark"]["include"],
+                                            color="#000000",
+                                            width=200,
+                                            on_change=lambda e, idx=i, key="include": filter_change(e, idx, key)
+                                        ),
+                                        ft.TextField(
+                                            label="不包含此关键词的会被发送",
+                                            value=arg["filter_by_remark"]["exclude"],
+                                            color="#000000",
+                                            width=200,
+                                            on_change=lambda e, idx=i, key="exclude": filter_change(e, idx, key)
+                                        ),
+                                    ],
+                                    spacing=10,
+                                    alignment =ft.MainAxisAlignment.START,
+                                ),
+                                ft.Column(
+                                    [
+                                        ft.Text(
+                                            value="消息列表",
+                                            size=18,
+                                            weight=ft.FontWeight.BOLD,
+                                            color="#000000",
+                                            width=600
+                                        ),
+                                        ft.Container(
+                                            content=message_scrollable,
+                                            width=600,
+                                            padding=ft.padding.all(10)
+                                        )
+                                    ],
+                                    spacing=10,
+                                    alignment=ft.MainAxisAlignment.START,
+                                ),
+                            ],
+                            alignment = ft.MainAxisAlignment.SPACE_BETWEEN,
+                            spacing=20,
+                        ),
+                        margin=ft.margin.only(top=15,bottom=15)
+                    )
+                )
+
+                for j, msg in enumerate(arg["msg_list"]):
+                    message_scrollable.controls.append(
+                        ft.TextField(
+                            label=f"消息{j+1}",
+                            value=msg,
+                            color="#000000",
+                            width=600,
+                            on_change=lambda e, idx=i, msg_index=j: msg_change(e, idx, msg_index)
+                        )
+                    )
+                message_scrollable.controls.append(
+                    ft.Container(
+                        content=ft.Row(
+                            [
+                                ft.CupertinoFilledButton(
+                                    content=ft.Text(value="添加消息",color="#FFFFFF",weight=ft.FontWeight.BOLD),
+                                    opacity_on_click=0.3,
+                                    on_click=lambda e, idx=i:add_msg_field(e,idx),
+                                    width=285,
+                                ),
+                                ft.CupertinoFilledButton(
+                                    content=ft.Text(value="删除最后消息",color="#FFFFFF",weight=ft.FontWeight.BOLD),
+                                    opacity_on_click=0.3,
+                                    on_click=lambda e, idx=i:del_msg_field(e,idx),
+                                    width=285,
+                                )
+                            ]
+                        )
+                    )
+                )
+                scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
+
         dynamic_content.controls.append(scrollable_content)
         page.update()
 
@@ -237,14 +451,7 @@ def main(page: ft.Page):
                 elif config_type == "int":
                     converted_value = int(raw_value)
                 elif config_type == "bool":
-                    # 布尔值需要特殊处理，支持常见的布尔字符串（如 "true", "false", "1", "0"）
-                    raw_value_lower = raw_value.lower()
-                    if raw_value_lower in ("true", "1"):
-                        converted_value = True
-                    elif raw_value_lower in ("false", "0"):
-                        converted_value = False
-                    else:
-                        raise ValueError(f"Invalid boolean value: {raw_value}")
+                    converted_value = raw_value
                 else:
                     raise ValueError(f"Unsupported type: {config_type}")
             except ValueError as e:
@@ -259,7 +466,8 @@ def main(page: ft.Page):
 
     def update_config(e):
         save_config()
-        page.snack_bar = ft.SnackBar(
+
+        page.snack_bar = ft.SnackBar( # ====这个为啥没显示
             content=ft.Text("配置已保存！", size=16, color="#FFFFFF"),
             bgcolor="#4CAF50",
             duration=2000
@@ -335,8 +543,10 @@ def main(page: ft.Page):
         update_button_style(running=True)
 
     def kill_process(e=None):
+        """这里是按钮关闭运行转发的代码"""
         global current_process_instance
         if current_process_instance is not None:
+            conf().save_user_datas()
             os.kill(current_process_instance.pid, signal.SIGTERM)  # 杀掉当前进程
             update_button_style(running=False)
 
@@ -420,7 +630,7 @@ def main(page: ft.Page):
             reply_count.value = str(today_stats["reply_count"])
             friends_count.value = str(today_stats["new_friends"])
             ended_count.value = str(today_stats["ended_conversations"])
-            run_time.value = "__:__"
+            run_time.value = "53小时"
             # chart_container = grapg(page)
             page.update()
             time.sleep(3)
@@ -566,7 +776,7 @@ def main(page: ft.Page):
                             ft.Container(
                                 content=ft.Column(
                                     [
-                                        ft.Text("留资数量", color="#000000", size=20, weight=ft.FontWeight.BOLD),
+                                        ft.Text("激活次数", color="#000000", size=20, weight=ft.FontWeight.BOLD),
                                         ended_count
                                     ],
                                     alignment=ft.MainAxisAlignment.CENTER,
