@@ -128,5 +128,15 @@
         },
         "new_friends": 423,
         "ended_conversations": 101
+    },
+    "2025-03-13": {
+        "reply_count": 10,
+        "prompt_usage": {
+            "dify": 0,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
     }
 }

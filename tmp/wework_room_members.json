@@ -102,5 +102,71 @@
         "page_size": 500,
         "total": 5,
         "total_page": 1
+    },
+    "R:1970325146986767": {
+        "conversation_id": "R:1970325146986767",
+        "member_list": [
+            {
+                "acctid": "WangLongBuBeiZhuLaiYiBuTongGuo",
+                "avatar": "http://wx.qlogo.cn/mmhead/LHdtlaBo22cKlzqvrE74gw5fqNjibkicypem6w09VicOLKtdp5picnC6q9ZlDvO8BTDWaxHO3xM5A5c/0",
+                "corp_id": "1970325146986767",
+                "invite_user_id": "1688856140599953",
+                "is_admin": 0,
+                "join_scene": 0,
+                "join_time": 1741790743,
+                "mobile": "",
+                "nickname": "",
+                "position": "",
+                "realname": "",
+                "remark": "",
+                "room_nickname": "",
+                "sex": 1,
+                "unionid": "ozynqsuRyXPEGyBEtfdwZnGr17xc",
+                "user_id": "1688855519674029",
+                "username": "望龙（不备注来意不通过"
+            },
+            {
+                "acctid": "ZhangDouDou",
+                "avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/znxOmia9TYGdrHIJib5gPtKjCBg3tyoSKhoUEB0RyJX2116sK24mXM4OsP7sSLiaTOH6QjKLIlJZ7rKByuERxTVVFfATaibYaNseFcWtBkzAw9g/0",
+                "corp_id": "1970325146986767",
+                "invite_user_id": "1688856140599953",
+                "is_admin": 0,
+                "join_scene": 0,
+                "join_time": 1710397048,
+                "mobile": "",
+                "nickname": "",
+                "position": "",
+                "realname": "张豆豆",
+                "remark": "",
+                "room_nickname": "",
+                "sex": 1,
+                "unionid": "ozynqstnkaNw9fGQuOp3PO7AAQzs",
+                "user_id": "1688856140599953",
+                "username": "张豆豆"
+            },
+            {
+                "acctid": "HeSongSheng",
+                "avatar": "https://wework.qpic.cn/wwpic3az/644626_aXqYsbW0SGq35nf_1702710206/0",
+                "corp_id": "1970325146986767",
+                "invite_user_id": "1688856140599953",
+                "is_admin": 0,
+                "join_scene": 0,
+                "join_time": 1710397126,
+                "mobile": "15929269926",
+                "nickname": "何颂生",
+                "position": "",
+                "realname": "张豆豆",
+                "remark": "",
+                "room_nickname": "",
+                "sex": 1,
+                "unionid": "ozynqsh0qMIRG3m_muR6-RcqnbDo",
+                "user_id": "1688856140600643",
+                "username": "张锦澜"
+            }
+        ],
+        "page_num": 1,
+        "page_size": 500,
+        "total": 3,
+        "total_page": 1
     }
 }

@@ -9,43 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LongShangAI.spec" beforeDir="false" afterPath="$PROJECT_DIR$/LongShangAI.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/LongShangAI.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/warn-LongShangAI.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/LongShangAI/xref-LongShangAI.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/test.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/warn-test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test/xref-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/wecommix/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wecommix/run.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/wecommix/wecommix_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wecommix/wecommix_channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/wecommix/wecommix_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wecommix/wecommix_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/channel_infomanage/run.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/channel_infomanage/tmp/login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wecom_broadcast/setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sikulix/broadcast_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/LongShangAI.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/run.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/license.lic" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/run.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/wework_contacts.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_contacts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/login.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/login.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/wework_room_members.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_room_members.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/部署方法.md" beforeDir="false" afterPath="$PROJECT_DIR$/部署方法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/wework_rooms.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_rooms.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,19 +133,9 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/interface.py</url>
-          <line>167</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/channel/wework/wework_message.py</url>
           <line>125</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/config.py</url>
-          <line>284</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

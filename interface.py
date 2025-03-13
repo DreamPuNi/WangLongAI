@@ -248,8 +248,8 @@ def main(page: ft.Page):
 
         # wecommix渠道的特别设置
         if current_select == "wecommix":
-            def time_picker_change(e, index, button):
-                new_time = time_picker.value
+            def time_picker_change(e, index,button):
+                new_time = e.control.value
                 if new_time:
                     broadcast_config[index]["time"] = new_time.strftime("%H:%M")
                     button.text = new_time.strftime("%H:%M")
@@ -292,6 +292,7 @@ def main(page: ft.Page):
 
             def save_bdcast_config(e):
                 save_broadcast_config(broadcast_config)
+                logger.info(f"Save broadcast config:{broadcast_config}")
                 page.snack_bar = ft.SnackBar(
                     content=ft.Text("配置已保存！", size=16, color="#FFFFFF"),
                     bgcolor="#4CAF50",
@@ -330,21 +331,22 @@ def main(page: ft.Page):
             message_scrollables = {}
 
             for i, arg in enumerate(broadcast_config):
-                time_picker = ft.TimePicker(
-                    confirm_text="保存",
-                    error_invalid_text="按理说不会报错的，但是现在报了",
-                    help_text="选择发送时间",
-                    on_change=lambda e, idx=i: time_picker_change(e,idx, time_button),
-                )
                 time_button = ft.ElevatedButton(
                     text=arg["time"],
-                    on_click=lambda _: page.open(time_picker),
+                    # on_click=lambda _: page.open(time_picker),
                     width=100,
                     height=100,
                     bgcolor="#2196F3",
                     color="#FFFFFF",
                 )
-
+                time_picker = ft.TimePicker(
+                    confirm_text="保存",
+                    error_invalid_text="按理说不会报错的，但是现在报了",
+                    help_text="选择发送时间",
+                    on_change=functools.partial(time_picker_change, index=i, button=time_button),
+                )
+                
+                time_button.on_click = lambda e, i=i, tp=time_picker: page.open(tp)
                 message_scrollable = ft.ListView(expand=True, spacing=10)
                 message_scrollables[i] = message_scrollable
 
