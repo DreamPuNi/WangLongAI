@@ -9,12 +9,15 @@
   <component name="ChangeListManager">
     <list default="true" id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_grouping.json" beforeDir="false" afterPath="$PROJECT_DIR$/config_grouping.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sikulix/broadcast_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sikulix/broadcast_setting.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/license.lic" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/run.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/login.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/wework_room_members.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_room_members.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/wework_rooms.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_rooms.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,48 +51,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.1.get_token.executor&quot;: &quot;Run&quot;,
-    &quot;Python.2.get_logging.executor&quot;: &quot;Run&quot;,
-    &quot;Python.3.is_logging.executor&quot;: &quot;Run&quot;,
-    &quot;Python.4.call_back.executor&quot;: &quot;Run&quot;,
-    &quot;Python.6.log_out.executor&quot;: &quot;Run&quot;,
-    &quot;Python.8.appid_what.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.chat_channel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.dify_bot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.flet.executor&quot;: &quot;Run&quot;,
-    &quot;Python.flet_components.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fuck_webui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gewe_manage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gewechat_channel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gewechat_webui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.interface.executor&quot;: &quot;Run&quot;,
-    &quot;Python.interface_t1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.log.executor&quot;: &quot;Run&quot;,
-    &quot;Python.log_out.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.read_pkl.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sikulix_channel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sikulix_chat_message.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sikulix_message.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.text.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tkinter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.verify.executor&quot;: &quot;Run&quot;,
-    &quot;Python.watch_dog.executor&quot;: &quot;Run&quot;,
-    &quot;Python.web_ui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.web_ui_failed.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wecommix_channel.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Program/WangLongAI/channel/wecommix&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.1.get_token.executor": "Run",
+    "Python.2.get_logging.executor": "Run",
+    "Python.3.is_logging.executor": "Run",
+    "Python.4.call_back.executor": "Run",
+    "Python.6.log_out.executor": "Run",
+    "Python.8.appid_what.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.chat_channel.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.dify_bot.executor": "Run",
+    "Python.flet.executor": "Run",
+    "Python.flet_components.executor": "Run",
+    "Python.fuck_webui.executor": "Run",
+    "Python.gewe_manage.executor": "Run",
+    "Python.gewechat_channel.executor": "Run",
+    "Python.gewechat_message.executor": "Run",
+    "Python.gewechat_webui.executor": "Run",
+    "Python.interface.executor": "Run",
+    "Python.interface_t1.executor": "Run",
+    "Python.log.executor": "Run",
+    "Python.log_out.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.read_pkl.executor": "Run",
+    "Python.sikulix_channel.executor": "Run",
+    "Python.sikulix_chat_message.executor": "Run",
+    "Python.sikulix_message.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.text.executor": "Run",
+    "Python.tkinter.executor": "Run",
+    "Python.verify.executor": "Run",
+    "Python.watch_dog.executor": "Run",
+    "Python.web_ui.executor": "Run",
+    "Python.web_ui_failed.executor": "Run",
+    "Python.wecommix_channel.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/Program/WangLongAI/channel/wecommix",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Program\WangLongAI\channel\wecommix" />
@@ -99,11 +103,11 @@
       <recent name="D:\Program\dify-on-wechat\channel\wcferry" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program\WangLongAI-dev\tmp" />
       <recent name="D:\Program\dify-on-wechat\core\channel_infomanage" />
       <recent name="D:\Program\dify-on-wechat\core" />
       <recent name="D:\Program\dify-on-wechat\core\flet" />
       <recent name="D:\Program\dify-on-wechat" />
-      <recent name="D:\Program\dify-on-wechat\core\data" />
     </key>
   </component>
   <component name="SharedIndexes">

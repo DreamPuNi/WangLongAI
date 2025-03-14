@@ -1,6 +1,8 @@
 import os
 import time
+import random
 import signal
+import asyncio
 import threading
 import flet as ft
 from tkinter import *
@@ -62,7 +64,10 @@ def main(page: ft.Page):
     page.window.full_screen = False
 
 
-    # 路由管理部分
+    # ================================================
+    # =================>>>路由管理部分<<<===============
+    # ================================================
+
     def show_infocenter(e):
         infocenter_container.visible = True
         channel_container.visible = False
@@ -107,8 +112,10 @@ def main(page: ft.Page):
         doc_container.visible = True
         page.update()
 
+    # ================================================
+    # =================>>>动态组件部分<<<===============
+    # ================================================
 
-    # 动态组件部分
     def minimze_to_tray(e):
         page.window.minimized = True
         page.update()
@@ -643,6 +650,38 @@ def main(page: ft.Page):
     # 模型管理页部分
     model_dynamic_content = ft.Column(expand=True)
 
+    # 使用文档部分
+    shakeble_button = ft.ElevatedButton(
+        text="了解更多私域知识",
+        bgcolor="#000000",
+        color="#FFFFFF",
+        height=40,
+        width=200,
+        url="www.baidu.com"
+    )
+    shaking = asyncio.Event()
+
+    async def shake_button():
+        while shaking.is_set():
+            shakeble_button.offset = ft.transform.Offset(
+                random.uniform(-0.1, 0.1), random.uniform(-0.1, 0.1)
+            )
+            shakeble_button.update()
+            await asyncio.sleep(0.05)  # 控制抖动速度
+
+        shakeble_button.offset = ft.transform.Offset(0, 0)
+        shakeble_button.update()
+
+    def shakeble_button_on_hover(e):
+        if e.data == "true":
+            if not shaking.is_set():
+                shaking.set()
+                asyncio.run_coroutine_threadsafe(shake_button(), page.loop)
+        else:
+            shaking.clear()
+
+    shakeble_button.on_hover = shakeble_button_on_hover
+
     # 页面构造部分
     navbar_button_style = ft.ButtonStyle( # 导航栏按钮
         color="#000000",
@@ -675,11 +714,15 @@ def main(page: ft.Page):
     channel_run_button = create_run_button()
     model_run_button = create_run_button()
 
+    # ================================================
+    # =================>>>静态页面部分<<<===============
+    # ================================================
+
     navbar_container = ft.Container( # 左侧导航栏
         content=ft.Column(
             [
                 ft.Container(
-                    content=ft.Image(src="logo.png",width=250,height=100),
+                    content=ft.Image(src="https://www.helloimg.com/i/2025/03/14/67d39f162eb1e.png",width=250,height=100),
                     margin=ft.margin.only(bottom=10),
                 ),
                 ft.Text("龙商学院-AI客服", color="#000000", size=26, weight=ft.FontWeight.BOLD),
@@ -959,10 +1002,127 @@ def main(page: ft.Page):
     )
 
     doc_container = ft.Container( # 文档管理页面
-        content=ft.Column(
+        content=ft.ListView(
             [
-                ft.Text("请选择需要运行的渠道：", size=20, weight=ft.FontWeight.BOLD),
-            ]
+                ft.Text("团队支持：", size=30, weight=ft.FontWeight.BOLD, color="#000000"),
+                ft.Container(
+                    content=ft.Row(
+                        [
+                            ft.Image(
+                                src="https://www.helloimg.com/i/2025/03/14/67d333d198d07.jpg",
+                                height=400,
+                                width=350,
+                                fit=ft.ImageFit.FIT_WIDTH
+                            ),
+                            ft.Container(
+                                content=ft.Column(
+                                    [
+                                        ft.Text("望龙本龙联系方式", size=20, weight=ft.FontWeight.BOLD, color="#000000"),
+                                        ft.Text(
+                                            value="望龙是来自西安的顶级私域操盘手，在前端流量获客方面有着无可匹敌的优势与经验",
+                                            size=12,
+                                            color="#4D4D4D"
+                                        ),
+                                        shakeble_button
+                                    ],
+                                ),
+                                expand=True,
+                                alignment=ft.alignment.top_left,
+                                margin=ft.margin.only(left=10)
+                            ),
+                        ],
+                        vertical_alignment=ft.CrossAxisAlignment.START,
+                    ),
+                ),
+                ft.Text("使用文档：", size=30, weight=ft.FontWeight.BOLD, color="#000000"),
+                ft.Text("🧐数据中心页面介绍", size=20, weight=ft.FontWeight.BOLD, color="#000000"),
+                ft.Container(
+                    content=ft.Row(
+                        [
+                            ft.ElevatedButton(
+                                text="页面介绍",
+                                url="www.baidu.com",
+                                height=40,
+                                width=100
+                            )
+                        ]
+                    ),
+                    margin=ft.margin.only(left=30)
+                ),
+                ft.Text("🥳渠道管理", size=20, weight=ft.FontWeight.BOLD, color="#000000"),
+                ft.Container(
+                    content=ft.Column(
+                        [
+                            ft.Text("个人微信：", size=15, weight=ft.FontWeight.BOLD, color="#000000"),
+                            ft.Container(
+                                content=ft.Row(
+                                    [
+                                        ft.ElevatedButton(
+                                            text="gewechat",
+                                            url="www.baidu.com",
+                                            height=40,
+                                            width=100
+                                        ),
+                                        ft.ElevatedButton(
+                                            text="wcf",
+                                            url="www.baidu.com",
+                                            height=40,
+                                            width=100
+                                        )
+                                    ]
+                                )
+                            ),
+                            ft.Text("企业微信：", size=15, weight=ft.FontWeight.BOLD, color="#000000"),
+                            ft.Container(
+                                content=ft.Row(
+                                    [
+                                        ft.ElevatedButton(
+                                            text="sikulix",
+                                            url="www.baidu.com",
+                                            height=40,
+                                            width=100
+                                        ),
+                                        ft.ElevatedButton(
+                                            text="wecommix",
+                                            url="www.baidu.com",
+                                            height=40,
+                                            width=100
+                                        ),
+                                        ft.ElevatedButton(
+                                            text="wework",
+                                            url="www.baidu.com",
+                                            height=40,
+                                            width=100
+                                        )
+                                    ]
+                                )
+                            ),
+                        ]
+                    ),
+                    margin=ft.margin.only(left=30)
+                ),
+                ft.Text("🤗模型管理", size=20, weight=ft.FontWeight.BOLD, color="#000000"),
+                ft.Container(
+                    content=ft.Row(
+                        [
+                            ft.ElevatedButton(
+                                text="dify",
+                                url="www.baidu.com",
+                                height=40,
+                                width=100
+                            ),
+                            ft.ElevatedButton(
+                                text="coze",
+                                url="www.baidu.com",
+                                height=40,
+                                width=100
+                            )
+                        ]
+                    ),
+                    margin=ft.margin.only(left=30)
+                ),
+            ],
+            spacing=10,
         ),
         bgcolor="#EDEBEB",
         border_radius=20,
@@ -971,6 +1131,7 @@ def main(page: ft.Page):
         padding=25
     )
 
+    # 主页面
     rounded_container = ft.WindowDragArea(
         ft.Container(
             content=ft.Row(
