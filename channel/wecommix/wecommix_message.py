@@ -149,6 +149,7 @@ class WecomMixMessage(ChatMessage):
                 conf().user_data["history"].append(
                     {wework_msg['data'].get("sender_name"): wework_msg['data']['content']}
                 )
+                conf().save_user_datas()
                 if any(substring in wework_msg['data']['content'] for substring in ("该消息类型暂不能展示", "不支持的消息类型")):
                     return
                 self.ctype = ContextType.TEXT

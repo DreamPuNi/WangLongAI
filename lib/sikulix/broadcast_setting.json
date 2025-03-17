@@ -1,9 +1,9 @@
 [
     {
-        "time": "12:00",
+        "time": "09:28",
         "filter_by_remark": {
-            "include": "阿斯顿",
-            "exclude": "何颂生"
+            "include": "何颂生",
+            "exclude": ""
         },
         "msg_list": [
             "我测试一下定时发送"

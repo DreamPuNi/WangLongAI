@@ -6,6 +6,8 @@ import asyncio
 import threading
 import flet as ft
 from tkinter import *
+
+from common.log import add_log_listener
 from plugins import *
 from common import const
 from channel import channel_factory
@@ -136,80 +138,6 @@ def main(page: ft.Page):
         scrollable_content = ft.ListView(expand=True, spacing=10, height=600)
 
         conf().set(config_class,current_select)
-
-        if config_class == "channel_type":
-            if current_select == "gewechat":
-                scrollable_content.controls.append(
-                    ft.Text(value="Gewe登录信息", size=22, weight=ft.FontWeight.BOLD, color="#000000")
-                )
-                if check_gewechat_online()[0]:
-                    nick_name, avatar_path = get_gewechat_profile()
-                    scrollable_content.controls.append(
-                        ft.Row([
-                            ft.Container(
-                                content=img,
-                                margin=ft.margin.only(right=40)
-                            ),
-                            ft.Column(
-                                [
-                                    ft.Text(value=f"当前登陆账号：{nick_name}", size=16, color="#000000"),
-                                    ft.FilledButton(text="刷新状态",on_click=lambda e: check_gewechat_online()),
-                                    ft.FilledButton(text="退出登录",on_click=lambda e: gewe_log_out())
-                                ]
-                            )
-                        ])
-                    )
-                else:
-                    scrollable_content.controls.append(
-                        ft.Row([
-                            ft.Container(
-                                content=ft.Image(src="/tmp/login.png", width=150, height=150),
-                                margin=ft.margin.only(right=40)
-                            ),
-                            ft.Column(
-                                [
-                                    ft.Text(value=f"请先启动运行，然后在3秒后刷新状态，尝试扫码，如果提示二维码过期，请重新刷新状态", size=16, color="#000000"),
-                                    ft.FilledButton(text="刷新状态", on_click=load_qrcode),
-                                ]
-                            )
-                        ])
-                    )
-            scrollable_content.controls.append(
-                ft.Text(value="微信公共参数设置", size=22, weight=ft.FontWeight.BOLD, color="#000000")
-            )
-            for arg in config_grouping[config_class]["wechat_common"]:
-                scrollable_content.controls.append(
-                    ft.Text(
-                        value=f"{config_grouping[config_class]['wechat_common'][arg]['tittle']}",
-                        size=16,
-                        color="#000000",
-                        weight=ft.FontWeight.BOLD)
-                )
-                scrollable_content.controls.append(
-                    ft.Text(
-                        value=f"{config_grouping[config_class]['wechat_common'][arg]['describe']}",
-                        size=12,
-                        color="#9B9FA1"
-                    )
-                )
-                if config_grouping[config_class]['wechat_common'][arg]['type'] == "bool":
-                    scrollable_content.controls.append(
-                        ft.Switch(
-                            label=arg,
-                            value=conf().get(arg),
-                            on_change=lambda e,key=arg:handle_value_change(e,key,"wechat_common")
-                        )
-                    )
-                else:
-                    scrollable_content.controls.append(
-                        ft.TextField(
-                            label=arg,
-                            value=conf().get(arg),
-                            color="#000000",
-                            on_change=lambda e,key=arg:handle_value_change(e,key)
-                        )
-                    )
-            scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
 
         scrollable_content.controls.append(
             ft.Text(
@@ -447,6 +375,84 @@ def main(page: ft.Page):
                 )
                 scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
 
+        if config_class == "channel_type":
+            if current_select == "gewechat":
+                scrollable_content.controls.insert(
+                    0,
+                    ft.Text(value="Gewe登录信息", size=22, weight=ft.FontWeight.BOLD, color="#000000")
+                )
+                if check_gewechat_online()[0]:
+                    nick_name, avatar_path = get_gewechat_profile()
+                    scrollable_content.controls.insert(
+                        1,
+                        ft.Row([
+                            ft.Container(
+                                content=img,
+                                margin=ft.margin.only(right=40)
+                            ),
+                            ft.Column(
+                                [
+                                    ft.Text(value=f"当前登陆账号：{nick_name}", size=16, color="#000000"),
+                                    ft.FilledButton(text="刷新状态",on_click=lambda e: check_gewechat_online()),
+                                    ft.FilledButton(text="退出登录",on_click=lambda e: gewe_log_out())
+                                ]
+                            )
+                        ])
+                    )
+                else:
+                    scrollable_content.controls.insert(
+                        1,
+                        ft.Row([
+                            ft.Container(
+                                content=ft.Image(src="/tmp/login.png", width=150, height=150),
+                                margin=ft.margin.only(right=40)
+                            ),
+                            ft.Column(
+                                [
+                                    ft.Text(value=f"请先启动运行，然后在3秒后刷新状态，尝试扫码，如果提示二维码过期，请重新刷新状态", size=16, color="#000000"),
+                                    ft.FilledButton(text="刷新状态", on_click=load_qrcode),
+                                ]
+                            )
+                        ])
+                    )
+                scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
+            scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
+            scrollable_content.controls.append(
+                ft.Text(value="微信公共参数设置", size=22, weight=ft.FontWeight.BOLD, color="#000000")
+            )
+            for arg in config_grouping[config_class]["wechat_common"]:
+                scrollable_content.controls.append(
+                    ft.Text(
+                        value=f"{config_grouping[config_class]['wechat_common'][arg]['tittle']}",
+                        size=16,
+                        color="#000000",
+                        weight=ft.FontWeight.BOLD)
+                )
+                scrollable_content.controls.append(
+                    ft.Text(
+                        value=f"{config_grouping[config_class]['wechat_common'][arg]['describe']}",
+                        size=12,
+                        color="#9B9FA1"
+                    )
+                )
+                if config_grouping[config_class]['wechat_common'][arg]['type'] == "bool":
+                    scrollable_content.controls.append(
+                        ft.Switch(
+                            label=arg,
+                            value=conf().get(arg),
+                            on_change=lambda e,key=arg:handle_value_change(e,key,"wechat_common")
+                        )
+                    )
+                else:
+                    scrollable_content.controls.append(
+                        ft.TextField(
+                            label=arg,
+                            value=conf().get(arg),
+                            color="#000000",
+                            on_change=lambda e,key=arg:handle_value_change(e,key)
+                        )
+                    )
+
         dynamic_content.controls.append(scrollable_content)
         page.update()
 
@@ -481,6 +487,8 @@ def main(page: ft.Page):
             bgcolor="#4CAF50",
             duration=2000
         )
+
+        load_config()
         page.snack_bar.open = True
         page.update()
 
@@ -555,7 +563,6 @@ def main(page: ft.Page):
         """这里是按钮关闭运行转发的代码"""
         global current_process_instance
         if current_process_instance is not None:
-            conf().save_user_datas()
             os.kill(current_process_instance.pid, signal.SIGTERM)  # 杀掉当前进程
             update_button_style(running=False)
 
@@ -599,15 +606,13 @@ def main(page: ft.Page):
                 padding=20,
                 on_click=self.toggle_size,
             )
-            self.start_log_file_watcher()
             return self.log_container
 
-        def start_log_file_watcher(self):
+        def start_log_watcher(self):
             """启动日志文件监控"""
             event_handler = LogFileHandler(self)
-            observer = Observer()
-            observer.schedule(event_handler, path=".", recursive=False)
-            observer.start()
+            event_handler.start()
+
 
         def toggle_size(self, e):
             if self.is_expanded:
@@ -883,7 +888,10 @@ def main(page: ft.Page):
                                                 ft.dropdown.Option("sikulix"),
                                                 ft.dropdown.Option("wcf"),
                                                 ft.dropdown.Option("wework"),
-                                                ft.dropdown.Option("wecommix")
+                                                ft.dropdown.Option("wecommix"),
+                                                ft.dropdown.Option("wechatcom_service"),
+                                                ft.dropdown.Option("wechatmp"),
+                                                ft.dropdown.Option("wechatcom_app"),
                                             ],
                                             on_change=lambda e: update_parameters(
                                                 dynamic_content=channel_dynamic_content,
@@ -1041,7 +1049,7 @@ def main(page: ft.Page):
                         [
                             ft.ElevatedButton(
                                 text="页面介绍",
-                                url="www.baidu.com",
+                                url="https://qcnmanduqh7k.feishu.cn/wiki/TgXTwrasri3XqlkbhRQcttGunOb?from=from_copylink",
                                 height=40,
                                 width=100
                             )
@@ -1059,7 +1067,7 @@ def main(page: ft.Page):
                                     [
                                         ft.ElevatedButton(
                                             text="gewechat",
-                                            url="www.baidu.com",
+                                            url="https://qcnmanduqh7k.feishu.cn/wiki/S6kawPZoFieuwckdOJvcaQLonGf?from=from_copylink",
                                             height=40,
                                             width=100
                                         ),
@@ -1156,7 +1164,10 @@ def main(page: ft.Page):
 
     page.add(rounded_container)
 
+    log_manager.start_log_watcher()
     realtime_data()
+
+
 
 def main_entry():
     try:
@@ -1172,25 +1183,21 @@ def main_entry():
 # ==========>>>---    下面的不用看了   ---<<<==========
 # ==================================================
 
-class LogFileHandler(FileSystemEventHandler):
+class LogFileHandler:
     def __init__(self, log_view_manager):
         self.log_view_manager = log_view_manager
         self.last_position = 0  # 记录上次读取的位置
 
-    def on_modified(self, event):
-        """当文件被修改时触发"""
-        if not event.is_directory and event.src_path.endswith("run.log"):
-            with open("run.log", "r", encoding="utf-8") as f:
-                f.seek(self.last_position)  # 从上次读取的位置开始
-                new_logs = f.readlines()
-                self.last_position = f.tell()  # 更新读取位置
 
-            # 将新日志添加到界面
-            for log_entry in new_logs:
-                self.log_view_manager.log_view.controls.append(
-                    ft.Text(log_entry.strip(), color="white", selectable=True)
+    def start(self):
+        add_log_listener(lambda log: self.update(log))
+
+    def update(self, log: str):
+        print(2,log)
+        self.log_view_manager.log_view.controls.append(
+                    ft.Text(log.strip(), color="white", selectable=True)
                 )
-            self.log_view_manager.log_view.update()
+        self.log_view_manager.log_view.update()
 
 
 class WinGUI(Tk):

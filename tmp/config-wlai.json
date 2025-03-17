@@ -1,0 +1,23 @@
+{
+    "channel_type": "gewechat",
+    "coze_api_base": "https://api.coze.cn",
+    "coze_api_key": "pat_zZKXkQv3GHizH4nYLWoHvLs6shC63enocbWySFR92HlpAK5TgT8dhnOlC5xspmRp",
+    "coze_bot_id": "7480597603886055439",
+    "debug": false,
+    "dify_api_base": "http://localhost/v1",
+    "dify_api_key": "app-GkR35UgbAt7r9NpD6rPxpAWY",
+    "dify_app_type": "chatbot",
+    "gewechat_app_id": "wx_VzTqgHBeCxViPUHpEqbnT",
+    "gewechat_base_url": "http://192.168.31.235:2531/v2/api",
+    "gewechat_callback_url": "http://192.168.31.235:9919/v2/api/callback/collect",
+    "gewechat_download_url": "http://192.168.31.235:2532/download",
+    "gewechat_token": "77454c4c65a94089919faffcc5d58749",
+    "message_buffer_second": 1,
+    "model": "coze",
+    "nick_name_black_list": [],
+    "sikulix_describe": "wec",
+    "skip_ai_keywords": "1-",
+    "wecommix_broadcast": false,
+    "wxid_black_list": [],
+    "wxid_recip_note": ""
+}

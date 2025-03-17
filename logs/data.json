@@ -140,7 +140,37 @@
         "ended_conversations": 0
     },
     "2025-03-14": {
-        "reply_count": 2,
+        "reply_count": 3,
+        "prompt_usage": {
+            "dify": 0,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
+    },
+    "2025-03-15": {
+        "reply_count": 43,
+        "prompt_usage": {
+            "dify": 0,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
+    },
+    "2025-03-16": {
+        "reply_count": 24,
+        "prompt_usage": {
+            "dify": 0,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
+    },
+    "2025-03-17": {
+        "reply_count": 21,
         "prompt_usage": {
             "dify": 0,
             "coze": 0,

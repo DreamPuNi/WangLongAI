@@ -1,7 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 from PyInstaller.utils.hooks import collect_data_files
 
-datas = [('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\flet', 'flet'), ('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\wcferry', 'wcferry'), ('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\wcferry\\\\sdk.dll', 'wcferry'), ('D:\\\\Program\\\\dify-on-wechat\\\\plugins', 'plugins')]
+datas = [('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\flet', 'flet'), ('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\wcferry', 'wcferry'), ('D:\\\\Program\\\\0-venv\\\\dify-on-wechat-env\\\\Lib\\\\site-packages\\\\wcferry\\\\sdk.dll', 'wcferry'), ('D:\\\\Program\\\\WangLongAI-dev\\\\plugins', 'plugins')]
 datas += collect_data_files('ntwork')
 
 
@@ -32,8 +32,8 @@ exe = EXE(
     strip=False,
     upx=True,
     upx_exclude=[],
-    runtime_tmpdir=None,
-    console=False,
+    runtime_tmpdir='./temp_data',
+    console=True,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,

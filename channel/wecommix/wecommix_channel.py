@@ -1,4 +1,5 @@
 import io
+import re
 import sys
 import time
 import uuid
@@ -21,7 +22,7 @@ from common.time_check import time_checker
 from channel.chat_channel import ChatChannel
 from channel.wecommix.wecommix_message import *
 from common.utils import compress_imgfile, fsize
-from config import conf,save_config, get_broadcast_config
+from config import conf,save_config, get_broadcast_config, load_config
 from channel.wecommix.wecommix_message import WecomMixMessage
 from apscheduler.schedulers.background import BackgroundScheduler
 
@@ -228,8 +229,8 @@ class WecomMixChannel(ChatChannel):
         self.user_id = login_info['user_id']
         self.name = login_info['nickname'] if login_info['nickname'] else login_info['username']
         logger.info(f"登录信息:>>>user_id:{self.user_id}>>>>>>>>name:{self.name}")
-        logger.info("静默延迟60s，等待客户端刷新数据，请勿进行任何操作······")
-        time.sleep(60)
+        logger.info("静默延迟30s，等待客户端刷新数据，请勿进行任何操作······")
+        time.sleep(30)
         self.contacts = get_with_retry(wework.get_external_contacts) # 这里是获取的企微的外部联系人
         rooms = get_with_retry(wework.get_rooms) # 这里是获取的群聊
         directory = os.path.join(os.getcwd(), "tmp")
@@ -267,7 +268,7 @@ class WecomMixChannel(ChatChannel):
             return
         # print("cmsg.from_user_nickname:",cmsg.from_user_nickname)
         user_marker = self.find_remarkname_by_coverid(cmsg.other_user_id)
-        if conf().get("skip_ai_keywords"):
+        if conf().get("skip_ai_keywords") is not None:
             if conf().get("skip_ai_keywords") in user_marker:
                 logger.info("检测到人工关键词:{},跳过回复".format(user_marker))
                 return
@@ -331,11 +332,10 @@ class WecomMixChannel(ChatChannel):
                     logger.info(f"{nick_name}:{receiver}对话结束，转人工")
                     self.add_remark_task(user_nickname=nick_name,status="end")
                     # self.send_transfer_notice(receiver, user)  # 执行通知函数
-                reply_list = re.findall(r'「(.*?)」', reply.content)
+                reply_list = re.findall(r'「(.*?)」', reply.content, re.DOTALL)
                 data().update_stat("reply_count") if reply_list else None
                 for content in reply_list:
-                    # sleep_time = len(content) * 0.3
-                    # time.sleep(sleep_time)
+                    time.sleep(1)
                     wework.send_text(receiver, content)
             # ==================>   在这里添加过滤器   <==================
             logger.info("[WX] sendMsg={}, receiver={}".format(reply, receiver))
@@ -399,10 +399,12 @@ class WecomMixChannel(ChatChannel):
         Args:
             直接在setting.json中配置定时任务，图片的话<img>图片地址</img>
         """
+        if not conf().get("wecommix_broadcast"):
+            logger.info("群发未开启")
+            return
         if not self.inited:
             logger.error("企业微信未初始化或联系人未获取")
             return
-
         try:
             self.contacts = get_with_retry(wework.get_external_contacts)
         except Exception as e:
@@ -414,7 +416,7 @@ class WecomMixChannel(ChatChannel):
         for entry in broadcast_config:
             if entry['time'] != now_time:
                 continue
-
+            logger.info(f"开始{now_time}的群发事件")
             include = entry['filter_by_remark']['include']
             exclude = entry['filter_by_remark']['exclude']
             messages = entry['msg_list']
@@ -455,7 +457,7 @@ class WecomMixChannel(ChatChannel):
             # print("current contact:",contact)
             if contact["conversation_id"] == conversation_id:
                 return contact["remark"]
-        return None
+        return "未知用户"# 这意味着为啥没有保存这个用户的信息
 
 class SikuliXWorker(threading.Thread):
     def __init__(self, task_queue):
@@ -464,7 +466,7 @@ class SikuliXWorker(threading.Thread):
             PROJECT_ROOT = os.path.dirname(sys.executable)
         else:
             PROJECT_ROOT = os.path.dirname(os.path.abspath(sys.argv[0]))
-        self.jvm_path = jpype.getDefaultJVMPath()
+        # self.jvm_path = jpype.getDefaultJVMPath()
         self.jvm_path = r"C:\Program Files\Java\jdk-23\bin\server\jvm.dll"
         self.sikulix_jar_path = os.path.join(PROJECT_ROOT,"lib","sikulix","sikulixide-2.0.5-win.jar")
         # self.sikulix_jar_path = r"D:\Program\WangLongAI\lib\sikulix\sikulixide-2.0.5-win.jar"

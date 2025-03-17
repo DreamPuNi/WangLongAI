@@ -10,6 +10,56 @@
         "tittle": "调试模式",
         "describe": "调试模式会输出更详细的日志",
         "type": "bool"
+      },
+      "nick_name_black_list": {
+        "tittle": "不回复的用户昵称",
+        "describe": "这些昵称的用户的消息不会被AI进行处理",
+        "type": "list"
+      },
+      "wxid_black_list": {
+        "tittle": "不回复的用户wxid",
+        "describe": "这些wxid的用户的消息不会被AI进行处理",
+        "type": "list"
+      },
+      "wxid_recip_note": {
+        "tittle": "end事件接收者",
+        "describe": "这里是end事件接收者的微信，仅支持一个",
+        "type": "str"
+      },
+      "speech_recognition": {
+        "tittle": "是否语音识别",
+        "describe": "是否开启语音识别功能",
+        "type": "bool"
+      },
+      "voice_reply_voice": {
+        "tittle": "是否语音回复语音",
+        "describe": "是否使用语音回复语音，需要设置对应语音合成引擎的api key",
+        "type": "bool"
+      },
+      "always_reply_voice": {
+        "tittle": "是否一直使用语音回复",
+        "describe": "是否一直使用语音回复",
+        "type": "bool"
+      },
+      "voice_to_text": {
+        "tittle": "语音识别引擎",
+        "describe": "语音识别引擎，支持openai,baidu,google,azure,xunfei,ali",
+        "type": "str"
+      },
+      "text_to_voice": {
+        "tittle": "语音合成引擎",
+        "describe": "语音合成引擎，支持openai,baidu,google,azure,xunfei,ali,pytts(offline),elevenlabs,edge(online)",
+        "type": "str"
+      },
+      "text_to_voice_model": {
+        "tittle": "文本转语音模型",
+        "describe": "文本转语音模型",
+        "type": "str"
+      },
+      "tts_voice_id": {
+        "tittle": "tts_voice_id",
+        "describe": "tts_voice_id",
+        "type": "str"
       }
     },
     "gewechat": {
@@ -37,21 +87,6 @@
         "tittle": "gewe令牌",
         "describe": "首次登录可留空,自动获取",
         "type": "str"
-      },
-      "wxid_recip_note": {
-        "tittle": "接受通知的wxid",
-        "describe": "在对话结束之后会发送给这个微信一个通知消息，并且将对话结束的用户添加至AI不再处理的列表",
-        "type": "str"
-      },
-      "nick_name_black_list": {
-        "tittle": "不回复的用户（微信名）",
-        "describe": "这部分用户AI不会进行回复",
-        "type": "list"
-      },
-      "wxid_black_list": {
-        "tittle": "不回复的用户（wxid）",
-        "describe": "这部分用户AI不会进行回复",
-        "type": "list"
       }
     },
     "sikulix": {
@@ -84,6 +119,97 @@
       "skip_ai_keywords": {
         "tittle": "跳过AI的关键词",
         "describe": "当用户的备注包含此关键词时，不调用AI",
+        "type": "str"
+      }
+    },
+    "wechatcom_service": {
+      "wechatcom_corp_id": {
+        "tittle": "企业微信公司ID",
+        "describe": "企业微信公司的corpID",
+        "type": "str"
+      },
+      "wechatcomapp_token": {
+        "tittle": "自建应用token",
+        "describe": "企业微信的自建应用的token",
+        "type": "str"
+      },
+      "wechatcomapp_port": {
+        "tittle": "自建应用端口",
+        "describe": "企业微信app的服务端口, 不需要端口转发，默认为9898",
+        "type": "int"
+      },
+      "wechatcomapp_agent_id": {
+        "tittle": "自建应用agent_id",
+        "describe": "企业微信的自建应用的agent_id",
+        "type": "str"
+      },
+      "wechatcomapp_aes_key": {
+        "tittle": "自建应用aes_key",
+        "describe": "企业微信的自建应用的aes_key",
+        "type": "str"
+      },
+      "wechatcomapp_secret": {
+        "tittle": "自建应用secret",
+        "describe": "企业微信的自建应用的secret，验证回调成功之前可以留空",
+        "type": "str"
+      }
+    },
+    "wechatmp": {
+      "wechatmp_token": {
+        "tittle": "微信公众平台Token",
+        "describe": "微信公众平台的Token",
+        "type": "str"
+      },
+      "wechatmp_port": {
+        "tittle": "微信公众平台端口",
+        "describe": "微信公众平台的端口,需要端口转发到80或443",
+        "type": "int"
+      },
+      "wechatmp_app_id": {
+        "tittle": "微信公众平台appID",
+        "describe": "微信公众平台的appID",
+        "type": "str"
+      },
+      "wechatmp_app_secret": {
+        "tittle": "微信公众平台appsecret",
+        "describe": "微信公众平台的appsecret",
+        "type": "str"
+      },
+      "wechatmp_aes_key": {
+        "tittle": "微信公众平台AES_KEY",
+        "describe": "微信公众平台的EncodingAESKey，加密模式需要",
+        "type": "str"
+      }
+    },
+    "wechatcom_app": {
+      "wechatcom_corp_id": {
+        "tittle": "企业微信公司ID",
+        "describe": "企业微信公司的corpID",
+        "type": "str"
+      },
+      "wechatcomapp_token": {
+        "tittle": "自建应用token",
+        "describe": "企业微信的自建应用的token",
+        "type": "str"
+      },
+      "wechatcomapp_port": {
+        "tittle": "自建应用端口",
+        "describe": "企业微信app的服务端口, 不需要端口转发，默认为9898",
+        "type": "int"
+      },
+      "wechatcomapp_agent_id": {
+        "tittle": "自建应用agent_id",
+        "describe": "企业微信的自建应用的agent_id",
+        "type": "str"
+      },
+      "wechatcomapp_aes_key": {
+        "tittle": "自建应用aes_key",
+        "describe": "企业微信的自建应用的aes_key",
+        "type": "str"
+      },
+      "wechatcomapp_secret": {
+        "tittle": "自建应用secret",
+        "describe": "企业微信的自建应用的secret，验证回调成功之前可以留空",
         "type": "str"
       }
     }
