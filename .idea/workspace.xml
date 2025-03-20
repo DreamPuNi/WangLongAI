@@ -10,11 +10,9 @@
     <list default="true" id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/chat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/chat_channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/run.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/wework_contacts.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_contacts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/wework_room_members.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_room_members.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_datas.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_datas.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/user_datas.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

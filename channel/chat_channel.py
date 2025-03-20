@@ -450,8 +450,14 @@ class ChatChannel(Channel):
                 logger.info("Worker cancelled, session_id = {}".format(session_id))
             except Exception as e:
                 logger.exception("Worker raise exception: {}".format(e))
-            with self.lock:  # 进行线程安全操作，确保在修改共享资源时不会发生竞争条件。
-                self.sessions[session_id][1].release()  # 在任务完成后，无论成功还是失败，都会释放该锁，以允许其他线程继续执行。
+            finally:
+                with self.lock:
+                    if session_id in self.futures:
+                        self.futures[session_id] = [f for f in self.futures[session_id] if f != worker]
+                    if session_id in self.sessions:
+                        self.sessions[session_id][1].release()
+            # with self.lock:  # 进行线程安全操作，确保在修改共享资源时不会发生竞争条件。
+            #     self.sessions[session_id][1].release()  # 在任务完成后，无论成功还是失败，都会释放该锁，以允许其他线程继续执行。
 
         return func
 
@@ -476,6 +482,7 @@ class ChatChannel(Channel):
                         Dequeue(),
                         threading.BoundedSemaphore(conf().get("concurrency_in_session", 4)),
                     ]
+                    self.futures[session_id]=[]
                 self.sessions[session_id][0].putleft(context)  # 优先处理管理命令
             elif context.type == ContextType.TEXT: # 仅对文本进行消息缓冲
                 self.message_buffer.add_message(context)
@@ -489,6 +496,8 @@ class ChatChannel(Channel):
                 session_ids = list(self.sessions.keys())
             for session_id in session_ids:  # 遍历每个session_id
                 with self.lock:
+                    if session_id not in self.sessions:
+                        continue
                     context_queue, semaphore = self.sessions[session_id]
                 """
                 从 self.sessions 中取出当前会话的任务队列（context_queue）和信号量（semaphore）。
@@ -510,9 +519,13 @@ class ChatChannel(Channel):
                             self.futures[session_id].append(future)
                     elif semaphore._initial_value == semaphore._value + 1:  # 除了当前，没有任务再申请到信号量，说明所有任务都处理完毕
                         with self.lock:
-                            self.futures[session_id] = [t for t in self.futures[session_id] if not t.done()]
-                            assert len(self.futures[session_id]) == 0, "thread pool error"
-                            del self.sessions[session_id]
+                            if session_id in self.futures:
+                                del self.futures[session_id]
+                            if session_id in self.sessions:
+                                del self.sessions[session_id]
+                            #self.futures[session_id] = [t for t in self.futures[session_id] if not t.done()]
+                            #assert len(self.futures[session_id]) == 0, "thread pool error"
+                            #del self.sessions[session_id]
                     else:
                         semaphore.release()
             time.sleep(0.2)
