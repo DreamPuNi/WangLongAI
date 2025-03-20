@@ -1,46 +1,39 @@
-import flet as ft
-import random
-import asyncio
+import pilk
+import wave
+
+def preprocess_wechat_silk(input_path, output_path):
+    """
+    预处理微信 Silk 文件，使其符合标准 Silk 格式
+    """
+    with open(input_path, "rb") as fin, open(output_path, "wb") as fout:
+        # 跳过微信 Silk 文件开头的多余字节（0x02）
+        fin.seek(1)
+
+        # 读取剩余内容并写入新文件
+        data = fin.read()
+
+        # 在文件末尾追加标准 Silk 结束标识（0xFFFF）
+        fout.write(data + b'\xFF\xFF')
+
+# 测试用的标准 Silk 文件路径
+silk_path = "tmp/voice_86b19948-99d5-4771-9936-aeedcdd51fcf.silk"
+formatted_silk_path = "tmp/standard_output.silk"
+wav_path = "tmp/standard_output.wav"
+
+# 预处理微信 Silk 文件
+preprocess_wechat_silk(silk_path, formatted_silk_path)
+
+# 使用 pilk 解码 Silk 文件
+pilk.silk_to_wav(silk_path, wav_path,rate=24000)
+
+# 验证生成的 WAV 文件是否有效
+try:
+    with wave.open(wav_path, "rb") as fp:
+        print("WAV 文件有效，采样率：", fp.getframerate())
+except wave.Error as e:
+    print(f"WAV 文件无效: {e}")
 
 
-def main(page: ft.Page):
-    page.title = "疯狂抖动按钮"
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
 
 
-
-
-    button = ft.ElevatedButton(text="别碰我！")
-
-    # 控制抖动的状态
-    shaking = asyncio.Event()
-
-    async def shake_button():
-        """让按钮无限抖动，直到 shaking 被清除"""
-        while shaking.is_set():
-            button.offset = ft.transform.Offset(
-                random.uniform(-0.1, 0.1), random.uniform(-0.1, 0.1)
-            )
-            button.update()
-            await asyncio.sleep(0.05)  # 控制抖动速度
-
-        # 鼠标移开后，按钮回到原位
-        button.offset = ft.transform.Offset(0, 0)
-        button.update()
-
-    def on_hover(e):
-        """鼠标悬停时触发抖动，鼠标移开时停止"""
-        if e.data == "true":
-            if not shaking.is_set():  # 避免重复创建任务
-                shaking.set()
-                asyncio.run_coroutine_threadsafe(shake_button(), page.loop)
-        else:
-            shaking.clear()  # 停止抖动
-
-    button.on_hover = on_hover
-    page.add(button)
-
-
-ft.app(target=main)

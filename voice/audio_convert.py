@@ -173,10 +173,12 @@ def sil_to_wav(silk_path, wav_path, rate: int = 24000):
     """
     silk 文件转 wav
     """
+    pilk.silk_to_wav(silk_path, wav_path,rate=24000)
+    """
     wav_data = pysilk.decode_file(silk_path, to_wav=True, sample_rate=rate)
     with open(wav_path, "wb") as f:
         f.write(wav_data)
-
+    """
 
 def split_audio(file_path, max_segment_length_ms=60000):
     """

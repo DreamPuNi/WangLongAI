@@ -134,11 +134,10 @@ class GeWeChatChannel(ChatChannel):
                 self.send_transfer_notice(receiver, user) # 执行通知函数
                 # self.rename_customer(receiver, user) # 执行重命名
 
-            reply_list = re.findall(r'「(.*?)」', text_after_details) # 对消息进行切分自适应发送
+            reply_list = re.findall(r'「(.*?)」', text_after_details, re.DOTALL) # 对消息进行切分自适应发送
             data().update_stat("reply_count") if reply_list else None
             for content in reply_list:
-                sleep_time = len(content) * 0.3
-                time.sleep(sleep_time)
+                time.sleep(1)
                 self.client.post_text(self.app_id, receiver, content, ats)
             # ==================>   这里注意并行问题   <==================
             logger.info("[gewechat] Do send text to {}: {}".format(receiver, reply_text))

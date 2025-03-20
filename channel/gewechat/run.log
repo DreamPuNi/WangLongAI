@@ -1,0 +1,2 @@
+[WARNING][2025-03-20 12:51:31][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub
+[WARNING][2025-03-20 12:52:13][audio_convert.py:15] - import pydub failed, wechat voice conversion will not be supported. Try: pip install pydub

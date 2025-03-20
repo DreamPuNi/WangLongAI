@@ -197,7 +197,7 @@ def accept_friend_with_retries(wework_instance, user_id, corp_id):
     result = wework_instance.accept_friend(user_id, corp_id)
     logger.debug(f'result:{result}')
 
-def get_with_retry(get_func, max_retries=5, delay=5):
+def get_with_retry(get_func, max_retries=3, delay=5):
     """重试获取数据的func"""
     retries = 0
     result = None
@@ -324,8 +324,6 @@ class WecomMixChannel(ChatChannel):
                 # 这里带@的先不管
             else:
                 nick_name = self.find_nickname_by_coverid(receiver)
-                print("receiver:",receiver)
-                print("conf_receiver:",conf().user_datas[receiver])
                 conf().user_datas[receiver]['history'].append({ "assistant": reply.content})
                 if "<end>" in reply.content:  # 先判断是不是对话结束,如果是就转人工
                     data().update_stat("ended_conversations")
@@ -353,6 +351,7 @@ class WecomMixChannel(ChatChannel):
                 temp.write(data)
             # Send the image
             wework.send_image(receiver, temp_path)
+            wework.send_image(receiver, r"C:\Users\龙崎盈子\Desktop\表情包\1.png")
             logger.info("[WX] sendImage, receiver={}".format(receiver))
             # Remove the temporary file
             os.remove(temp_path)
@@ -383,6 +382,10 @@ class WecomMixChannel(ChatChannel):
             wework.send_file(receiver, reply.content)
             logger.info("[WX] sendFile={}, receiver={}".format(reply.content, receiver))
 
+    def update_contacts(self):
+        logger.debug("Update external contacts.")
+        self.contacts = get_with_retry(wework.get_external_contacts)
+
     def add_remark_task(self,user_nickname, status):
         """添加备注任务"""
         message = {
@@ -400,7 +403,6 @@ class WecomMixChannel(ChatChannel):
             直接在setting.json中配置定时任务，图片的话<img>图片地址</img>
         """
         if not conf().get("wecommix_broadcast"):
-            logger.info("群发未开启")
             return
         if not self.inited:
             logger.error("企业微信未初始化或联系人未获取")

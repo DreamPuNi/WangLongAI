@@ -25,41 +25,6 @@
         "tittle": "end事件接收者",
         "describe": "这里是end事件接收者的微信，仅支持一个",
         "type": "str"
-      },
-      "speech_recognition": {
-        "tittle": "是否语音识别",
-        "describe": "是否开启语音识别功能",
-        "type": "bool"
-      },
-      "voice_reply_voice": {
-        "tittle": "是否语音回复语音",
-        "describe": "是否使用语音回复语音，需要设置对应语音合成引擎的api key",
-        "type": "bool"
-      },
-      "always_reply_voice": {
-        "tittle": "是否一直使用语音回复",
-        "describe": "是否一直使用语音回复",
-        "type": "bool"
-      },
-      "voice_to_text": {
-        "tittle": "语音识别引擎",
-        "describe": "语音识别引擎，支持openai,baidu,google,azure,xunfei,ali",
-        "type": "str"
-      },
-      "text_to_voice": {
-        "tittle": "语音合成引擎",
-        "describe": "语音合成引擎，支持openai,baidu,google,azure,xunfei,ali,pytts(offline),elevenlabs,edge(online)",
-        "type": "str"
-      },
-      "text_to_voice_model": {
-        "tittle": "文本转语音模型",
-        "describe": "文本转语音模型",
-        "type": "str"
-      },
-      "tts_voice_id": {
-        "tittle": "tts_voice_id",
-        "describe": "tts_voice_id",
-        "type": "str"
       }
     },
     "gewechat": {
@@ -262,6 +227,66 @@
         "tittle": "Coze_return_show_img",
         "describe": "Coze_return_show_img",
         "type": "bool"
+      },
+      "speech_recognition": {
+        "tittle": "是否语音识别",
+        "describe": "是否开启语音识别功能",
+        "type": "bool"
+      },
+      "voice_reply_voice": {
+        "tittle": "是否语音回复语音",
+        "describe": "是否使用语音回复语音，需要设置对应语音合成引擎的api key",
+        "type": "bool"
+      },
+      "always_reply_voice": {
+        "tittle": "是否一直使用语音回复",
+        "describe": "是否一直使用语音回复",
+        "type": "bool"
+      },
+      "voice_to_text": {
+        "tittle": "语音识别引擎",
+        "describe": "语音识别引擎，支持openai,baidu,google,azure,xunfei,ali",
+        "type": "str"
+      },
+      "text_to_voice": {
+        "tittle": "语音合成引擎",
+        "describe": "语音合成引擎，支持openai,baidu,google,azure,xunfei,ali,pytts(offline),elevenlabs,edge(online)",
+        "type": "str"
+      },
+      "text_to_voice_model": {
+        "tittle": "文本转语音模型",
+        "describe": "文本转语音模型",
+        "type": "str"
+      },
+      "tts_voice_id": {
+        "tittle": "tts_voice_id",
+        "describe": "tts_voice_id",
+        "type": "str"
+      },
+      "xf_audio_app_id": {
+          "tittle": "讯飞app_id",
+          "describe": "讯飞app_id",
+          "type": "str"
+      },
+      "xf_audio_api_key": {
+          "tittle": "讯飞api_key",
+          "describe": "讯飞api_key",
+          "type": "str"
+      },
+      "xf_audio_secret": {
+          "tittle": "讯飞secret",
+          "describe": "讯飞secret",
+          "type": "str"
+      },
+      "xf_audio_business_args_tts": {
+          "tittle": "讯飞语音合成参数",
+          "describe": "讯飞语音合成参数",
+          "type": "dict"
+      },
+      "xf_audio_business_args_asr": {
+          "tittle": "讯飞语音识别参数",
+          "describe": "讯飞语音识别参数",
+          "type": "dict"
       }
     },
     "linkai-holdon": {

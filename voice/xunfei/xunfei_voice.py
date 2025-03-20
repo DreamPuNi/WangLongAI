@@ -27,22 +27,25 @@ from common.tmp_dir import TmpDir
 from voice.voice import Voice
 from .xunfei_asr import xunfei_asr
 from .xunfei_tts import xunfei_tts
+from config import conf
 
 
 class XunfeiVoice(Voice):
     def __init__(self):
         try:
+            """
             curdir = os.path.dirname(__file__)
             config_path = os.path.join(curdir, "config.json")
             conf = None
             with open(config_path, "r") as fr:
                 conf = json.load(fr)
             print(conf)
-            self.APPID = str(conf.get("APPID"))
-            self.APIKey = str(conf.get("APIKey"))
-            self.APISecret = str(conf.get("APISecret"))
-            self.BusinessArgsTTS = conf.get("BusinessArgsTTS")
-            self.BusinessArgsASR= conf.get("BusinessArgsASR")
+            """
+            self.APPID = str(conf().get("xf_audio_app_id"))
+            self.APIKey = str(conf().get("xf_audio_api_key"))
+            self.APISecret = str(conf().get("xf_audio_secret"))
+            self.BusinessArgsTTS = conf().get("xf_audio_business_args_tts")
+            self.BusinessArgsASR= conf().get("xf_audio_business_args_asr")
 
         except Exception as e:
             logger.warn("XunfeiVoice init failed: %s, ignore " % e)

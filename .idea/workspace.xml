@@ -9,32 +9,48 @@
   <component name="ChangeListManager">
     <list default="true" id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LongShangAI.spec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/chat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/chat_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/LongShangAI.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/LongShangAI.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/warn-LongShangAI.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/warn-LongShangAI.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/LongShangAI/xref-LongShangAI.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/LongShangAI/xref-LongShangAI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/gewechat/gewechat_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/gewechat/gewechat_channel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/gewechat/gewechat_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/gewechat/gewechat_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/gewechat/run.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/message_buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/message_buffer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/wecommix/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wecommix/run.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/channel/wecommix/wecommix_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wecommix/wecommix_channel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel/wecommix/wecommix_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wecommix/wecommix_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/log.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config_grouping.json" beforeDir="false" afterPath="$PROJECT_DIR$/config_grouping.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug/gewechat/8.appid_what.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/8.appid_what.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/2.get_logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/2.get_logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/3.is_logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/3.is_logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/4.call_back.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/4.call_back.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug/gewechat/6.log_out.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug/gewechat/6.log_out.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/sikulix/broadcast_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sikulix/broadcast_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logo.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/run.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/config-备份.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-optional.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/config-wlai.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/config-xh.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/login.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/wanglong.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/run.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/wework_contacts.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_contacts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/wework_room_members.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_room_members.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/wework_rooms.json" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wework_rooms.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_datas.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/user_datas.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/工作进度.txt" beforeDir="false" afterPath="$PROJECT_DIR$/工作进度.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/部署方法.md" beforeDir="false" afterPath="$PROJECT_DIR$/部署方法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_datas.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voice/audio_convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/voice/audio_convert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voice/xunfei/xunfei_voice.py" beforeDir="false" afterPath="$PROJECT_DIR$/voice/xunfei/xunfei_voice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/代码启动.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/工作进度.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/提示词规则.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/界面.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/部署方法.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

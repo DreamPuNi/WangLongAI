@@ -613,7 +613,6 @@ def main(page: ft.Page):
             event_handler = LogFileHandler(self)
             event_handler.start()
 
-
         def toggle_size(self, e):
             if self.is_expanded:
                 self.log_container.width = self.base_width
@@ -1092,7 +1091,7 @@ def main(page: ft.Page):
                                         ),
                                         ft.ElevatedButton(
                                             text="wecommix",
-                                            url="www.baidu.com",
+                                            url="https://qcnmanduqh7k.feishu.cn/wiki/Nl8FwYoTsi2qAtkDW9ycOVqnn7b?from=from_copylink",
                                             height=40,
                                             width=100
                                         ),
@@ -1193,7 +1192,6 @@ class LogFileHandler:
         add_log_listener(lambda log: self.update(log))
 
     def update(self, log: str):
-        print(2,log)
         self.log_view_manager.log_view.controls.append(
                     ft.Text(log.strip(), color="white", selectable=True)
                 )

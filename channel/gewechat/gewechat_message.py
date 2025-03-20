@@ -1,14 +1,16 @@
-import base64
-import uuid
+import os
 import re
-from bridge.context import ContextType
-from channel.chat_message import ChatMessage
-from common.log import logger
-from common.tmp_dir import TmpDir
-from config import conf
-from lib.gewechat import GewechatClient
+import uuid
+import base64
 import requests
+from config import conf
+from common.log import logger
+from bridge.bridge import Bridge
+from common.tmp_dir import TmpDir
 import xml.etree.ElementTree as ET
+from bridge.context import ContextType
+from lib.gewechat import GewechatClient
+from channel.chat_message import ChatMessage
 
 # 私聊信息示例
 """
@@ -332,7 +334,13 @@ class GeWeChatMessage(ChatMessage):
 
         if msg_type == 1:  # Text message
             self.ctype = ContextType.TEXT
-            self.content = msg['Data']['Content']['string']
+            conf().user_data = conf().get_user_data(self.other_user_id)
+            conf().user_data["history"].append(
+                {self.get_other_user_nickname(self.app_id,self.other_user_id): msg['Data']['Content']['string']}
+            )
+            conf().save_user_datas()
+            self.content = str(conf().user_datas[self.other_user_id]["history"])
+            # self.content = msg['Data']['Content']['string']
         elif msg_type == 34:  # Voice message
             self.ctype = ContextType.VOICE
             if 'ImgBuf' in msg['Data'] and 'buffer' in msg['Data']['ImgBuf'] and msg['Data']['ImgBuf']['buffer']:
@@ -341,7 +349,6 @@ class GeWeChatMessage(ChatMessage):
                 silk_file_path = TmpDir().path() + silk_file_name
                 with open(silk_file_path, "wb") as f:
                     f.write(silk_data)
-                # TODO: silk2mp3
                 self.content = silk_file_path
         elif msg_type == 3:  # Image message
             self.ctype = ContextType.IMAGE
@@ -436,12 +443,7 @@ class GeWeChatMessage(ChatMessage):
             raise NotImplementedError("Unsupported message type: Type:{}".format(msg_type))
 
         # 获取群聊或好友的名称
-        brief_info_response = self.client.get_brief_info(self.app_id, [self.other_user_id])
-        if brief_info_response['ret'] == 200 and brief_info_response['data']:
-            brief_info = brief_info_response['data'][0]
-            self.other_user_nickname = brief_info.get('nickName', '')
-            if not self.other_user_nickname:
-                self.other_user_nickname = self.other_user_id
+        self.other_user_nickname = self.get_other_user_nickname(self.app_id, self.other_user_id)
 
         if self.is_group:
             # 如果是群聊消息，获取实际发送者信息
@@ -532,6 +534,15 @@ class GeWeChatMessage(ChatMessage):
 
         self.my_msg = self.msg['Wxid'] == self.from_user_id  # 消息是否来自自己
 
+    def get_other_user_nickname(self,appid, other_user_id):
+        brief_info_response = self.client.get_brief_info(appid, [other_user_id])
+        if brief_info_response['ret'] == 200 and brief_info_response['data']:
+            brief_info = brief_info_response['data'][0]
+            other_user_nickname = brief_info.get('nickName', '')
+            if not other_user_nickname:
+                other_user_nickname = other_user_id
+            return other_user_nickname
+
     def download_voice(self):
         try:
             voice_data = self.client.download_voice(self.msg['Wxid'], self.msg_id)
@@ -610,3 +621,11 @@ class GeWeChatMessage(ChatMessage):
             return True
 
         return False
+
+    def add_chat_history(self, wxid, content):
+        conf().user_data = conf().get_user_data(wxid)
+        conf().user_data["history"].append(
+            {self.get_other_user_nickname(self.app_id,wxid): content}
+        )
+        conf().save_user_datas()
+        return conf().user_datas[wxid]["history"]

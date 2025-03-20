@@ -220,6 +220,12 @@ available_setting = {
     "sikulix_describe":"", # 注意：wcf不需要任何设置，这个只是占位
     # wcf配置
     "wcf_describe":"", # 注意：wcf不需要任何设置，这个只是占位
+    # 讯飞语音API
+    "xf_audio_app_id": "",# 讯飞语音app id
+    "xf_audio_api_key": "",
+    "xf_audio_secret": "",# 下面这俩参数不用动基本上
+    "xf_audio_business_args_tts": {"aue": "lame", "sfl": 1, "auf": "audio/L16;rate=16000", "vcn": "xiaoyan", "tte": "utf8"},
+    "xf_audio_business_args_asr": {"domain": "iat", "language": "zh_cn", "accent": "mandarin", "vad_eos":10000, "dwa": "wpgs"},
 }
 
 class Config(dict):
@@ -367,7 +373,12 @@ def conf():
     return config
 
 def get_appdata_dir():
-    data_path = os.path.join(get_root(), conf().get("appdata_dir", ""))
+    if getattr(sys, 'frozen', False):
+        data_path = os.path.dirname(sys.executable)
+    else:
+        data_path = os.path.join(get_root(), conf().get("appdata_dir", ""))
+
+    # data_path = os.path.join(get_root(), conf().get("appdata_dir", ""))
     if not os.path.exists(data_path):
         logger.info("[INIT] data path not exists, create it: {}".format(data_path))
         os.makedirs(data_path)

@@ -108,7 +108,7 @@ class MessageBufferWithHistory:
         if key not in wxid_black_wxid:
             with self.lock:
                 self.all_tmp_history[key].append({"user": context})  # 直接存入历史消息
-                print("=========现在的全消息是：",self.all_tmp_history)
+                # print("=========现在的全消息是：",self.all_tmp_history)
                 # 取消已有计时器
                 if key in self.timers:
                     self.timers[key].cancel()

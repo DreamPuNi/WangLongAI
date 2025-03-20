@@ -6,10 +6,10 @@ from PIL import Image
 
 conn = http.client.HTTPConnection("192.168.31.235", 2531)
 payload = json.dumps({
-   "appId": "wx_VzTqgHBeCxViPUHpEqbnT"
+   "appId": "wx_NGQW5r8ByAR4LLE95m7Ks"
 })
 headers = {
-   'X-GEWE-TOKEN': '77454c4c65a94089919faffcc5d58749',
+   'X-GEWE-TOKEN': '83efaf2c67124e90af810820cc12efc0',
    'Content-Type': 'application/json'
 }
 conn.request("POST", "/v2/api/login/getLoginQrCode", payload, headers)
