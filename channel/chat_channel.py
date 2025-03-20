@@ -257,6 +257,7 @@ class ChatChannel(Channel):
                     wav_path = file_path
                 # 语音识别
                 reply = super().build_voice_to_text(wav_path)
+                print(f"【chat_channel】=====reply: {reply}")
                 # 删除临时文件
                 try:
                     os.remove(file_path)
@@ -268,10 +269,22 @@ class ChatChannel(Channel):
 
                 if reply.type == ReplyType.TEXT:
                     new_context = self._compose_context(ContextType.TEXT, reply.content, **context.kwargs)
+                    # 添加了语音消息合并到消息列表并继承上下文的操作
+                    session_id = new_context.kwargs.get("session_id")
+                    if session_id:
+                        conf().user_data = conf().get_user_data(session_id)
+                        conf().user_data["history"].append(
+                            {"user": new_context.content}
+                        )
+                        conf().save_user_datas()
+                        new_context.content = str(conf().user_datas[session_id]["history"])
+
                     if new_context:
                         reply = self._generate_reply(new_context)
                     else:
                         return
+                    print(f"【chat_channel】=====new_context: {new_context}")
+                    print(f"【chat_channel】=====reply: {reply}")
             elif context.type == ContextType.IMAGE:  # 图片消息，当前仅做下载保存到本地的逻辑
                 memory.USER_IMAGE_CACHE[context["session_id"]] = {
                     "path": context.content,
@@ -452,13 +465,11 @@ class ChatChannel(Channel):
         session_id = context.get("session_id", 0)
 
         with self.lock:
-            """
-            if session_id not in self.sessions: # 如果是新的会话
+            if session_id not in self.sessions:
                 self.sessions[session_id] = [
                     Dequeue(),
-                    threading.BoundedSemaphore(conf().get("concurrency_in_session", 4)),
+                    threading.BoundedSemaphore(conf().get("concurrency_in_session", 4))
                 ]
-            """
             if context.type == ContextType.TEXT and context.content.startswith("#"):  # 如果是管理命令
                 if session_id not in self.sessions:  # 如果是新的会话
                     self.sessions[session_id] = [
@@ -466,10 +477,10 @@ class ChatChannel(Channel):
                         threading.BoundedSemaphore(conf().get("concurrency_in_session", 4)),
                     ]
                 self.sessions[session_id][0].putleft(context)  # 优先处理管理命令
-            else:
-                # 在这里添加消息缓冲功能
+            elif context.type == ContextType.TEXT: # 仅对文本进行消息缓冲
                 self.message_buffer.add_message(context)
-                # self.sessions[session_id][0].put(context)
+            else:
+                self.sessions[session_id][0].put(context)
 
     def consume(self):
         """主要是处理会话队列中的任务并管理它们的执行。它会不断地从每个会话的任务队列中取出任务进行处理，并管理任务的执行状态和资源释放。"""
