@@ -200,7 +200,7 @@
         "ended_conversations": 0
     },
     "2025-03-20": {
-        "reply_count": 39,
+        "reply_count": 79,
         "prompt_usage": {
             "dify": 0,
             "coze": 0,
@@ -208,5 +208,15 @@
         },
         "new_friends": 0,
         "ended_conversations": 3
+    },
+    "2025-03-21": {
+        "reply_count": 10,
+        "prompt_usage": {
+            "dify": 0,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
     }
 }

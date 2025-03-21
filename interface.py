@@ -726,7 +726,11 @@ def main(page: ft.Page):
         content=ft.Column(
             [
                 ft.Container(
-                    content=ft.Image(src="https://www.helloimg.com/i/2025/03/14/67d39f162eb1e.png",width=250,height=100),
+                    content=ft.Image(
+                        src="https://longshangai.oss-cn-beijing.aliyuncs.com/software_assets/logo.png?Expires=1742542687&OSSAccessKeyId=TMP.3KntNkaUWwGWQtFbbJgAVbsUHda789m1jQaxsCS2nLW7bJBE6xHkwSA5fmqJX7uut7bPxcetC76gHeqzuTJxEKzCk2FmLX&Signature=75KBm6ovPTnTGepGT4aDMt8u%2Bmo%3D",
+                        width=250,
+                        height=100
+                    ),
                     margin=ft.margin.only(bottom=10),
                 ),
                 ft.Text("龙商学院-AI客服", color="#000000", size=26, weight=ft.FontWeight.BOLD),
@@ -1016,7 +1020,7 @@ def main(page: ft.Page):
                     content=ft.Row(
                         [
                             ft.Image(
-                                src="https://www.helloimg.com/i/2025/03/14/67d333d198d07.jpg",
+                                src="https://longshangai.oss-cn-beijing.aliyuncs.com/software_assets/%E6%9C%9B%E9%BE%99%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg?Expires=1742542655&OSSAccessKeyId=TMP.3KntNkaUWwGWQtFbbJgAVbsUHda789m1jQaxsCS2nLW7bJBE6xHkwSA5fmqJX7uut7bPxcetC76gHeqzuTJxEKzCk2FmLX&Signature=HPMe7TnyUvDtqHKKqsMQaUQ%2FFbQ%3D",
                                 height=400,
                                 width=350,
                                 fit=ft.ImageFit.FIT_WIDTH

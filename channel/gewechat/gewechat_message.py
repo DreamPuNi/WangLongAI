@@ -354,6 +354,12 @@ class GeWeChatMessage(ChatMessage):
             self.ctype = ContextType.IMAGE
             self.content = TmpDir().path() + str(self.msg_id) + ".png"
             self._prepare_fn = self.download_image
+        elif msg_type == 37: # 好友请求
+            self.ctype = ContextType.ACCEPT_FRIEND
+            msg_content = msg['Data']['Content']['string']
+            root = ET.fromstring(msg_content)
+            self.content = root.get('content')
+            print("【gewechat_channel】content:",self.content)  # TODO:这里需要填充消息体才能让程序继续处理，过chatchannel的handle方法
         elif msg_type == 49:  # 引用消息，小程序，公众号等
             # After getting content_xml
             content_xml = msg['Data']['Content']['string']

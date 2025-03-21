@@ -351,10 +351,10 @@ class WecomMixChannel(ChatChannel):
                 temp.write(data)
             # Send the image
             wework.send_image(receiver, temp_path)
-            wework.send_image(receiver, r"C:\Users\龙崎盈子\Desktop\表情包\1.png")
-            logger.info("[WX] sendImage, receiver={}".format(receiver))
+            # wework.send_image(receiver, r"C:\Users\龙崎盈子\Desktop\CurrentProcessing\doc\doc\表情包\哭哭.gif")
+            logger.info(f"[WX] sendImage, receiver={receiver}/temp_path={temp_path}")
             # Remove the temporary file
-            os.remove(temp_path)
+            # os.remove(temp_path)
         elif reply.type == ReplyType.IMAGE_URL:  # 从网络下载图片
             img_url = reply.content
             filename = str(uuid.uuid4())

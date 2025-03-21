@@ -1,7 +1,7 @@
 import http.client
 import json
 
-conn = http.client.HTTPConnection("127.0.0.1", 2531)
+conn = http.client.HTTPConnection("192.168.31.235", 2531)
 payload = json.dumps({
    "appId": "wx_NGQW5r8ByAR4LLE95m7Ks"
 })

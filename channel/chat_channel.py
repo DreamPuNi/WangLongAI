@@ -257,7 +257,6 @@ class ChatChannel(Channel):
                     wav_path = file_path
                 # 语音识别
                 reply = super().build_voice_to_text(wav_path)
-                print(f"【chat_channel】=====reply: {reply}")
                 # 删除临时文件
                 try:
                     os.remove(file_path)
@@ -283,8 +282,6 @@ class ChatChannel(Channel):
                         reply = self._generate_reply(new_context)
                     else:
                         return
-                    print(f"【chat_channel】=====new_context: {new_context}")
-                    print(f"【chat_channel】=====reply: {reply}")
             elif context.type == ContextType.IMAGE:  # 图片消息，当前仅做下载保存到本地的逻辑
                 memory.USER_IMAGE_CACHE[context["session_id"]] = {
                     "path": context.content,
@@ -405,6 +402,7 @@ class ChatChannel(Channel):
         Return:
             reply: 通过好友请求的消息体
         """
+        # TODO: 这里似乎并没有以合适的消息体发送，需要检查下content，然后就是channel的调用通过好友方法
         if isinstance(context.content, dict) and "Content" in context.content:
             logger.info("friend request content: {}".format(context.content["Content"]))
             return Reply(type=ReplyType.ACCEPT_FRIEND, content=True)
