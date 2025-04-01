@@ -8,6 +8,7 @@ from bridge.context import ContextType
 from channel.chat_message import ChatMessage
 from common.log import logger
 from wcferry import WxMsg
+from config import conf
 
 
 class WechatfMessage(ChatMessage):
@@ -28,13 +29,6 @@ class WechatfMessage(ChatMessage):
         self.wxid = channel.wxid
         self.name = channel.name
 
-        # 解析消息类型
-        if wcf_msg.is_text():
-            self.ctype = ContextType.TEXT
-            self.content = wcf_msg.content
-        else:
-            raise NotImplementedError(f"Unsupported message type: {wcf_msg.type}")
-
         # 设置发送者和接收者信息
         self.from_user_id = self.wxid if wcf_msg.sender == self.wxid else wcf_msg.sender
         self.from_user_nickname = self.name if wcf_msg.sender == self.wxid else channel.contact_cache.get_name_by_wxid(wcf_msg.sender)
@@ -42,6 +36,20 @@ class WechatfMessage(ChatMessage):
         self.to_user_nickname = self.name
         self.other_user_id = wcf_msg.sender
         self.other_user_nickname = channel.contact_cache.get_name_by_wxid(wcf_msg.sender)
+
+        # 解析消息类型
+        if wcf_msg.is_text():
+            self.ctype = ContextType.TEXT
+            conf().user_data = conf().get_user_data(self.from_user_id)
+            conf().user_data["history"].append(
+                {self.from_user_nickname: wcf_msg.content}
+            )
+            conf().save_user_datas()
+
+            self.content = str(conf().user_datas[self.other_user_id]["history"])
+
+        else:
+            raise NotImplementedError(f"Unsupported message type: {wcf_msg.type}")
 
         # 群消息特殊处理
         if self.is_group:

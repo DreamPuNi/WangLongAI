@@ -1,5 +1,6 @@
 import os
 import qrcode
+from bridge.shared_queue import qr_queue
 
 def print_green(text):
     print(f"\033[32m{text}\033[0m")
@@ -25,6 +26,9 @@ def make_and_print_qr(url):
         3. 同时在本地当前文件夹tmp下生成二维码
     """
     print_green(f"您可以访问下方链接获取二维码:\nhttps://api.qrserver.com/v1/create-qr-code/?data={url}")
+    qr_url = f"https://api.qrserver.com/v1/create-qr-code/?data={url}"
+    qr_queue.put(qr_url)
+
     print_green("也可以扫描下方二维码登录")
     qr = qrcode.QRCode()
     qr.add_data(url)

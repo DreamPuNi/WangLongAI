@@ -7,7 +7,7 @@ wechat channel
 import threading
 import time
 from queue import Empty
-
+from common.tmp_dir import TmpDir
 from bridge.context import *
 from bridge.reply import *
 from channel.chat_channel import ChatChannel
@@ -15,7 +15,7 @@ from channel.wcferry.wcf_message import WechatfMessage
 from common.singleton import singleton
 from common.utils import *
 from wcferry import Wcf, WxMsg
-
+from config import conf
 
 @singleton
 class WechatfChannel(ChatChannel):
@@ -116,17 +116,33 @@ class WechatfChannel(ChatChannel):
                     if context["msg"].actual_user_id:
                         at_list = [context["msg"].actual_user_id]
                 at_str = ",".join(at_list) if at_list else ""
-
                 # ========================
+                self.wcf.send_text(reply.content, receiver, at_str)
+                conf().user_data = conf().get_user_data(receiver)
+                conf().user_data["history"].append(
+                    {"assistant": reply.content}
+                )
+                conf().save_user_datas()
+                """
                 reply_list = re.findall(r'「(.*?)」', reply.content)  # 对消息进行切分自适应发送
                 for content in reply_list:
                     sleep_time = len(content) * 0.3
                     time.sleep(sleep_time)
                     self.wcf.send_text(content, receiver, at_str)
+                """
                 # =========================
-
             elif reply.type == ReplyType.ERROR or reply.type == ReplyType.INFO:
                 self.wcf.send_text(reply.content, receiver)
+            elif reply.type == ReplyType.IMAGE:
+                image_storage = reply.content
+                image_storage.seek(0)
+                img_data = image_storage.read()
+                img_file_name = f"img_test.png"
+                img_file_path = TmpDir().path() + img_file_name
+                #img_file_path = f"C:/tmp/{img_file_name}"
+                with open(img_file_path, "wb") as f:
+                    f.write(img_data)
+                self.wcf.send_image(img_file_path, receiver)
             else:
                 logger.error(f"暂不支持的消息类型: {reply.type}")
 

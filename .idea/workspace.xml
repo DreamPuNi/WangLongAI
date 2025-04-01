@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/channel/wcferry/wcf_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wcferry/wcf_channel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/wcferry/wcf_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/channel/wcferry/wcf_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/tmp_dir.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/tmp_dir.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/channel_infomanage/gewe_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/channel_infomanage/gewe_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gewechat/util/terminal_printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/gewechat/util/terminal_printer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/data.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../0-venv/dow310_env/Lib/site-packages/ntwork/core/wework.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/channel/gewechat/gewechat_message.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2shQCyF61cBNy3fDhRv1AkmTO1w" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.1.get_token.executor": "Run",
+    "Python.2.get_logging.executor": "Run",
+    "Python.3.is_logging.executor": "Run",
+    "Python.4.call_back.executor": "Run",
+    "Python.6.log_out.executor": "Run",
+    "Python.8.appid_what.executor": "Run",
+    "Python._core.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.chat_channel.executor": "Run",
+    "Python.config.executor": "Run",
+    "Python.dify_bot.executor": "Run",
+    "Python.flet.executor": "Run",
+    "Python.flet_components.executor": "Run",
+    "Python.fuck_webui.executor": "Run",
+    "Python.gewe_manage.executor": "Run",
+    "Python.gewechat_channel.executor": "Run",
+    "Python.gewechat_message.executor": "Run",
+    "Python.gewechat_webui.executor": "Run",
+    "Python.interface.executor": "Run",
+    "Python.interface_t1.executor": "Run",
+    "Python.log.executor": "Run",
+    "Python.log_out.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.message_buffer.executor": "Run",
+    "Python.read_pkl.executor": "Run",
+    "Python.sikulix_channel.executor": "Run",
+    "Python.sikulix_chat_message.executor": "Run",
+    "Python.sikulix_message.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.text.executor": "Run",
+    "Python.tkinter.executor": "Run",
+    "Python.verify.executor": "Run",
+    "Python.watch_dog.executor": "Run",
+    "Python.wcf_channel.executor": "Run",
+    "Python.wcf_message.executor": "Run",
+    "Python.web_ui.executor": "Run",
+    "Python.web_ui_failed.executor": "Run",
+    "Python.wecommix_channel.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/Program/WangLongAI/channel/wecommix",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program\WangLongAI\channel\wecommix" />
+      <recent name="D:\Program\dify-on-wechat" />
+      <recent name="D:\Program\dify-on-wechat\channel\sikulix_wechat" />
+      <recent name="D:\Program\dify-on-wechat\external" />
+      <recent name="D:\Program\dify-on-wechat\channel\wcferry" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program\WangLongAI-dev\tmp" />
+      <recent name="D:\Program\dify-on-wechat\core\channel_infomanage" />
+      <recent name="D:\Program\dify-on-wechat\core" />
+      <recent name="D:\Program\dify-on-wechat\core\flet" />
+      <recent name="D:\Program\dify-on-wechat" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-495700d161d3-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.220" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="610824d6-0506-4729-83e6-00e52d496d22" name="Changes" comment="" />
+      <created>1738905203675</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738905203675</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/channel/wework/wework_message.py</url>
+          <line>125</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/channel/gewechat/gewechat_channel.py</url>
+          <line>168</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

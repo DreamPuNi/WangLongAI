@@ -1,4 +1,5 @@
 import os
+import queue
 import time
 import random
 import signal
@@ -6,7 +7,7 @@ import asyncio
 import threading
 import flet as ft
 from tkinter import *
-
+from bridge.shared_queue import qr_queue
 from common.log import add_log_listener
 from plugins import *
 from common import const
@@ -129,8 +130,8 @@ def main(page: ft.Page):
         page.window.destroy()
         # kill_process()
 
-    img = ft.Image(src="/tmp/login.png", width=150, height=150)
     def update_parameters(dynamic_content, config_class, e):
+        global current_process_instance
         current_select = e.control.value
         with open("config_grouping.json", "r", encoding="utf-8") as f:
             config_grouping = json.load(f)
@@ -180,6 +181,49 @@ def main(page: ft.Page):
                         on_change=lambda e,key=arg:handle_value_change(e,key,current_select)
                     )
                 )
+
+        def gewe_info(e):
+            del scrollable_content.controls[1]
+
+            if check_gewechat_online()[0]:
+                nick_name, avatar_url = get_gewechat_profile()
+                scrollable_content.controls.insert(
+                    1,
+                    ft.Row([
+                        ft.Container(
+                            content=ft.Image(src=avatar_url,width=150,height=150),
+                            margin=ft.margin.only(right=40)
+                        ),
+                        ft.Column(
+                            [
+                                ft.Text(value=f"当前登陆账号：{nick_name}", size=16, color="#000000"),
+                                ft.FilledButton(text="刷新状态", on_click=gewe_info),
+                                ft.FilledButton(text="退出登录", on_click=lambda e: gewe_log_out())
+                            ]
+                        )
+                    ])
+                )
+            else:
+                qr_url = qr_queue.get(timeout=15)
+                scrollable_content.controls.insert(
+                    1,
+                    ft.Row([
+                        ft.Container(
+                            content=ft.Image(src=qr_url, width=150, height=150),
+                            margin=ft.margin.only(right=40)
+                        ),
+                        ft.Column(
+                            [
+                                ft.Text(
+                                    value=f"请尝试扫码，如果提示二维码过期，请重新刷新状态",
+                                    size=16, color="#000000"),
+                                ft.FilledButton(text="刷新状态", on_click=gewe_info),
+                            ]
+                        )
+                    ])
+                )
+            scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
+            page.update()
 
         # wecommix渠道的特别设置
         if current_select == "wecommix":
@@ -381,41 +425,30 @@ def main(page: ft.Page):
                     0,
                     ft.Text(value="Gewe登录信息", size=22, weight=ft.FontWeight.BOLD, color="#000000")
                 )
-                if check_gewechat_online()[0]:
-                    nick_name, avatar_path = get_gewechat_profile()
+                if current_process_instance is None:
                     scrollable_content.controls.insert(
                         1,
                         ft.Row([
                             ft.Container(
-                                content=img,
+                                content=ft.Image(
+                                    src="https://longshangai.oss-cn-beijing.aliyuncs.com/software_assets/%E9%BE%99%E5%95%86-%E9%BB%91%E9%BE%99.png",
+                                    width=150,
+                                    height=150
+                                ),
                                 margin=ft.margin.only(right=40)
                             ),
                             ft.Column(
                                 [
-                                    ft.Text(value=f"当前登陆账号：{nick_name}", size=16, color="#000000"),
-                                    ft.FilledButton(text="刷新状态",on_click=lambda e: check_gewechat_online()),
-                                    ft.FilledButton(text="退出登录",on_click=lambda e: gewe_log_out())
+                                    ft.Text(
+                                        value=f"服务未运行",
+                                        size=16, color="#000000"),
+                                    ft.FilledButton(text="刷新状态", on_click=gewe_info),
                                 ]
                             )
                         ])
                     )
                 else:
-                    scrollable_content.controls.insert(
-                        1,
-                        ft.Row([
-                            ft.Container(
-                                content=ft.Image(src="/tmp/login.png", width=150, height=150),
-                                margin=ft.margin.only(right=40)
-                            ),
-                            ft.Column(
-                                [
-                                    ft.Text(value=f"请先启动运行，然后在3秒后刷新状态，尝试扫码，如果提示二维码过期，请重新刷新状态", size=16, color="#000000"),
-                                    ft.FilledButton(text="刷新状态", on_click=load_qrcode),
-                                ]
-                            )
-                        ])
-                    )
-                scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
+                    gewe_info(e)
             scrollable_content.controls.append(ft.Divider(height=15, color="#CCCCCC"))
             scrollable_content.controls.append(
                 ft.Text(value="微信公共参数设置", size=22, weight=ft.FontWeight.BOLD, color="#000000")
@@ -474,10 +507,6 @@ def main(page: ft.Page):
                 print(f"Error converting value for key '{key}': {e}")
                 return
             conf().set(key, converted_value)
-
-    def load_qrcode(e):
-        img.src = "/tmp/login.png"
-        img.update()
 
     def update_config(e):
         save_config()
@@ -727,7 +756,7 @@ def main(page: ft.Page):
             [
                 ft.Container(
                     content=ft.Image(
-                        src="https://longshangai.oss-cn-beijing.aliyuncs.com/software_assets/logo.png?Expires=1742542687&OSSAccessKeyId=TMP.3KntNkaUWwGWQtFbbJgAVbsUHda789m1jQaxsCS2nLW7bJBE6xHkwSA5fmqJX7uut7bPxcetC76gHeqzuTJxEKzCk2FmLX&Signature=75KBm6ovPTnTGepGT4aDMt8u%2Bmo%3D",
+                        src="https://longshangai.oss-cn-beijing.aliyuncs.com/software_assets/logo.png",
                         width=250,
                         height=100
                     ),
@@ -1020,7 +1049,7 @@ def main(page: ft.Page):
                     content=ft.Row(
                         [
                             ft.Image(
-                                src="https://longshangai.oss-cn-beijing.aliyuncs.com/software_assets/%E6%9C%9B%E9%BE%99%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg?Expires=1742542655&OSSAccessKeyId=TMP.3KntNkaUWwGWQtFbbJgAVbsUHda789m1jQaxsCS2nLW7bJBE6xHkwSA5fmqJX7uut7bPxcetC76gHeqzuTJxEKzCk2FmLX&Signature=HPMe7TnyUvDtqHKKqsMQaUQ%2FFbQ%3D",
+                                src="https://longshangai.oss-cn-beijing.aliyuncs.com/software_assets/%E6%9C%9B%E9%BE%99%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg",
                                 height=400,
                                 width=350,
                                 fit=ft.ImageFit.FIT_WIDTH

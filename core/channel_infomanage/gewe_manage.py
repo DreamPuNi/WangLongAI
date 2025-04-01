@@ -76,7 +76,7 @@ def get_gewechat_profile():
                 logger.error(f"下载头像失败: {str(e)}")
                 avatar_path = None
 
-        return nickname, avatar_path
+        return nickname, avatar_url
     except Exception as e:
         logger.error(f"获取Gewechat用户信息失败: {str(e)}")
         return None, None
@@ -111,15 +111,15 @@ def gewe_log_out():
 def get_qrcode_url():
     try:
         from lib.gewechat.client import GewechatClient
-        base_url = "http://192.168.31.235:2531/v2/api"#conf().get("gewechat_base_url")
-        token = "77454c4c65a94089919faffcc5d58749"#conf().get("gewechat_token")
-        app_id = "wx_s1xmJ50YU5cepHa9OsnHD"#conf().get("gewechat_app_id")
+        base_url = conf().get("gewechat_base_url")
+        token = conf().get("gewechat_token")
+        app_id = conf().get("gewechat_app_id")
         client = GewechatClient(base_url, token)
 
         client.login(app_id)
         from lib.gewechat.util.terminal_printer import url
         print(url)
-        return 1
+        return url
     except Exception as e:
         logger.error(f"获取二维码失败: {str(e)}")
         return None

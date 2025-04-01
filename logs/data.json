@@ -218,5 +218,25 @@
         },
         "new_friends": 0,
         "ended_conversations": 0
+    },
+    "2025-03-22": {
+        "reply_count": 16,
+        "prompt_usage": {
+            "dify": 0,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
+    },
+    "2025-03-23": {
+        "reply_count": 1,
+        "prompt_usage": {
+            "dify": 0,
+            "coze": 0,
+            "openai": 0
+        },
+        "new_friends": 0,
+        "ended_conversations": 0
     }
 }
